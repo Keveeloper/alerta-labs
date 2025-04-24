@@ -1,6 +1,7 @@
 import { LayoutProps } from "./types/types";
 import Navbar from "../navbar/Navbar";
 import Footer from "../footer/Footer";
+import CanvasComponent from "./components/CanvasComponent";
 
 const Layout = (props: LayoutProps) => {
 
@@ -8,6 +9,7 @@ const Layout = (props: LayoutProps) => {
 
     return (
         <> 
+            <CanvasComponent/>
             <Navbar />
             {children}
             <Footer/>
