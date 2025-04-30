@@ -105,7 +105,7 @@ function CanvasComponent() {
     function render() {
       system.update();
       ctx.globalCompositeOperation = 'source-over';
-      ctx.fillStyle = '#010101';
+      ctx.fillStyle = '#000';
       ctx.fillRect(0, 0, width, height);
 
       let grad = ctx.createRadialGradient(width / 2, height / 2, 0, width / 2, height / 2, width);
