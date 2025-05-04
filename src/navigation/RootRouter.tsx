@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router";
 import Layout from "../modules/shared/layout";
 import Home from "../modules/home/Home";
+import Contact from "../modules/contact/Contact";
 
 const RootRouter = () => {
 
@@ -20,6 +21,12 @@ const RootRouter = () => {
                     <Layout>
                         <h1>Services...</h1>
                     </Layout>
+                } 
+            />
+             <Route 
+                path="/contact"
+                element={
+                    <Contact/>
                 } 
             />
         </Routes>
