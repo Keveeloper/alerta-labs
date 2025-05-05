@@ -186,3 +186,12 @@ font-display:auto;font-style:normal;font-weight:100;font-stretch:normal;
     font-weight: normal;
     font-style: normal;
   }
+
+  .alerta-labs-swiper .swiper-button-prev {
+    margin-top: 180px;
+    color: white;
+  }
+  .alerta-labs-swiper .swiper-button-next {
+    margin-top: 180px;
+    color: white;
+  }
