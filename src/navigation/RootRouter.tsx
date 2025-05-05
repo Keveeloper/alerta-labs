@@ -2,6 +2,7 @@ import { Route, Routes } from "react-router";
 import Layout from "../modules/shared/layout";
 import Home from "../modules/home/Home";
 import Contact from "../modules/contact/Contact";
+import Services from "../modules/services/Services";
 
 const RootRouter = () => {
 
@@ -19,7 +20,7 @@ const RootRouter = () => {
                 path="/services"
                 element={
                     <Layout>
-                        <h1>Services...</h1>
+                        <Services/>
                     </Layout>
                 } 
             />

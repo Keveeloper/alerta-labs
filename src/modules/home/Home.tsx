@@ -1,4 +1,13 @@
+import useSpacialStore from "../../store/SpacialStore";
+
 const Home = () => {
+
+    const { setTextHovered } = useSpacialStore();
+
+    const handleHover = (text: string) => {
+        setTextHovered(text);
+    }
+
     return (
         <main className="w-full h-lvh">
             <img 
@@ -12,22 +21,27 @@ const Home = () => {
             <img 
                 src="https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/f26a10e8-4fd0-47e5-ad61-f14cb8011600/public" alt="Glass diamonds" 
                 className="absolute top-[8%] right-[20%] -translate-x-1/2"
+                onMouseEnter={() => handleHover("[futurebit] Experimental TECH, yet essential_")}
             />
             <img 
                 src="https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/2a615b82-df16-482f-e78c-571588b7f600/public" alt="Asteroid" 
                 className="absolute top-[20%] right-0 -translate-x-1/2"
-            />
+                onMouseEnter={() => handleHover("[brand boulder] Built to carry identities_")}
+                />
             <img 
                 src="https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/051108b3-a21a-4a06-b840-2a649c1efb00/public" alt="Station" 
                 className="absolute bottom-[15%] right-[5%]"
-            />
+                onMouseEnter={() => handleHover("[codecrumb] NEW tech, new tricks_")}
+                />
             <img 
-                src="https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/7d9c35d4-fe34-4b21-9978-9aab6d5dd000/public" alt="Satellite" 
-                className="absolute bottom-[5%] left-0 z-1"
-            />
+                src="https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/973bfea9-3bb4-408f-1b85-0110a76cb300/public" alt="Satellite" 
+                className="absolute w-[400px] bottom-[5%] left-0 z-1"
+                onMouseEnter={() => handleHover("[update base] App-building in zero-G_")}
+                />
             <img 
                 src="https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/7347c776-8a4a-4ab8-cf7a-267797610800/public" alt="Nebula" 
-                className="absolute top-[5%] left-[10%] bg-amber-300"
+                className="absolute top-[5%] left-[10%]"
+                onMouseEnter={() => handleHover("[UXxplosion] Cosmic clarity in pixels_")}
             />
         </main>
     );
