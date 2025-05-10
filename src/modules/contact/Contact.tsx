@@ -28,12 +28,13 @@ const contact = () => {
   return (
     <main className="w-full h-lvh">
       <Navbar />
-      <img
-        src="https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/47a4e8a6-c2b3-429f-c834-86343375a200/public"
-        alt="solar system background"
-        className="fixed w-full h-full left-1/2 -translate-x-1/2 object-cover mix-blend-screen"
-      />
-
+      <a href="/">
+        <img
+          src="https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/47a4e8a6-c2b3-429f-c834-86343375a200/public"
+          alt="solar system background"
+          className="fixed w-full h-full left-1/2 -translate-x-1/2 object-cover mix-blend-screen"
+        />
+      </a>
       {/* Start Section */}
       {!isContact && (
         <>
