@@ -81,7 +81,7 @@ const PackagesView = () => {
             </div>
             <div className="text-center mt-10" style={{ fontFamily: 'Bebas Neue'}}>
                 <h2 className="text-[55px] mb-4 text-white uppercase">Explore every detail</h2>
-                <h2 className="text-[55px] mb-4 text-white uppercase mt-[-15px]">side by side_</h2>
+                <h2 className="text-[45px] mb-4 text-white uppercase mt-[-35px]">side by side_</h2>
             </div>
             <PlanComparisonTable/>
         </div>
