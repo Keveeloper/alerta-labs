@@ -8,10 +8,10 @@ type plansTableParameters = {
 const PlansCard = ({ title, price, description, features }: plansTableParameters) => {
   return (
      <div className="bg-black text-white rounded-[1rem] p-6 w-full border border-[#FFFFFF]">
-      <h2 className="text-2xl font-bold text-center">{title}</h2>
-      <p className="text-sm text-center mt-1">{description}</p>
+      <h2 className="text-2xl text-center" style={{ fontFamily: 'Bebas Neue'}}>{title}</h2>
+      <p className="text-sm text-center mt-1 text-gray-300">{description}</p>
       <p className="text-center text-cyan-400 font-semibold mt-2">
-        {price} <span className="text-white">/per month</span>
+        {price} <span >/per month</span>
       </p>
       <hr className="my-4 border-gray-600" />
 

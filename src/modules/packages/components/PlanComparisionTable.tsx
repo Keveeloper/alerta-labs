@@ -72,14 +72,14 @@ export default function PlanComparisonTable() {
         <div className="max-h-[500px] overflow-y-auto scrollbar-hide">
           <div className="min-w-[1024px]">
             {/* Header with 2 rows: DESCRIPTION + PLANS */}
-            <div className="grid grid-cols-[300px_repeat(4,1fr)] sticky top-0 z-10 bg-black text-sm border-b border-gray-700">
+            <div className="grid grid-cols-[300px_repeat(4,1fr)] sticky top-0 z-10 bg-black text-sm border-b border-gray-600" style={{ fontFamily: 'Bebas Neue'}}>
               {/* DESCRIPTION cell (rowspan 2) */}
-              <div className="row-span-2 p-4 font-bold border-b border-gray-700">
+              <div className="row-span-2 p-4 border-b border-gray-700 text-[30px] text-center" >
                 DESCRIPTION
               </div>
 
               {/* PLANS cell (colspan 4) */}
-              <div className="col-span-4 p-4 text-center font-bold border-l border-gray-700">
+              <div className="col-span-4 text-center border-l border-gray-700 text-[30px]">
                 PLANS
               </div>
 
@@ -87,7 +87,7 @@ export default function PlanComparisonTable() {
               {plans.map((plan, i) => (
                 <div
                   key={i}
-                  className="p-4 text-center font-bold border-t border-l border-gray-700"
+                  className="p-4 text-center border-t border-l border-gray-700"
                 >
                   {plan}
                 </div>

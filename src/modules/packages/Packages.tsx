@@ -4,7 +4,7 @@ const plans = [
 {
     title: 'BASIC',
     price: '$300',
-    description: 'starter pack with support',
+    description: 'maintenance, prevention, and updates for your website.',
     features: [
       'Technical Support',
       'Tracking Implementation',
@@ -14,8 +14,8 @@ const plans = [
   },
   {
     title: 'MEDIUM',
-    price: '$1000',
-    description: 'adds app maintenance and\nSearch engine optimization',
+    price: '$500',
+    description: 'E-commerce with API integration & advanced data analysis.',
     features: [
       'Technical Support',
       'Tracking Implementation',
@@ -29,8 +29,8 @@ const plans = [
   },
   {
     title: 'PRO',
-    price: '$800',
-    description: 'adds e-commerce and analytics',
+    price: '$750',
+    description: 'includes user traffic generation, email and form optimization.',
     features: [
       'Technical Support',
       'Tracking Implementation',
@@ -47,7 +47,7 @@ const plans = [
   {
     title: 'ULTRA',
     price: '$1000',
-    description: 'adds app maintenance and\nSearch engine optimization',
+    description: 'adds app maintenance and Search engine optimization',
     features: [
       'Technical Support',
       'Tracking Implementation',
@@ -79,9 +79,9 @@ const PackagesView = () => {
                     />
                 ))}
             </div>
-            <div className="text-center mt-10">
-                <h2 className="text-2xl font-bold mb-4 text-white uppercase">Explore every detail</h2>
-                <h2 className="text-2xl font-bold mb-4 text-white uppercase mt-[-15px]">side by side_</h2>
+            <div className="text-center mt-10" style={{ fontFamily: 'Bebas Neue'}}>
+                <h2 className="text-[55px] mb-4 text-white uppercase">Explore every detail</h2>
+                <h2 className="text-[55px] mb-4 text-white uppercase mt-[-15px]">side by side_</h2>
             </div>
             <PlanComparisonTable/>
         </div>
