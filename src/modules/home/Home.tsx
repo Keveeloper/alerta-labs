@@ -1,11 +1,35 @@
+import { useState } from "react";
 import useSpacialStore from "../../store/SpacialStore";
+import { Link } from "react-router";
 
 const Home = () => {
 
     const { setTextHovered } = useSpacialStore();
+    const [stationHighlighted, setStationHighlighted] = useState<string>('1cd060bc-6e36-4286-3d92-234765af0300');
+    const [cristalHighlighted, setCristalHighlighted] = useState<string>('c86ffcab-84fb-4f9c-401b-7eb5d2a69900');
+    const [nebulaHighlighted, setNebulaHighlighted] = useState<string>('642af0a5-a5a3-4134-fcf7-c785a9f01500');
 
     const handleHover = (text: string) => {
         setTextHovered(text);
+        switch (text) {
+            case '[codecrumb] NEW tech, new tricks_':
+                setStationHighlighted('53b980b5-3df2-4291-1cc2-b1a699a35200');
+                break;
+            case '[futurebit] Experimental TECH, yet essential_':
+                setCristalHighlighted('b6af95e2-98c6-4d16-576c-75c04cf87100');
+                break;
+            case '[UXxplosion] Cosmic clarity in pixels_':
+                setNebulaHighlighted('3745c65f-ceda-4557-f643-11551e716000');
+                break;
+                default:
+                    break;
+                }
+            }
+            
+    const handleMouseLeave = () => {
+        setStationHighlighted('1cd060bc-6e36-4286-3d92-234765af0300');
+        setCristalHighlighted('c86ffcab-84fb-4f9c-401b-7eb5d2a69900');
+        setNebulaHighlighted('642af0a5-a5a3-4134-fcf7-c785a9f01500');
     }
 
     return (
@@ -19,9 +43,10 @@ const Home = () => {
                 className="absolute bottom-[8%] left-1/2 -translate-x-1/2"
             />
             <img 
-                src="https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/f26a10e8-4fd0-47e5-ad61-f14cb8011600/public" alt="Glass diamonds" 
-                className="absolute top-[8%] right-[20%] -translate-x-1/2"
+                src={`https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/${cristalHighlighted}/public`} alt="Glass diamonds" 
+                className="absolute w-[213px] top-[8%] right-[20%] -translate-x-1/2"
                 onMouseEnter={() => handleHover("[futurebit] Experimental TECH, yet essential_")}
+                onMouseLeave={handleMouseLeave}
             />
             <img 
                 src="https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/2a615b82-df16-482f-e78c-571588b7f600/public" alt="Asteroid" 
@@ -29,20 +54,24 @@ const Home = () => {
                 onMouseEnter={() => handleHover("[brand boulder] Built to carry identities_")}
                 />
             <img 
-                src="https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/051108b3-a21a-4a06-b840-2a649c1efb00/public" alt="Station" 
-                className="absolute bottom-[15%] right-[5%]"
+                src={`https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/${stationHighlighted}/public`} alt="Station" 
+                className="absolute w-[320px] bottom-[15%] right-[5%]"
                 onMouseEnter={() => handleHover("[codecrumb] NEW tech, new tricks_")}
-                />
+                onMouseLeave={handleMouseLeave}
+            />
             <img 
                 src="https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/973bfea9-3bb4-408f-1b85-0110a76cb300/public" alt="Satellite" 
                 className="absolute w-[400px] bottom-[5%] left-0 z-1"
                 onMouseEnter={() => handleHover("[update base] App-building in zero-G_")}
                 />
-            <img 
-                src="https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/7347c776-8a4a-4ab8-cf7a-267797610800/public" alt="Nebula" 
-                className="absolute top-[5%] left-[10%]"
-                onMouseEnter={() => handleHover("[UXxplosion] Cosmic clarity in pixels_")}
-            />
+            <Link to={'/services'}>
+                <img 
+                    src={`https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/${nebulaHighlighted}/public`} alt="Nebula" 
+                    className="absolute w-[508px] top-[5%] left-[10%]"
+                    onMouseEnter={() => handleHover("[UXxplosion] Cosmic clarity in pixels_")}
+                    onMouseLeave={handleMouseLeave}
+                />
+            </Link>
         </main>
     );
 
