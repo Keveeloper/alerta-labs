@@ -3,6 +3,7 @@ import Layout from "../modules/shared/layout";
 import Home from "../modules/home/Home";
 import Contact from "../modules/contact/Contact";
 import Services from "../modules/services/Services";
+import PackagesView from "../modules/packages/Packages";
 
 const RootRouter = () => {
 
@@ -28,6 +29,12 @@ const RootRouter = () => {
                 path="/contact"
                 element={
                     <Contact/>
+                } 
+            />
+            <Route 
+                path="/packages"
+                element={
+                    <PackagesView/>
                 } 
             />
         </Routes>
