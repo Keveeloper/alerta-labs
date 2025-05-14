@@ -2,6 +2,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import "swiper/css";
 import 'swiper/css/navigation';
 import { Navigation } from 'swiper/modules';
+import useSpacialObjectStore from '../../store/spacial-object-store/SpacialObjectsStore';
 
 const UXxplosion = [
     {
@@ -14,12 +15,15 @@ const UXxplosion = [
     },
 ]
 const Services = () => {
+
+    const { spacialObject } = useSpacialObjectStore();
+
     return (
         <div className="px-[var(--horizontal-padding)] w-full h-screen flex justify-center items-center">
             <div className="w-full h-[80%] flex">
                 <div className="w-[35%] h-full">
                     <div className="w-full h-[15%] flex justify-between items-center text-2xl text-white text-[Space Mono]">
-                        <p>X DESIGN</p>
+                        <p>{spacialObject.title}</p>
                         <button className="p-5 border rounded-2xl border-white">{'<<'}</button>
                     </div>
                     <div className="w-full h-[85%] border border-white rounded-2xl">
@@ -31,8 +35,10 @@ const Services = () => {
                             slidesPerView={1}
                             onSlideChange={() => console.log('slide change')}
                             onSwiper={(swiper) => console.log(swiper)}
+                            loop
                         >
-                            {UXxplosion.map((item, index) => (
+                            {/* {UXxplosion.map((item, index) => ( */}
+                            {spacialObject.item.map((item, index) => (
                                 <SwiperSlide className='w-full h-full'>
                                     <div className='w-full h-[70%] flex justify-center items-center'>
                                         <img src={item.image} alt="" />
@@ -55,7 +61,7 @@ const Services = () => {
                     </div>
                 </div>
                 <div className="w-[65%] h-full flex justify-center items-center">
-                    <img src="https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/14a151f4-f13a-43d7-4900-771aa2a12800/public" alt="" />
+                    <img src={spacialObject.object_image} alt="" />
                 </div>
             </div>
         </div>
