@@ -1,3 +1,4 @@
+import { useEffect, useRef } from "react";
 import PlanComparisonTable from "./components/PlanComparisionTable";
 import PlansCard from "./components/PlansTable";
 const plans = [
@@ -65,9 +66,10 @@ const plans = [
   },
 ];
 
-const PackagesView = () => {
+const PackagesView = ({ scrollRef }: { scrollRef?:any}) => {
     return (
-        <div className="p-[100px] bg-black/80 backdrop-blur-[50px]">        
+      <div className="p-[100px] bg-black/80">
+        <div className="">        
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 {plans.map((plan, idx) => (
                     <PlansCard
@@ -83,8 +85,9 @@ const PackagesView = () => {
                 <h2 className="text-[55px] mb-4 text-white uppercase">Explore every detail</h2>
                 <h2 className="text-[45px] mb-4 text-white uppercase mt-[-35px]">side by side_</h2>
             </div>
-            <PlanComparisonTable/>
         </div>
+          <PlanComparisonTable scrollRef={scrollRef} />
+      </div>
     )
 }
 export default PackagesView;
