@@ -17,9 +17,9 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
 
     const onScroll = () => {
       console.log("Scroll position:", element.scrollTop);
-      if(element.scrollTop > 900) {
+      if (element.scrollTop > 900) {
         setShowHeader(true);
-      }else{
+      } else {
         setShowHeader(false);
       }
     };
@@ -38,11 +38,21 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
       {/* Aquí ponemos el ref */}
       <div
         ref={scrollRef}
-        className="rounded-2xl p-6 max-h-[80vh] w-full shadow-xl relative overflow-y-auto"
+        className="relative rounded-2xl p-6 max-h-[80vh] w-full shadow-xl overflow-y-auto custom-scrollbar"
         onClick={(e) => e.stopPropagation()}
       >
+        {/* Botón de cerrar */}
+        <button
+          onClick={onClose}
+          className="absolute top-2 right-2 text-gray-500 hover:text-gray-800 rounded-full p-1 shadow-md"
+          aria-label="Cerrar modal"
+        >
+          ✕
+        </button>
+
+        {/* Contenido */}
         {React.isValidElement(children)
-          ? React.cloneElement(children as React.ReactElement<any>, { })
+          ? React.cloneElement(children as React.ReactElement<any>, {})
           : children}
       </div>
     </div>
