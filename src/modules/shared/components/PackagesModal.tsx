@@ -38,13 +38,13 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
       {/* Aquí ponemos el ref */}
       <div
         ref={scrollRef}
-        className="relative rounded-2xl p-6 max-h-[80vh] w-full shadow-xl overflow-y-auto custom-scrollbar"
+        className="relative rounded-2xl p-6 max-h-[80vh] w-full shadow-xl overflow-y-auto white-scrollbar"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Botón de cerrar */}
         <button
           onClick={onClose}
-          className="absolute top-2 right-2 text-gray-500 hover:text-gray-800 rounded-full p-1 shadow-md"
+          className="fixed top-10 right-[12px] text-[30px] font-normal text-white hover:text-gray-200 z-50"
           aria-label="Cerrar modal"
         >
           ✕

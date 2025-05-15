@@ -172,19 +172,6 @@ export default function PlanComparisonTable({
     setIsFixed(showheader);
     console.log('scrollRef', showheader);
   }, [showheader]);
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     if (scrollRef.current) {
-  //       const top = scrollRef.current.getBoundingClientRect().top;
-  //       setIsFixed(top <= 0);
-  //       if(top <= 0){
-  //         alert('asdasd')
-  //       }
-  //     }
-  //   };
-  //   window.addEventListener("scroll", handleScroll);
-  //   return () => window.removeEventListener("scroll", handleScroll);
-  // }, [scrollRef]);
 
   function addClassToSpans(html: string): string {
     return html.replace(/<span(.*?)>/g, `<span$1 class="text-cyan-400">`);
@@ -215,9 +202,9 @@ export default function PlanComparisonTable({
                 className="grid grid-cols-[600px_repeat(4,1fr)] border-b border-gray-800 text-sm"
               >
                 <div className="p-4 border-r border-gray-800">
-                  <div className="font-semibold mb-1">{section.title}</div>
-                  <div className="mb-1 text-gray-400">{section.subtitle}</div>
-                  <ul className="list-disc list-inside text-gray-400 text-xs space-y-0.5 ml-4">
+                  <div className="font-semibold mb-1 font-seismic-latin-variable">{section.title}</div>
+                  <div className="mb-1 text-white-400 font-seismic-latin-variable">{section.subtitle}</div>
+                  <ul className="list-disc list-inside text-white-400 text-xs space-y-0.5 ml-4 font-seismic-latin-variable">
                     {section.items.map((item, i) => (
                       <li key={i} dangerouslySetInnerHTML={{ __html: addClassToSpans(item) }}></li>
                     ))}
