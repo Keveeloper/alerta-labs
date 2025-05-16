@@ -50,7 +50,8 @@ const Home = () => {
     const handleClick = (text: string) => {
         switch (text) {
             case '[codecrumb] NEW tech, new tricks_':
-                setStationHighlighted('53b980b5-3df2-4291-1cc2-b1a699a35200');
+                setSpacialObject(spacialObjectsData.station);
+                navigate('/services');
                 break;
             case '[futurebit] Experimental TECH, yet essential_':
                 setSpacialObject(spacialObjectsData.cristal);
@@ -61,7 +62,8 @@ const Home = () => {
                 navigate('/services');
                 break;
             case '[update base] App-building in zero-G_':
-                setSatelliteHighlighted('9d447971-ee1b-46d8-6cd0-48bc1c688900');
+                setSpacialObject(spacialObjectsData.satellite);
+                navigate('/services');
                 break;
             case '[brand boulder] Built to carry identities_':
                 setAsteroidHighlighted('e5f7495d-19fa-46b8-9a2f-098f3a727300');
@@ -102,6 +104,7 @@ const Home = () => {
                     className="absolute w-[320px] bottom-[15%] right-[5%]"
                     onMouseEnter={() => handleHover("[codecrumb] NEW tech, new tricks_")}
                     onMouseLeave={handleMouseLeave}
+                    onClick={() => handleClick("[codecrumb] NEW tech, new tricks_")}
                 />
             </Link>
             <Link to={'/services'}>
@@ -110,6 +113,7 @@ const Home = () => {
                     className="absolute w-[400px] bottom-[5%] left-0 z-1"
                     onMouseEnter={() => handleHover("[update base] App-building in zero-G_")}
                     onMouseLeave={handleMouseLeave}
+                    onClick={() => handleClick("[update base] App-building in zero-G_")}
                 />
             </Link>
             <img 

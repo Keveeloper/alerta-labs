@@ -46,9 +46,30 @@ export const spacialObjectsData = {
                 description: '* Attractive and intuitive interface design * Disruptive experience design * Three.JS Web experiences'
             },
             {
-                image: 'https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/402caacf-480f-4e5c-6e26-e87ad05e5b00/public',
-                title: 'ASSETS',
-                description: '* Attractive and intuitive interface design * Disruptive experience design * Three.JS Web experiences'
+                image: 'https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/dd507cc0-28d0-4c37-bb55-fcba237fbf00/public',
+                title: 'web development',
+                description: '* Customized APIs * Real time data analysis * Data base management * Fluid systems integration * Security and compliance * Cloud management (DevOps) * Customized scalable solutions'
+            },
+            {
+                image: 'https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/892f42e4-de2a-4c7b-b70b-5e7b7bd39f00/public',
+                title: 'web translation & LOCALIZATION',
+                description: '* Fully automated website translation processes. * Multilingual content management with real-time updates. * URL translation and global sitemap integration for SEO. * Advanced analytics to track multilingual website performance.'
+            },
+        ],
+    },
+    satellite: {
+        title: 'APP DEVELOPMENT',
+        object_image: 'https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/c89599ce-e4f3-4794-d3ed-7b6bce0cef00/public',
+        item: [
+            {
+                image: 'https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/9d5a99ff-b0ea-4811-de45-2680d4ff9400/public',
+                title: 'MOBILE & DESKTOP',
+                description: '* Native apps for Android and IOS * UX/UI App Design * Backend and APIs integration * Custom corporate apps dEVELOPMENT & Publishing Customized APIs* Real time data analysis * Data base management * Fluid systems integration * Security and compliance * Cloud management (DevOps) * Customized scalable solutions * APP Store & Google Play'
+            },
+            {
+                image: 'https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/ecea7dc4-ca8a-4472-4004-4fc0c0862d00/public',
+                title: 'GAmes',
+                description: '2D Game Development and design * 3D Game Development and design * AR/VR Integration * Blockchain Integration * Integration of game plugins * Update & Maintenance dEVELOPMENT & Publishing Customized APIs * Real time data analysis * Data base management * Fluid systems integration * Security and compliance * Cloud management (DevOps) * Customized scalable solutions * APP Store & Google Play'
             },
         ],
     },

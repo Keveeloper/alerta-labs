@@ -61,7 +61,7 @@ const Services = () => {
                     </div>
                 </div>
                 <div className="w-[65%] h-full flex justify-center items-center">
-                    <img src={spacialObject.object_image} alt="" />
+                    <img className='w-[70%]' src={spacialObject.object_image} alt="" />
                 </div>
             </div>
         </div>
