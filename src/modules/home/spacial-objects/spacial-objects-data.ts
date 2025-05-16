@@ -18,7 +18,7 @@ export const spacialObjectsData = {
                 title: 'BLOCKCHAIN nft',
                 description: 'Add NFTs and cryptocurrency into your brand’s communication strategy with Alerta. We’ll develop the digital product and distribute it to marketplaces or allow your user to purchase or download it off your site, app or game. NFTs are a great way to build community, share perks with your members and even grant access to real-world events.'
             },
-    ],
+        ],
     },
     nebula: {
         title: 'X DESIGN',
@@ -27,6 +27,22 @@ export const spacialObjectsData = {
             {
                 image: 'https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/4450f5f2-5941-409d-f4f8-6e38dee44800/public',
                 title: 'UX / UI',
+                description: '* Attractive and intuitive interface design * Disruptive experience design * Three.JS Web experiences'
+            },
+            {
+                image: 'https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/402caacf-480f-4e5c-6e26-e87ad05e5b00/public',
+                title: 'ASSETS',
+                description: '* Attractive and intuitive interface design * Disruptive experience design * Three.JS Web experiences'
+            },
+        ],
+    },
+    station: {
+        title: 'WEB SERVICES',
+        object_image: 'https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/e92a6eab-e2c4-4900-316a-48493d1dca00/public',
+        item: [
+            {
+                image: 'https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/8574a0cf-096f-4203-4742-f129ac48f900/public',
+                title: 'web product',
                 description: '* Attractive and intuitive interface design * Disruptive experience design * Three.JS Web experiences'
             },
             {
