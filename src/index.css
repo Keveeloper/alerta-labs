@@ -195,3 +195,14 @@ font-display:auto;font-style:normal;font-weight:100;font-stretch:normal;
     margin-top: 180px;
     color: white;
   }
+
+  .white-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: #ffffff transparent;
+    right: 20px;
+  }
+  .font-seismic-latin-variable{
+    font-family: seismic-latin-variable, sans-serif;
+    font-style: normal;
+    font-variation-settings: "SEIS" 0, "wght" 100;
+  }
