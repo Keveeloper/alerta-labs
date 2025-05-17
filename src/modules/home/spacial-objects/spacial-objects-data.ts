@@ -73,4 +73,15 @@ export const spacialObjectsData = {
             },
         ],
     },
+    asteroide: {
+        title: 'WHITE LABEL SOLUTIONS',
+        object_image: 'https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/5d77f0ac-84e4-4e28-07c3-912e01dd2000/public',
+        item: [
+            {
+                image: 'https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/9d5a99ff-b0ea-4811-de45-2680d4ff9400/public',
+                title: 'WHITE LABEL SOLUTIONS',
+                description: 'Expand your offerings without expanding your team. At Alerta Partnership, we provide fully customizable, white-label digital solutions that allow agencies to deliver high-quality websites, apps, SaaS platforms, and more under their brand. Focus on client relationships—we’ll handle the tech. '
+            }
+        ],
+    },
 }

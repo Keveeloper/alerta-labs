@@ -206,3 +206,17 @@ font-display:auto;font-style:normal;font-weight:100;font-stretch:normal;
     font-style: normal;
     font-variation-settings: "SEIS" 0, "wght" 100;
   }
+
+@keyframes fly {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+.rocket {
+  position: relative;
+  animation: fly 2s ease-in-out infinite;
+}

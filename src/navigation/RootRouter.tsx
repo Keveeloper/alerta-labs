@@ -1,9 +1,13 @@
 import { Route, Routes } from "react-router";
-import Layout from "../modules/shared/layout";
-import Home from "../modules/home/Home";
-import Contact from "../modules/contact/Contact";
-import Services from "../modules/services/Services";
-import PackagesView from "../modules/packages/Packages";
+import { lazy } from "react";
+import { Suspense } from "react";
+import Loader from "../modules/shared/components/Loader";
+
+const Layout = lazy(() => import("../modules/shared/layout"));
+const Home = lazy(() => import("../modules/home/Home"));
+const Contact = lazy(() => import("../modules/contact/Contact"));
+const Services = lazy(() => import("../modules/services/Services"));
+const PackagesView = lazy(() => import("../modules/packages/Packages"));
 
 const RootRouter = () => {
 
@@ -12,17 +16,21 @@ const RootRouter = () => {
             <Route 
                 path="/" 
                 element={
-                    <Layout>
-                        <Home/>
-                    </Layout>
+                    <Suspense fallback={<Loader/>}>
+                        <Layout>
+                            <Home/>
+                        </Layout>
+                    </Suspense>
                 }
             />
             <Route 
                 path="/services"
                 element={
-                    <Layout>
-                        <Services/>
-                    </Layout>
+                    <Suspense fallback={<Loader/>}>
+                        <Layout>
+                            <Services/>
+                        </Layout>
+                    </Suspense>
                 } 
             />
              <Route 
