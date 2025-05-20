@@ -45,7 +45,7 @@ const Services = () => {
                         {showItemDetail ? 
                             <div className='relative w-full h-full p-8'>
                                 <h2 
-                                    className='text-white text-6xl z-1'
+                                    className='w-[80%] text-white text-6xl z-1'
                                     style={{fontFamily: 'Bebas Neue'}}
                                 >
                                     {selectedItem?.title}
@@ -55,7 +55,7 @@ const Services = () => {
                             </div>    
                         :
                             <Swiper
-                                className='alerta-labs-swiper w-full h-full'
+                                className='alerta-labs-swiper w-full h-full cursor-pointer'
                                 navigation={true} 
                                 modules={[Navigation]}
                                 spaceBetween={50}

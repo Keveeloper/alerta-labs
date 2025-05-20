@@ -97,7 +97,7 @@ const Home = () => {
             <img
                 loading="lazy" 
                 src={`https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/${asteroidHighlighted}/public`} alt="Asteroid" 
-                className="absolute w-[228px] top-[20%] right-0 -translate-x-1/2"
+                className="absolute w-[228px] top-[20%] right-0 -translate-x-1/2 cursor-pointer"
                 onMouseEnter={() => handleHover("[brand boulder] Built to carry identities_")}
                 onMouseLeave={handleMouseLeave}
                 onClick={() => handleClick("[brand boulder] Built to carry identities_")}
@@ -105,7 +105,7 @@ const Home = () => {
             <img
                 loading="lazy" 
                 src={`https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/${stationHighlighted}/public`} alt="Station" 
-                className="absolute w-[320px] bottom-[15%] right-[5%]"
+                className="absolute w-[320px] bottom-[15%] right-[5%] cursor-pointer"
                 onMouseEnter={() => handleHover("[codecrumb] NEW tech, new tricks_")}
                 onMouseLeave={handleMouseLeave}
                 onClick={() => handleClick("[codecrumb] NEW tech, new tricks_")}
@@ -113,7 +113,7 @@ const Home = () => {
             <img
                 loading="lazy" 
                 src={`https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/${satelliteHighlighted}/public`} alt="Satellite" 
-                className="absolute w-[400px] bottom-[5%] left-0 z-1"
+                className="absolute w-[400px] bottom-[5%] left-0 cursor-pointer z-1"
                 onMouseEnter={() => handleHover("[update base] App-building in zero-G_")}
                 onMouseLeave={handleMouseLeave}
                 onClick={() => handleClick("[update base] App-building in zero-G_")}
