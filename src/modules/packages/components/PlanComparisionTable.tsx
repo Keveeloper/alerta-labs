@@ -141,7 +141,7 @@ const sections = [
 const CheckIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    className="w-4 h-4 text-green-400"
+    className="w-8 h-8 text-green-400"
     fill="currentColor"
     viewBox="0 0 24 24"
   >
@@ -152,7 +152,7 @@ const CheckIcon = () => (
 const DashIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    className="w-4 h-4 text-red-500"
+    className="w-8 h-8 text-red-500"
     fill="currentColor"
     viewBox="0 0 24 24"
   >
@@ -174,7 +174,7 @@ export default function PlanComparisonTable({
   }, [showheader]);
 
   function addClassToSpans(html: string): string {
-    return html.replace(/<span(.*?)>/g, `<span$1 class="text-cyan-400">`);
+    return html.replace(/<span(.*?)>/g, `<span$1 class="font-seismic-latin-variable-span text-[#00F0FF]" style="font-weight: 600;">`);
   }
 
   return (
@@ -201,12 +201,12 @@ export default function PlanComparisonTable({
                 key={idx}
                 className="grid grid-cols-[600px_repeat(4,1fr)] border-b border-gray-800 text-sm"
               >
-                <div className="p-4 border-r border-gray-800">
-                  <div className="font-semibold mb-1 font-seismic-latin-variable">{section.title}</div>
-                  <div className="mb-1 text-white-400 font-seismic-latin-variable">{section.subtitle}</div>
+                <div className="font-seismic-latin-variable-span p-4 border-r border-gray-800">
+                  <div className="font-seismic-latin-variable-span font-semibold text-xl mb-1 font-seismic-latin-variable">{section.title}</div>
+                  <div className=" font-seismic-latin-variable-span text-[16px] *:mb-1 text-white-400 font-seismic-latin-variable">{section.subtitle}</div>
                   <ul className="list-disc list-inside text-white-400 text-xs space-y-0.5 ml-4 font-seismic-latin-variable">
                     {section.items.map((item, i) => (
-                      <li key={i} dangerouslySetInnerHTML={{ __html: addClassToSpans(item) }}></li>
+                      <li className="font-seismic-latin-variable-span text-base" key={i} dangerouslySetInnerHTML={{ __html: addClassToSpans(item) }}></li>
                     ))}
                   </ul>
                 </div>
@@ -236,7 +236,7 @@ const TableHeader: React.FC<TableHeaderProps> = ({ columnWidth }) => {
 
   return(
     <div className={`grid ${gridTemplate} sticky top-0 z-10 bg-black text-sm border-b border-gray-600`} style={{ fontFamily: 'Bebas Neue' }}>
-      <div className="row-span-2 p-4 border-b border-gray-700 text-[30px] text-center">
+      <div className="row-span-2 p-4 border-b border-gray-700 text-[35px] text-center">
         DESCRIPTION
       </div>
       <div className="col-span-4 text-center border-l border-gray-700 text-[30px]">
@@ -245,7 +245,7 @@ const TableHeader: React.FC<TableHeaderProps> = ({ columnWidth }) => {
       {plans.map((plan, i) => (
         <div
           key={i}
-          className="p-4 text-center border-t border-l border-gray-700"
+          className="p-4 text-2xl text-center border-t border-l border-gray-700"
         >
           {plan}
         </div>

@@ -5,7 +5,7 @@ const plans = [
 {
     title: 'BASIC',
     price: '$300',
-    description: 'maintenance, prevention, and updates for your website.',
+    description: 'Maintenance, prevention, and updates for your website.',
     features: [
       'Technical Support',
       'Tracking Implementation',
@@ -31,7 +31,7 @@ const plans = [
   {
     title: 'PRO',
     price: '$750',
-    description: 'includes user traffic generation, email and form optimization.',
+    description: 'Includes user traffic generation, email and form optimization.',
     features: [
       'Technical Support',
       'Tracking Implementation',
@@ -48,7 +48,7 @@ const plans = [
   {
     title: 'ULTRA',
     price: '$1000',
-    description: 'adds app maintenance and Search engine optimization',
+    description: 'Adds app maintenance and Search engine optimization',
     features: [
       'Technical Support',
       'Tracking Implementation',
