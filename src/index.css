@@ -220,3 +220,7 @@ font-display:auto;font-style:normal;font-weight:100;font-stretch:normal;
   position: relative;
   animation: fly 2s ease-in-out infinite;
 }
+
+.bebas-neue {
+  font-family: Bebas Neue;
+}

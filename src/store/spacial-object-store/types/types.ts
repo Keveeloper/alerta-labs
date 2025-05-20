@@ -4,7 +4,7 @@ export interface spacialObject {
     item: spacialItem[];
 }
 
-interface spacialItem {
+export interface spacialItem {
     image: string;
     title: string;
     description: string;

@@ -64,12 +64,46 @@ export const spacialObjectsData = {
             {
                 image: 'https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/9d5a99ff-b0ea-4811-de45-2680d4ff9400/public',
                 title: 'MOBILE & DESKTOP',
-                description: '* Native apps for Android and IOS * UX/UI App Design * Backend and APIs integration * Custom corporate apps dEVELOPMENT & Publishing Customized APIs* Real time data analysis * Data base management * Fluid systems integration * Security and compliance * Cloud management (DevOps) * Customized scalable solutions * APP Store & Google Play'
+                description: `<ul class="font-seismic-latin-variable" style="padding-left: 1.2rem; color: white; font-size: 18px; list-style: disc;">
+                                <li>Native apps for Android and IOS</li>
+                                <li>UX/UI App Design</li>
+                                <li>Backend and APIs integration</li>
+                                <li>Custom corporate apps </li>
+                              </ul>
+                              <p class="bebas-neue" style="color: white; font-size: 24px">development & publishing</p>
+                              <ul class="font-seismic-latin-variable" style="padding-left: 1.2rem; color: white; font-size: 18px; list-style: disc;">
+                                <li>Customized APIs</li>
+                                <li>Real time data analysis</li>
+                                <li>Data base management</li>
+                                <li>Fluid systems integration</li>
+                                <li>Security and compliance</li>
+                                <li>Cloud management (DevOps)</li>
+                                <li>Customized scalable solutions</li>
+                                <li>APP Store & Google Play</li>
+                              </ul>`
             },
             {
                 image: 'https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/ecea7dc4-ca8a-4472-4004-4fc0c0862d00/public',
                 title: 'GAmes',
-                description: '2D Game Development and design * 3D Game Development and design * AR/VR Integration * Blockchain Integration * Integration of game plugins * Update & Maintenance dEVELOPMENT & Publishing Customized APIs * Real time data analysis * Data base management * Fluid systems integration * Security and compliance * Cloud management (DevOps) * Customized scalable solutions * APP Store & Google Play'
+                description: `<ul class="font-seismic-latin-variable" style="padding-left: 1.2rem; color: white; font-size: 18px; list-style: disc;">
+                                <li>2D Game Development and design</li>
+                                <li>3D Game Development and design</li>
+                                <li>AR/VR Integration</li>
+                                <li>Blockchain Integration</li>
+                                <li>Integration of game plugins</li>
+                                <li>Update & Maintenance</li>
+                              </ul>
+                              <p class="bebas-neue" style="color: white; font-size: 24px">development & publishing</p>
+                              <ul class="font-seismic-latin-variable" style="padding-left: 1.2rem; color: white; font-size: 18px; list-style: disc;">
+                                <li>Customized APIs</li>
+                                <li>Real time data analysis</li>
+                                <li>Data base management</li>
+                                <li>Fluid systems integration</li>
+                                <li>Security and compliance</li>
+                                <li>Cloud management (DevOps)</li>
+                                <li>Customized scalable solutions</li>
+                                <li>APP Store & Google Play</li>
+                              </ul>`
             },
         ],
     },
