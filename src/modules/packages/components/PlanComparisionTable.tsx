@@ -166,12 +166,33 @@ export default function PlanComparisonTable({
   scrollRef?: boolean;
 }) {
   const [isFixed, setIsFixed] = useState(false);
-    const showheader = useModalStore((state) => state.showheader);
+  //const showheader = useModalStore((state) => state.showheader);
 
   useEffect(() => {
-    setIsFixed(showheader);
-    console.log('scrollRef', showheader);
-  }, [showheader]);
+    console.log('showheader', scrollRef);
+    if(scrollRef){
+      setIsFixed(scrollRef);
+    }else{
+      setIsFixed(false);
+    }
+  }, [scrollRef]);
+
+  const categorySelectorRef = useRef<HTMLDivElement>(null);
+  
+  // useEffect(() => {
+  //     const handleScroll = () => {
+  //       console.log('scroll down:', categorySelectorRef.current);
+  //         if (categorySelectorRef.current) {
+  //             const top = categorySelectorRef.current.getBoundingClientRect().top;
+  //             setIsFixed(top <= 0);
+  //             if(top <= 0){
+  //               console.log('top', top);
+  //             }
+  //         }
+  //     };
+  //     window.addEventListener("scroll", handleScroll);
+  //     return () => window.removeEventListener("scroll", handleScroll);
+  // }, []);
 
   function addClassToSpans(html: string): string {
     return html.replace(/<span(.*?)>/g, `<span$1 class="font-seismic-latin-variable-span text-[#00F0FF]" style="font-weight: 600;">`);
@@ -181,14 +202,14 @@ export default function PlanComparisonTable({
     <div className="bg-black text-white rounded-[1rem] p-4 mt-6 border border-[#FFFFFF] relative">
       {/* Sticky header shown only when scrolling */}
       {isFixed && (
-        <div className="sticky top-[-24px]  z-50 bg-black shadow-lg ">
+        <div className="sticky top-[-15px]  z-50 bg-black shadow-lg ">
           <TableHeader columnWidth={600}/>
         </div>
       )}
 
 
-      <div className="overflow-x-auto">
-        <div className="overflow-y-auto scrollbar-hide">
+      <div className="overflow-x-auto" >
+        <div className="overflow-y-auto scrollbar-hide" ref={categorySelectorRef}>
           <div className="min-w-[1024px]">
             {/* Original header (non-fixed) */}
             <div>
