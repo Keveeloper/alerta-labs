@@ -3,6 +3,7 @@ import PlanComparisonTable from "./components/PlanComparisionTable";
 import PlansCard from "./components/PlansTable";
 import Navbar from "../navbar/Navbar";
 import Footer from "../footer/Footer";
+import { useNavigate } from "react-router";
 const plans = [
 {
     title: 'BASIC',
@@ -71,6 +72,7 @@ const plans = [
 const PackagesView = ({ scrollRef }: { scrollRef?: any }) => {
   const PatterRef = useRef<HTMLDivElement>(null);
   const [showheader, setShowHeader] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const container = PatterRef.current;
@@ -111,7 +113,14 @@ const PackagesView = ({ scrollRef }: { scrollRef?: any }) => {
       {/* Container */}
       <div className="p-[100px] bg-black/80 backdrop-blur">
         <Navbar />
-        <div className="h-full max-h-[75vh] overflow-y-scroll p-[15px]" ref={PatterRef}>
+        <img
+          loading="lazy"
+          src="../icons/x.png"
+          alt="close modal"
+          onClick={() => navigate(-1)} 
+          className="float-right -mt-[25px] -mr-[4px]"
+        />
+        <div className="custom-scroll h-full max-h-[75vh] overflow-y-scroll p-[15px]" ref={PatterRef}>
           <div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {plans.map((plan, idx) => (
@@ -125,13 +134,13 @@ const PackagesView = ({ scrollRef }: { scrollRef?: any }) => {
               ))}
             </div>
             <div className="text-center mt-10" style={{ fontFamily: 'Bebas Neue' }}>
-              <h2 className="text-[55px] mb-4 text-white uppercase">Explore every detail</h2>
+              <h2 className="text-[55px] mb-4 text-white uppercase" id="exploreDetail">Explore every detail</h2>
               <h2 className="text-[45px] mb-4 text-white uppercase mt-[-35px]">side by side_</h2>
             </div>
           </div>
           <PlanComparisonTable scrollRef={showheader} />
         </div>
-        <Footer />
+        <Footer isPackages/>
       </div>
     </>
   );

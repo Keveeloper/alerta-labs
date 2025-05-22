@@ -178,21 +178,6 @@ export default function PlanComparisonTable({
   }, [scrollRef]);
 
   const categorySelectorRef = useRef<HTMLDivElement>(null);
-  
-  // useEffect(() => {
-  //     const handleScroll = () => {
-  //       console.log('scroll down:', categorySelectorRef.current);
-  //         if (categorySelectorRef.current) {
-  //             const top = categorySelectorRef.current.getBoundingClientRect().top;
-  //             setIsFixed(top <= 0);
-  //             if(top <= 0){
-  //               console.log('top', top);
-  //             }
-  //         }
-  //     };
-  //     window.addEventListener("scroll", handleScroll);
-  //     return () => window.removeEventListener("scroll", handleScroll);
-  // }, []);
 
   function addClassToSpans(html: string): string {
     return html.replace(/<span(.*?)>/g, `<span$1 class="font-seismic-latin-variable-span text-[#00F0FF]" style="font-weight: 600;">`);

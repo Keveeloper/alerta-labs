@@ -9,3 +9,22 @@
     object-fit: cover;
     z-index: -1;
 }
+
+.custom-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: white transparent; /* Para Firefox */
+}
+
+.custom-scroll::-webkit-scrollbar {
+  width: 10px; /* Puedes ajustar el ancho aquí */
+}
+
+.custom-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scroll::-webkit-scrollbar-thumb {
+  background-color: white;
+  border-radius: 10px;
+  border: 2px solid white; /* Borde blanco */
+}
