@@ -1,10 +1,11 @@
 export const spacialObjectsData = {
     cristal: {
         title: 'EMERGING TECH',
-        object_image: 'https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/2dc0b5c7-0bfa-4bf1-8382-92868e809100/mobile',
+        object_image: 'https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/5be5fa8e-4850-4b69-c207-7020d5f28000/public',
+        height: '70%',
         item: [
             {
-                image: 'https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/ad8a83bb-5f5e-4ea6-d255-ac7d47682c00/mobile',
+                image: 'https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/6aba3daa-f16a-4f1a-7bf3-5463a01c7700/public',
                 title: 'Integration AI Machine learning',
                 description: `<p class="font-seismic-latin-variable" style="margin-bottom: 20px; width: 70%; color: white; font-size: 18px;">
                                 Alerta develops or integrates systems to make artificial intelligence 
@@ -19,7 +20,7 @@ export const spacialObjectsData = {
                               </p>`
             },
             {
-                image: 'https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/822639ba-a10e-4d91-3b51-13d05024a000/mobile',
+                image: 'https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/c9e42433-1c92-4732-7920-3add69bc2100/public',
                 title: 'AR/VR SOLUTIOND',
                 description: `<p class="font-seismic-latin-variable" style="margin-bottom: 20px; width: 60%; color: white; font-size: 18px;">
                                 Alerta produces experiences that enhance the ability of your customer 
@@ -35,7 +36,7 @@ export const spacialObjectsData = {
                               </p>`
             },
             {
-                image: 'https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/6d452c3f-a7cc-4e0b-1467-797e4fa8f200/mobile',
+                image: 'https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/d28e2183-6917-4cb7-42ed-b2f695434800/public',
                 title: 'BLOCKCHAIN nft',
                 description: `<p class="font-seismic-latin-variable" style="margin-bottom: 20px; width: 60%; color: white; font-size: 18px;">
                                 Add NFTs and cryptocurrency into your brand’s communication strategy with Alerta.
@@ -54,6 +55,7 @@ export const spacialObjectsData = {
     nebula: {
         title: 'X DESIGN',
         object_image: 'https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/9b507227-b066-415e-9233-c76ed6e55c00/public',
+        height: '50%',
         item: [
             {
                 image: 'https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/a9441983-c906-44c9-f710-8d9ae2563700/public',
@@ -77,10 +79,11 @@ export const spacialObjectsData = {
     },
     station: {
         title: 'WEB SERVICES',
-        object_image: 'https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/e92a6eab-e2c4-4900-316a-48493d1dca00/mobile',
+        object_image: 'https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/37e2e421-b75d-4b3f-1524-3d31664f4000/public',
+        height: '80%',
         item: [
             {
-                image: 'https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/8574a0cf-096f-4203-4742-f129ac48f900/mobile',
+                image: 'https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/caf9c96b-5ae7-4445-e1ca-5f8b16d7d900/public',
                 title: 'web product',
                 description: `<ul class="font-seismic-latin-variable" style="padding-left: 1.2rem; width: 60%; color: white; font-size: 18px; list-style: disc;">
                                 <li>Tailor-made Websites (Wordpress or code)</li>
@@ -96,7 +99,7 @@ export const spacialObjectsData = {
                               </ul>`
             },
             {
-                image: 'https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/dd507cc0-28d0-4c37-bb55-fcba237fbf00/mobile',
+                image: 'https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/0cac427a-5da3-4646-0abf-ad9a38ff5d00/public',
                 title: 'web development',
                 description: `<ul class="font-seismic-latin-variable" style="padding-left: 1.2rem; width: 60%; color: white; font-size: 18px; list-style: disc;">
                                 <li>Customized APIs</li>
@@ -123,6 +126,7 @@ export const spacialObjectsData = {
     satellite: {
         title: 'APP DEVELOPMENT',
         object_image: 'https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/c89599ce-e4f3-4794-d3ed-7b6bce0cef00/mobile',
+        height: '50%',
         item: [
             {
                 image: 'https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/9d5a99ff-b0ea-4811-de45-2680d4ff9400/mobile',
@@ -172,10 +176,11 @@ export const spacialObjectsData = {
     },
     asteroide: {
         title: 'WHITE LABEL SOLUTIONS',
-        object_image: 'https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/5d77f0ac-84e4-4e28-07c3-912e01dd2000/mobile',
+        object_image: 'https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/d4d4412b-8b1b-4f2f-6ff1-901252017700/public',
+        height: '70%',
         item: [
             {
-                image: 'https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/79b54d1e-a6cb-4ec5-b54c-d4f7548b7900/mobile',
+                image: 'https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/f20bc51e-870d-4164-45fb-8a3b69b08500/public',
                 title: 'WHITE LABEL SOLUTIONS',
                 description: `<p class="font-seismic-latin-variable" style="margin-bottom: 20px; width: 60%; color: white; font-size: 18px;">
                                 Expand your offerings without expanding your team.

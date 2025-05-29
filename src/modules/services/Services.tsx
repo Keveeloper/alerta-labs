@@ -16,6 +16,8 @@ const Services = () => {
     const [ selectedItem, setSelectedItem ] = useState<spacialItem | null>(null);
     const [ activeIndex, setActiveIndex ] = useState<number>(0);
 
+    console.log(spacialObject.height);
+    
     const goBack = () => {
         if (showItemDetail) {
             setShowItemDetail(false);
@@ -99,14 +101,16 @@ const Services = () => {
                 </div>
                 <div className="w-[65%] h-full flex justify-center items-center">
                     {/* <img className='w-[70%]' src={spacialObject.object_image} alt=""/> */}
-                    <LazyLoadImage
-                        style={{display: 'flex !important'}}
-                        wrapperClassName='service-main-image w-full h-full justify-center items-center'
-                        className='h-full self-center'
-                        src={spacialObject.object_image}
-                        alt="services main alerta labs image"
-                        effect="blur" // efecto visual mientras carga
-                    />
+                    <div className={`w-full`} style={{height: spacialObject.height}}>
+                        <LazyLoadImage
+                            style={{height: spacialObject.height + ' !important'}}
+                            wrapperClassName={`service-main-image w-full h-full justify-center items-center`}
+                            className={`h-full`}
+                            src={spacialObject.object_image}
+                            alt="services main alerta labs image"
+                            effect="blur"
+                        />
+                    </div>
                 </div>
             </div>
         </div>

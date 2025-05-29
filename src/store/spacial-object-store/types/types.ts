@@ -1,6 +1,7 @@
 export interface spacialObject {
     title: string;
     object_image: string;
+    height: string;
     item: spacialItem[];
 }
 
