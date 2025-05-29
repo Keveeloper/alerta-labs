@@ -229,3 +229,7 @@ font-display:auto;font-style:normal;font-weight:100;font-stretch:normal;
 .bebas-neue {
   font-family: Bebas Neue;
 }
+
+.service-main-image.lazy-load-image-background {
+  display: flex !important;
+}

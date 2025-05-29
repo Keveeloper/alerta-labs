@@ -6,6 +6,7 @@ import useSpacialObjectStore from '../../store/spacial-object-store/SpacialObjec
 import { useNavigate } from 'react-router';
 import { useState } from 'react';
 import { spacialItem } from '../../store/spacial-object-store/types/types';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 const Services = () => {
 
@@ -72,7 +73,14 @@ const Services = () => {
                                         onClick={() => gotToItemDetail(item)}
                                     >
                                         <div className='w-full h-[70%] flex justify-center items-center'>
-                                            <img src={item.image} alt=""/>
+                                            {/* <img className='h-[100%]' src={item.image} alt=""/> */}
+                                            <LazyLoadImage
+                                                wrapperClassName='h-full'
+                                                className='h-full'
+                                                src={item.image}
+                                                alt="Services alerta labs item image"
+                                                effect="blur" // efecto visual mientras carga
+                                            />
                                         </div>
                                         <hr className='mx-10 text-white'/>
                                         <div className='w-full h-[30%] flex justify-center items-center'>
@@ -90,7 +98,15 @@ const Services = () => {
                     </div>
                 </div>
                 <div className="w-[65%] h-full flex justify-center items-center">
-                    <img className='w-[70%]' src={spacialObject.object_image} alt=""/>
+                    {/* <img className='w-[70%]' src={spacialObject.object_image} alt=""/> */}
+                    <LazyLoadImage
+                        style={{display: 'flex !important'}}
+                        wrapperClassName='service-main-image w-full h-full justify-center items-center'
+                        className='h-full self-center'
+                        src={spacialObject.object_image}
+                        alt="services main alerta labs image"
+                        effect="blur" // efecto visual mientras carga
+                    />
                 </div>
             </div>
         </div>
