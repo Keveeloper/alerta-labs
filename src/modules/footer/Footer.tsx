@@ -1,7 +1,4 @@
-import { useEffect, useRef, useState } from "react";
 import useSpacialStore from "../../store/SpacialStore";
-import PackagesView from "../packages/Packages";
-import Modal from "../shared/components/PackagesModal";
 
 const Footer = ({ isPackages }: { isPackages?: boolean  }) => {
 
@@ -36,8 +33,7 @@ const Footer = ({ isPackages }: { isPackages?: boolean  }) => {
           Portfolio
         </button>
         <a
-          // href="/packages"
-          onClick={() => setIsModalOpen(true)}
+          href="/packages"
           className="ml-10 px-5 py-2 text-white text-2xl rounded-2xl border border-white cursor-pointer font-[Exan] hover:bg-white/20"
         >
           Packages
