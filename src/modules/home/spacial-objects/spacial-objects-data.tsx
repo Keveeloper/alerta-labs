@@ -55,7 +55,7 @@ export const spacialObjectsData = {
     nebula: {
         title: 'X DESIGN',
         object_image: 'https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/9b507227-b066-415e-9233-c76ed6e55c00/public',
-        height: '50%',
+        height: '100%',
         item: [
             {
                 image: 'https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/a9441983-c906-44c9-f710-8d9ae2563700/public',
@@ -112,7 +112,7 @@ export const spacialObjectsData = {
                               </ul>`
             },
             {
-                image: 'https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/892f42e4-de2a-4c7b-b70b-5e7b7bd39f00/mobile',
+                image: 'https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/d7df765a-6b46-4479-eab5-faf948dfdc00/public',
                 title: 'web translation & LOCALIZATION',
                 description: `<ul class="font-seismic-latin-variable" style="padding-left: 1.2rem; width: 60%; color: white; font-size: 18px; list-style: disc;">
                                 <li>Fully automated website translation processes.</li>
@@ -125,11 +125,11 @@ export const spacialObjectsData = {
     },
     satellite: {
         title: 'APP DEVELOPMENT',
-        object_image: 'https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/c89599ce-e4f3-4794-d3ed-7b6bce0cef00/mobile',
-        height: '50%',
+        object_image: 'https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/d0035ab1-5b5c-4cb4-f10f-c907a2b7bb00/public',
+        height: '100%',
         item: [
             {
-                image: 'https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/9d5a99ff-b0ea-4811-de45-2680d4ff9400/mobile',
+                image: 'https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/abbbd0f6-9a2a-476f-3604-90f13476a200/public',
                 title: 'MOBILE & DESKTOP',
                 description: `<ul class="font-seismic-latin-variable" style="padding-left: 1.2rem; color: white; font-size: 18px; list-style: disc;">
                                 <li>Native apps for Android and IOS</li>
@@ -150,7 +150,7 @@ export const spacialObjectsData = {
                               </ul>`
             },
             {
-                image: 'https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/ecea7dc4-ca8a-4472-4004-4fc0c0862d00/mobile',
+                image: 'https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/bf8da037-f6b1-475d-c7ac-534f8172fa00/public',
                 title: 'GAmes',
                 description: `<ul class="font-seismic-latin-variable" style="padding-left: 1.2rem; color: white; font-size: 18px; list-style: disc;">
                                 <li>2D Game Development and design</li>

@@ -77,8 +77,8 @@ const Services = () => {
                                         <div className='w-full h-[70%] flex justify-center items-center'>
                                             {/* <img className='h-[100%]' src={item.image} alt=""/> */}
                                             <LazyLoadImage
-                                                wrapperClassName='h-full'
-                                                className='h-full'
+                                                wrapperClassName='service-main-image h-full justify-center items-center'
+                                                className='h-[90%]'
                                                 src={item.image}
                                                 alt="Services alerta labs item image"
                                                 effect="blur" // efecto visual mientras carga
@@ -103,7 +103,6 @@ const Services = () => {
                     {/* <img className='w-[70%]' src={spacialObject.object_image} alt=""/> */}
                     <div className={`w-full`} style={{height: spacialObject.height}}>
                         <LazyLoadImage
-                            style={{height: spacialObject.height + ' !important'}}
                             wrapperClassName={`service-main-image w-full h-full justify-center items-center`}
                             className={`h-full`}
                             src={spacialObject.object_image}
