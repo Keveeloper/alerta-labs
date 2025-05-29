@@ -50,7 +50,8 @@ const Home = () => {
     const handleClick = (text: string) => {
         switch (text) {
             case '[codecrumb] NEW tech, new tricks_':
-                setStationHighlighted('53b980b5-3df2-4291-1cc2-b1a699a35200');
+                setSpacialObject(spacialObjectsData.station);
+                navigate('/services');
                 break;
             case '[futurebit] Experimental TECH, yet essential_':
                 setSpacialObject(spacialObjectsData.cristal);
@@ -61,10 +62,12 @@ const Home = () => {
                 navigate('/services');
                 break;
             case '[update base] App-building in zero-G_':
-                setSatelliteHighlighted('9d447971-ee1b-46d8-6cd0-48bc1c688900');
+                setSpacialObject(spacialObjectsData.satellite);
+                navigate('/services');
                 break;
             case '[brand boulder] Built to carry identities_':
-                setAsteroidHighlighted('e5f7495d-19fa-46b8-9a2f-098f3a727300');
+                setSpacialObject(spacialObjectsData.asteroide);
+                navigate('/services');
                 break;
             default:
                 break;
@@ -73,46 +76,50 @@ const Home = () => {
 
     return (
         <main className="w-full h-lvh">
-            <img 
+            <img
+                loading="lazy" 
                 src="https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/47a4e8a6-c2b3-429f-c834-86343375a200/public" alt="solar system background" 
                 className="fixed w-full h-full left-1/2 -translate-x-1/2 object-cover mix-blend-screen"
             />
-            <img 
+            <img
+                loading="lazy" 
                 src="https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/09cb6e8c-0893-4171-0e4a-dce1538b5d00/public" alt="astronaut alerta labs" 
                 className="absolute bottom-[8%] left-1/2 -translate-x-1/2"
             />
-            <img 
+            <img
+                loading="lazy"
                 src={`https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/${cristalHighlighted}/public`} alt="Glass diamonds" 
                 className="absolute w-[213px] top-[8%] right-[20%] -translate-x-1/2 cursor-pointer"
                 onMouseEnter={() => handleHover("[futurebit] Experimental TECH, yet essential_")}
                 onMouseLeave={handleMouseLeave}
                 onClick={() => handleClick("[futurebit] Experimental TECH, yet essential_")}
             />
-            <Link to={'/services'}>
-                <img 
-                    src={`https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/${asteroidHighlighted}/public`} alt="Asteroid" 
-                    className="absolute w-[228px] top-[20%] right-0 -translate-x-1/2"
-                    onMouseEnter={() => handleHover("[brand boulder] Built to carry identities_")}
-                    onMouseLeave={handleMouseLeave}
-                />
-            </Link>
-            <Link to={'/services'}>
-                <img 
-                    src={`https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/${stationHighlighted}/public`} alt="Station" 
-                    className="absolute w-[320px] bottom-[15%] right-[5%]"
-                    onMouseEnter={() => handleHover("[codecrumb] NEW tech, new tricks_")}
-                    onMouseLeave={handleMouseLeave}
-                />
-            </Link>
-            <Link to={'/services'}>
-                <img 
-                    src={`https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/${satelliteHighlighted}/public`} alt="Satellite" 
-                    className="absolute w-[400px] bottom-[5%] left-0 z-1"
-                    onMouseEnter={() => handleHover("[update base] App-building in zero-G_")}
-                    onMouseLeave={handleMouseLeave}
-                />
-            </Link>
-            <img 
+            <img
+                loading="lazy" 
+                src={`https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/${asteroidHighlighted}/public`} alt="Asteroid" 
+                className="absolute w-[228px] top-[20%] right-0 -translate-x-1/2 cursor-pointer"
+                onMouseEnter={() => handleHover("[brand boulder] Built to carry identities_")}
+                onMouseLeave={handleMouseLeave}
+                onClick={() => handleClick("[brand boulder] Built to carry identities_")}
+            />
+            <img
+                loading="lazy" 
+                src={`https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/${stationHighlighted}/public`} alt="Station" 
+                className="absolute w-[320px] bottom-[15%] right-[5%] cursor-pointer"
+                onMouseEnter={() => handleHover("[codecrumb] NEW tech, new tricks_")}
+                onMouseLeave={handleMouseLeave}
+                onClick={() => handleClick("[codecrumb] NEW tech, new tricks_")}
+            />
+            <img
+                loading="lazy" 
+                src={`https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/${satelliteHighlighted}/public`} alt="Satellite" 
+                className="absolute w-[400px] bottom-[5%] left-0 cursor-pointer z-1"
+                onMouseEnter={() => handleHover("[update base] App-building in zero-G_")}
+                onMouseLeave={handleMouseLeave}
+                onClick={() => handleClick("[update base] App-building in zero-G_")}
+            />
+            <img
+                loading="lazy" 
                 src={`https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/${nebulaHighlighted}/public`} alt="Nebula" 
                 className="absolute w-[508px] top-[5%] left-[10%] cursor-pointer"
                 onMouseEnter={() => handleHover("[UXxplosion] Cosmic clarity in pixels_")}
