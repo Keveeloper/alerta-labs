@@ -15,6 +15,7 @@ const Home = () => {
     const [nebulaHighlighted, setNebulaHighlighted] = useState<string>('642af0a5-a5a3-4134-fcf7-c785a9f01500');
     const [satelliteHighlighted, setSatelliteHighlighted] = useState<string>('4667d586-b939-47bb-4a00-312799925e00');
     const [asteroidHighlighted, setAsteroidHighlighted] = useState<string>('96444b46-5e0f-4433-4dc0-2f1abc3c1600');
+    const [ astronauthighlighted, setAstronautHighlighted ] = useState<string>('5827b1f3-6cab-47c0-136f-338815997400');
     
     const handleHover = (text: string) => {
         setTextHovered(text);
@@ -34,6 +35,9 @@ const Home = () => {
             case '[brand boulder] Built to carry identities_':
                 setAsteroidHighlighted('e5f7495d-19fa-46b8-9a2f-098f3a727300');
                 break;
+            case 'astronaut':
+                setAstronautHighlighted('09cb6e8c-0893-4171-0e4a-dce1538b5d00');
+                break;
             default:
                 break;
         }
@@ -45,6 +49,7 @@ const Home = () => {
         setNebulaHighlighted('642af0a5-a5a3-4134-fcf7-c785a9f01500');
         setSatelliteHighlighted('4667d586-b939-47bb-4a00-312799925e00');
         setAsteroidHighlighted('96444b46-5e0f-4433-4dc0-2f1abc3c1600');
+        setAstronautHighlighted('5827b1f3-6cab-47c0-136f-338815997400');
     }
 
     const handleClick = (text: string) => {
@@ -77,17 +82,18 @@ const Home = () => {
     return (
         <main className="w-full h-lvh">
             <img
-                loading="lazy" 
-                src="https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/47a4e8a6-c2b3-429f-c834-86343375a200/public" alt="solar system background" 
+                src="https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/67101712-efc2-4dcf-3bea-0fbafde64f00/public" alt="solar system background" 
                 className="fixed w-full h-full left-1/2 -translate-x-1/2 object-cover mix-blend-screen"
             />
             <img
-                loading="lazy" 
-                src="https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/09cb6e8c-0893-4171-0e4a-dce1538b5d00/public" alt="astronaut alerta labs" 
-                className="absolute bottom-[8%] left-1/2 -translate-x-1/2"
+                // src="https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/09cb6e8c-0893-4171-0e4a-dce1538b5d00/public" 
+                src={`https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/${astronauthighlighted}/public`}
+                alt="astronaut alerta labs" 
+                className="absolute w-[400px] bottom-[8%] left-1/2 -translate-x-1/2 cursor-pointer"
+                onMouseEnter={() => handleHover("astronaut")}
+                onMouseLeave={handleMouseLeave}
             />
             <img
-                loading="lazy"
                 src={`https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/${cristalHighlighted}/public`} alt="Glass diamonds" 
                 className="absolute w-[213px] top-[8%] right-[20%] -translate-x-1/2 cursor-pointer"
                 onMouseEnter={() => handleHover("[futurebit] Experimental TECH, yet essential_")}
@@ -95,7 +101,6 @@ const Home = () => {
                 onClick={() => handleClick("[futurebit] Experimental TECH, yet essential_")}
             />
             <img
-                loading="lazy" 
                 src={`https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/${asteroidHighlighted}/public`} alt="Asteroid" 
                 className="absolute w-[228px] top-[20%] right-0 -translate-x-1/2 cursor-pointer"
                 onMouseEnter={() => handleHover("[brand boulder] Built to carry identities_")}
@@ -103,7 +108,6 @@ const Home = () => {
                 onClick={() => handleClick("[brand boulder] Built to carry identities_")}
             />
             <img
-                loading="lazy" 
                 src={`https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/${stationHighlighted}/public`} alt="Station" 
                 className="absolute w-[320px] bottom-[15%] right-[5%] cursor-pointer"
                 onMouseEnter={() => handleHover("[codecrumb] NEW tech, new tricks_")}
@@ -111,7 +115,6 @@ const Home = () => {
                 onClick={() => handleClick("[codecrumb] NEW tech, new tricks_")}
             />
             <img
-                loading="lazy" 
                 src={`https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/${satelliteHighlighted}/public`} alt="Satellite" 
                 className="absolute w-[400px] bottom-[5%] left-0 cursor-pointer z-1"
                 onMouseEnter={() => handleHover("[update base] App-building in zero-G_")}
@@ -119,12 +122,16 @@ const Home = () => {
                 onClick={() => handleClick("[update base] App-building in zero-G_")}
             />
             <img
-                loading="lazy" 
                 src={`https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/${nebulaHighlighted}/public`} alt="Nebula" 
                 className="absolute w-[508px] top-[5%] left-[10%] cursor-pointer"
                 onMouseEnter={() => handleHover("[UXxplosion] Cosmic clarity in pixels_")}
                 onMouseLeave={handleMouseLeave}
                 onClick={() => handleClick("[UXxplosion] Cosmic clarity in pixels_")}
+            />
+            <img 
+                className="absolute w-full h-full z-1 pointer-events-none"
+                src="https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/d2a95ff8-65a1-439b-cc90-ded1b8d0aa00/public" 
+                alt="vignette" 
             />
         </main>
     );

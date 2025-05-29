@@ -72,7 +72,7 @@ const Services = () => {
                                         onClick={() => gotToItemDetail(item)}
                                     >
                                         <div className='w-full h-[70%] flex justify-center items-center'>
-                                            <img src={item.image} alt="" loading='lazy'/>
+                                            <img src={item.image} alt=""/>
                                         </div>
                                         <hr className='mx-10 text-white'/>
                                         <div className='w-full h-[30%] flex justify-center items-center'>
@@ -90,7 +90,7 @@ const Services = () => {
                     </div>
                 </div>
                 <div className="w-[65%] h-full flex justify-center items-center">
-                    <img className='w-[70%]' src={spacialObject.object_image} alt="" loading='lazy'/>
+                    <img className='w-[70%]' src={spacialObject.object_image} alt=""/>
                 </div>
             </div>
         </div>
