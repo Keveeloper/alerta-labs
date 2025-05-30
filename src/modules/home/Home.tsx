@@ -1,6 +1,6 @@
 import { useState } from "react";
 import useSpacialStore from "../../store/SpacialStore";
-import { Link, useNavigate } from "react-router";
+import { useNavigate } from "react-router";
 import useSpacialObjectStore from "../../store/spacial-object-store/SpacialObjectsStore";
 import { spacialObjectsData } from "./spacial-objects/spacial-objects-data";
 import { LazyLoadImage } from "react-lazy-load-image-component";

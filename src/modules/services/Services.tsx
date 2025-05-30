@@ -19,6 +19,7 @@ const Services = () => {
     console.log(spacialObject.height);
     
     const goBack = () => {
+        setSelectedItem(null);
         if (showItemDetail) {
             setShowItemDetail(false);
         }else{
@@ -33,18 +34,21 @@ const Services = () => {
 
     return (
         <div className="px-[var(--horizontal-padding)] w-full h-screen flex justify-center items-center">
-            <div className="w-full h-[80%] flex">
-                <div className="w-[35%] h-full">
-                    <div className="w-full h-[15%] flex justify-between items-center text-2xl text-white text-[Space Mono]">
-                        <p>{spacialObject.title}</p>
+            <div className="w-full h-[80%] flex justify-between items-center">
+                <div className={`${!showItemDetail ? 'w-[30%]' : 'w-[35%]'} h-[95%]`}>
+                    <div className="w-full h-[15%] flex justify-between items-center text-2xl font-['Space_Mono'] text-white">
+                        <div className="w-[80%] flex overflow-auto whitespace-nowrap hide-scrollbar cursor-e-resize">
+                            <p className="shrink-0">{spacialObject.title}</p>
+                            {selectedItem && <p className="mx-5 shrink-0">// {selectedItem?.title}</p>}
+                        </div>
                         <button 
-                            className="p-5 border rounded-2xl cursor-pointer border-white"
+                            className="w-[20%] p-5 border rounded-2xl cursor-pointer border-white"
                             onClick={goBack}
                         >
                             {'<<'}
                         </button>
                     </div>
-                    <div className="w-full h-[85%] border border-white rounded-2xl">
+                    <div className={`relative w-full h-[85%] border border-white rounded-2xl`}>
                         {showItemDetail ? 
                             <div className='relative w-full h-full p-8'>
                                 <h2 
@@ -55,47 +59,59 @@ const Services = () => {
                                 </h2>
                                 <div className='z-1' dangerouslySetInnerHTML={{ __html: selectedItem?.description ?? '' }} />
                                 <img width={300} className="absolute bottom-0 right-0 z-[-1]" src={selectedItem?.image} alt="" />
-                            </div>    
+                            </div>
                         :
-                            <Swiper
-                                className='alerta-labs-swiper w-full h-full cursor-pointer'
-                                navigation={true} 
-                                modules={[Navigation]}
-                                spaceBetween={50}
-                                slidesPerView={1}
-                                loop
-                                initialSlide={activeIndex}
-                                onSlideChange={(swiper) => {
-                                    setActiveIndex(swiper.activeIndex);
-                                }}
-                            >
-                                {spacialObject.item.map((item, index) => (
-                                    <SwiperSlide 
-                                        className='w-full h-full'
-                                        onClick={() => gotToItemDetail(item)}
-                                    >
-                                        <div className='w-full h-[70%] flex justify-center items-center'>
-                                            {/* <img className='h-[100%]' src={item.image} alt=""/> */}
-                                            <LazyLoadImage
-                                                wrapperClassName='service-main-image h-full justify-center items-center'
-                                                className='h-[90%]'
-                                                src={item.image}
-                                                alt="Services alerta labs item image"
-                                                effect="blur" // efecto visual mientras carga
-                                            />
-                                        </div>
-                                        <hr className='mx-10 text-white'/>
-                                        <div className='w-full h-[30%] flex justify-center items-center'>
-                                            <h2 
-                                                className='w-[80%] text-white text-6xl'
-                                                style={{fontFamily: 'Bebas Neue'}}
-                                            >
-                                                {item.title}
-                                            </h2>
-                                        </div>
-                                    </SwiperSlide>
-                                ))}
-                            </Swiper>
+                            <>
+                                <div id="swiper-prev" className='absolute bottom-[12%] left-[5%] font-[Space_Mono] text-white text-4xl'>
+                                    {'<'}
+                                </div>
+                                <div id="swiper-next" className='absolute bottom-[12%] right-[5%] font-[Space_Mono] text-white text-4xl'>
+                                    {'>'}
+                                </div>
+                                <Swiper
+                                    className='alerta-labs-swiper w-full h-full cursor-pointer'
+                                    navigation={{
+                                        prevEl: '#swiper-prev',
+                                        nextEl: '#swiper-next',
+                                    }}
+                                    modules={[Navigation]}
+                                    spaceBetween={50}
+                                    slidesPerView={1}
+                                    loop
+                                    initialSlide={activeIndex}
+                                    onSlideChange={(swiper) => {
+                                        setActiveIndex(swiper.activeIndex);
+                                    }}
+                                >
+                                    {spacialObject.item.map((item, index) => (
+                                        <SwiperSlide 
+                                            key={index}
+                                            className='w-full h-full'
+                                            onClick={() => gotToItemDetail(item)}
+                                        >
+                                            <div className='w-full h-[70%] flex justify-center items-center'>
+                                                {/* <img className='h-[100%]' src={item.image} alt=""/> */}
+                                                <LazyLoadImage
+                                                    wrapperClassName='service-main-image h-full justify-center items-center'
+                                                    className='h-[90%]'
+                                                    src={item.image}
+                                                    alt="Services alerta labs item image"
+                                                    effect="blur" // efecto visual mientras carga
+                                                />
+                                            </div>
+                                            <hr className='mx-16 text-white'/>
+                                            <div className='px-5 w-full h-[30%] flex justify-center items-center'>
+                                                <h2 
+                                                    className={`w-[80%] text-white leading-normal`}
+                                                    style={{fontFamily: 'Bebas Neue', fontSize: item.fontSize, lineHeight: 0.8}}
+                                                >
+                                                    {item.title}
+                                                </h2>
+                                            </div>
+                                        </SwiperSlide>
+                                    ))}
+                                </Swiper>
+                            </>
                         }
                     </div>
                 </div>

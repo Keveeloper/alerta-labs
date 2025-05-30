@@ -7,6 +7,7 @@ export interface spacialObject {
 
 export interface spacialItem {
     image: string;
+    fontSize: string;
     title: string;
     description: string;
 }

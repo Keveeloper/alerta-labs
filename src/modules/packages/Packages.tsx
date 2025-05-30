@@ -105,7 +105,7 @@ const PackagesView = ({ scrollRef }: { scrollRef?: any }) => {
       {/* Background image */}
       <img
         loading="lazy"
-        src="https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/47a4e8a6-c2b3-429f-c834-86343375a200/public"
+        src="https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/67101712-efc2-4dcf-3bea-0fbafde64f00/public"
         alt="solar system background"
         className="fixed w-full h-full left-1/2 -translate-x-1/2 object-cover mix-blend-screen"
       />
