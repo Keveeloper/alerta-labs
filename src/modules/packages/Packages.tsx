@@ -69,7 +69,7 @@ const plans = [
   },
 ];
 
-const PackagesView = ({ }: { scrollRef?: any }) => {
+const PackagesView = () => {
   const PatterRef = useRef<HTMLDivElement>(null);
   const [showheader, setShowHeader] = useState(false);
   const navigate = useNavigate();
@@ -111,7 +111,7 @@ const PackagesView = ({ }: { scrollRef?: any }) => {
       />
 
       {/* Container */}
-      <div className="p-[100px] bg-black/80 backdrop-blur">
+      <div className="w-full h-full p-[100px] bg-black/80 backdrop-blur">
         <Navbar />
         <img
           loading="lazy"
