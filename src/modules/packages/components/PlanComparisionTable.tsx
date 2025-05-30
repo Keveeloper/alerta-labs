@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from "react";
-import { useModalStore } from "../../../store/useModalStore";
 
 const plans = ['BASIC', 'MEDIUM', 'PRO', 'ULTRA'];
 

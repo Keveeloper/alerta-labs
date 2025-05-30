@@ -69,7 +69,7 @@ const plans = [
   },
 ];
 
-const PackagesView = ({ scrollRef }: { scrollRef?: any }) => {
+const PackagesView = ({ }: { scrollRef?: any }) => {
   const PatterRef = useRef<HTMLDivElement>(null);
   const [showheader, setShowHeader] = useState(false);
   const navigate = useNavigate();
