@@ -6,13 +6,13 @@ export const spacialObjectsData = {
         item: [
             {
                 image: 'https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/6aba3daa-f16a-4f1a-7bf3-5463a01c7700/public',
-                title: 'Integration AI Machine learning',
+                title: 'INTEGRATION AI MACHINE LEARNING',
                 fontSize: '60px',
-                description: `<p class="font-seismic-latin-variable-span" style="margin-bottom: 20px; width: 70%; color: white; font-size: 18px;">
+                description: `<p class="font-seismic-latin-variable-span" style="margin-bottom: 20px; width: 90%; color: white; font-size: 18px;">
                                 Alerta develops or integrates systems to make artificial intelligence 
                                 work for the requirements of your brand or business. 
                               </p>
-                              <p class="font-seismic-latin-variable-span" style="width: 65%; color: white; font-size: 18px;">
+                              <p class="font-seismic-latin-variable-span" style="width: 60%; color: white; font-size: 18px;">
                                 From creating a proprietary tool to analyze your particular data and 
                                 formulate customized predictions, to building an audiovisual content 
                                 generation system that knows your brand and produces creative that follows 
@@ -22,7 +22,7 @@ export const spacialObjectsData = {
             },
             {
                 image: 'https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/c9e42433-1c92-4732-7920-3add69bc2100/public',
-                title: 'AR/VR SOLUTIOND',
+                title: 'AR/VR SOLUTION',
                 fontSize: '60px',
                 description: `<p class="font-seismic-latin-variable-span" style="margin-bottom: 20px; width: 60%; color: white; font-size: 18px;">
                                 Alerta produces experiences that enhance the ability of your customer 
@@ -39,16 +39,16 @@ export const spacialObjectsData = {
             },
             {
                 image: 'https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/d28e2183-6917-4cb7-42ed-b2f695434800/public',
-                title: 'BLOCKCHAIN nft',
+                title: 'BLOCKCHAIN NFT',
                 fontSize: '60px',
-                description: `<p class="font-seismic-latin-variable-span" style="margin-bottom: 20px; width: 60%; color: white; font-size: 18px;">
+                description: `<p class="font-seismic-latin-variable-span" style="margin-bottom: 20px; width: 50%; color: white; font-size: 18px;">
                                 Add NFTs and cryptocurrency into your brand’s communication strategy with Alerta.
                               </p>
-                              <p class="font-seismic-latin-variable-span" style="margin-bottom: 20px; width: 60%; color: white; font-size: 18px;">
+                              <p class="font-seismic-latin-variable-span" style="margin-bottom: 20px; width: 50%; color: white; font-size: 18px;">
                                 We’ll develop the digital product and distribute it to marketplaces 
                                 or allow your user to purchase or download it off your site, app or game.
                               </p>
-                              <p class="font-seismic-latin-variable-span" style="width: 60%; color: white; font-size: 18px;">
+                              <p class="font-seismic-latin-variable-span" style="width: 50%; color: white; font-size: 18px;">
                                 NFTs are a great way to build community, share perks with your members and 
                                 even grant access to real-world events.
                               </p>`
@@ -89,7 +89,7 @@ export const spacialObjectsData = {
         item: [
             {
                 image: 'https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/caf9c96b-5ae7-4445-e1ca-5f8b16d7d900/public',
-                title: 'web product',
+                title: 'WEB PRODUCT',
                 fontSize: '60px', 
                 description: `<ul class="font-seismic-latin-variable-span" style="padding-left: 1.2rem; width: 60%; color: white; font-size: 18px; list-style: disc;">
                                 <li>Tailor-made Websites (Wordpress or code)</li>
@@ -106,7 +106,7 @@ export const spacialObjectsData = {
             },
             {
                 image: 'https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/0cac427a-5da3-4646-0abf-ad9a38ff5d00/public',
-                title: 'web development',
+                title: 'WEB DEVELOPMENT',
                 fontSize: '60px',
                 description: `<ul class="font-seismic-latin-variable-span" style="padding-left: 1.2rem; width: 60%; color: white; font-size: 18px; list-style: disc;">
                                 <li>Customized APIs</li>
@@ -120,7 +120,7 @@ export const spacialObjectsData = {
             },
             {
                 image: 'https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/d7df765a-6b46-4479-eab5-faf948dfdc00/public',
-                title: 'web translation & LOCALIZATION',
+                title: 'WEB TRANSLATION & LOCALIZATION',
                 fontSize: '60px',
                 description: `<ul class="font-seismic-latin-variable-span" style="padding-left: 1.2rem; width: 60%; color: white; font-size: 18px; list-style: disc;">
                                 <li>Fully automated website translation processes.</li>
@@ -160,7 +160,7 @@ export const spacialObjectsData = {
             },
             {
                 image: 'https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/bf8da037-f6b1-475d-c7ac-534f8172fa00/public',
-                title: 'GAmes',
+                title: 'GAMES',
                 fontSize: '70px',
                 description: `<ul class="font-seismic-latin-variable-span" style="padding-left: 1.2rem; color: white; font-size: 18px; list-style: disc;">
                                 <li>2D Game Development and design</li>
@@ -196,7 +196,7 @@ export const spacialObjectsData = {
                 description: `<p class="font-seismic-latin-variable-span" style="margin-bottom: 20px; width: 60%; color: white; font-size: 18px;">
                                 Expand your offerings without expanding your team.
                               </p>
-                              <p class="font-seismic-latin-variable-span" style="width: 60%; color: white; font-size: 18px;">
+                              <p class="font-seismic-latin-variable-span" style="width: 50%; color: white; font-size: 18px;">
                                 At Alerta Partnership, we provide fully customizable, 
                                 white-label digital solutions that allow agencies to deliver 
                                 high-quality websites, apps, SaaS platforms, and more under their 
