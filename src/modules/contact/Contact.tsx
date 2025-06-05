@@ -27,32 +27,39 @@ const contact = () => {
   };
 
   return (
-    <main className="w-full h-lvh">
+    <main className="relative w-full h-lvh overflow-hidden">
       <CanvasComponent/>
       <Navbar />
-      <a href="/">
-        <img
-          src="https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/67101712-efc2-4dcf-3bea-0fbafde64f00/public"
-          alt="solar system background"
-          className="fixed w-full h-full left-1/2 -translate-x-1/2 object-cover mix-blend-screen"
-        />
-      </a>
+      <img
+        src="https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/67101712-efc2-4dcf-3bea-0fbafde64f00/public"
+        alt="solar system background"
+        className="fixed w-full h-full left-1/2 -translate-x-1/2 object-cover mix-blend-screen"
+      />
       {/* Start Section */}
       {!isContact && (
         <>
           <img
-
-            src="https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/09cb6e8c-0893-4171-0e4a-dce1538b5d00/public"
+            src="https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/5827b1f3-6cab-47c0-136f-338815997400/public"
             alt="astronaut alerta labs"
-            className="absolute bottom-[5%] left-1/2 -translate-x-1/2 h-[500px] b-yellow-200"
+            className="absolute h-[90%] bottom-[-5%] left-1/2 -translate-x-1/2"
           />
           <div className="fixed bottom-[20%] left-1/2 transform -translate-x-1/2">
             <button
               onClick={() => handleContactClick()}
-              className="px-5 py-2 text-white text-2xl rounded-2xl border border-white bg-black cursor-pointer hover:bg-white hover:text-red font-[Exan]"
+              className="px-5 py-2 w-[390px] h-15 text-white text-3xl hover:text-black hover:bg-white rounded-2xl border border-white bg-black cursor-pointer font-[Exan]"
             >
               INITIATE CONTACT
             </button>
+          </div>
+          <div className="absolute px-[var(--horizontal-padding)] py-7 w-full bottom-0 flex justify-between">
+            <div>
+              <h2 className="text-white font-[Exan] text-3xl"><span className="text-[var(--cyan)]">[ASTRONAUT]</span> LOST IN THOUGHT</h2>
+              <p className="text-white font-[Exan] text-xl">A GRAVITATIONAL FORCE FOR GROUNDBREAKING IDEAS_</p>
+            </div>
+            <div>
+              <h2 className="text-white font-[Exan] text-3xl">HELLO@alertacreAtive.com_</h2>
+              <p className="text-white font-[Exan] text-xl">©2025 Alerta Partnership llc</p>
+            </div>
           </div>
         </>
       )}

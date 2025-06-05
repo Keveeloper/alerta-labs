@@ -6,7 +6,7 @@ interface SpacialObjectsState {
 }
 
 const useSpacialStore = create<SpacialObjectsState>()((set) => ({
-    textHoovered: "[ALERTA SERVICES] universe of capabilities_",
+    textHoovered: "[ALERTA SERVICES] UNIVERSE OF CAPABILITIES_",
     setTextHovered: (text: string) => set(() => ({ textHoovered: text })),
 }))
 

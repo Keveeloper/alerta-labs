@@ -34,11 +34,11 @@ const Home = () => {
                 setStationHighlighted('53b980b5-3df2-4291-1cc2-b1a699a35200');
                 setHomeTitle('WEB SERVICES');
                 break;
-            case '[futurebit] Experimental TECH, yet essential_':
+            case '[FUTUREBIT] EXPERIMENTAL TECH, YET ESSENTIAL_':
                 setCristalHighlighted('b6af95e2-98c6-4d16-576c-75c04cf87100');
                 setHomeTitle('EMERGING TECH');
                 break;
-            case '[UXxplosion] Cosmic clarity in pixels_':
+            case '[UXXPlOSION] COSMIC CLARITY IN PIXELS_':
                 setNebulaHighlighted('3745c65f-ceda-4557-f643-11551e716000');
                 setHomeTitle('X DESIGN');
                 break;
@@ -46,7 +46,7 @@ const Home = () => {
                 setSatelliteHighlighted('9d447971-ee1b-46d8-6cd0-48bc1c688900');
                 setHomeTitle('APP DEVELOPMENT');
                 break;
-            case '[brand boulder] Built to carry identities_':
+            case '[BRAND BOULDER] BUILT TO CARRY IDENTITIES_':
                 setAsteroidHighlighted('e5f7495d-19fa-46b8-9a2f-098f3a727300');
                 setHomeTitle('WHITE LABEL');
                 break;
@@ -72,7 +72,7 @@ const Home = () => {
 
         // Creamos un nuevo timeout que solo actualiza si el usuario no vuelve a entrar a un objeto
         timeoutRef.current = setTimeout(() => {
-            setTextHovered('[ALERTA SERVICES] universe of capabilities_');
+            setTextHovered('[ALERTA SERVICES] UNIVERSE OF CAPABILITIES_');
             setHomeTitle(homeTilteInitialValue);
         }, 1000);
         
@@ -84,11 +84,11 @@ const Home = () => {
                 setSpacialObject(spacialObjectsData.station);
                 navigate('/services');
                 break;
-            case '[futurebit] Experimental TECH, yet essential_':
+            case '[FUTUREBIT] EXPERIMENTAL TECH, YET ESSENTIAL_':
                 setSpacialObject(spacialObjectsData.cristal);
                 navigate('/services');
                 break;
-            case '[UXxplosion] Cosmic clarity in pixels_':
+            case '[UXXPlOSION] COSMIC CLARITY IN PIXELS_':
                 setSpacialObject(spacialObjectsData.nebula);
                 navigate('/services');
                 break;
@@ -96,7 +96,7 @@ const Home = () => {
                 setSpacialObject(spacialObjectsData.satellite);
                 navigate('/services');
                 break;
-            case '[brand boulder] Built to carry identities_':
+            case '[BRAND BOULDER] BUILT TO CARRY IDENTITIES_':
                 setSpacialObject(spacialObjectsData.asteroide);
                 navigate('/services');
                 break;
@@ -134,39 +134,25 @@ const Home = () => {
                 onMouseEnter={() => handleHover("astronaut")}
                 onMouseLeave={handleMouseLeave}
             />
-            {/* <img
-                src={`https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/${cristalHighlighted}/public`} alt="Glass diamonds" 
-                className="absolute w-[213px] top-[8%] right-[20%] -translate-x-1/2 cursor-pointer"
-                onMouseEnter={() => handleHover("[futurebit] Experimental TECH, yet essential_")}
-                onMouseLeave={handleMouseLeave}
-                onClick={() => handleClick("[futurebit] Experimental TECH, yet essential_")}
-            /> */}
             <LazyLoadImage
                 wrapperClassName="absolute w-[213px] top-[8%] right-[20%] -translate-x-1/2 cursor-pointer"
                 className="w-full"
                 src={`https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/${cristalHighlighted}/public`}
                 alt="astronaut alerta labs"
                 effect="blur"
-                onMouseEnter={() => handleHover("[futurebit] Experimental TECH, yet essential_")}
+                onMouseEnter={() => handleHover("[FUTUREBIT] EXPERIMENTAL TECH, YET ESSENTIAL_")}
                 onMouseLeave={handleMouseLeave}
-                onClick={() => handleClick("[futurebit] Experimental TECH, yet essential_")}
+                onClick={() => handleClick("[FUTUREBIT] EXPERIMENTAL TECH, YET ESSENTIAL_")}
             />
-            {/* <img
-                src={`https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/${asteroidHighlighted}/public`} alt="Asteroid" 
-                className="absolute w-[228px] top-[20%] right-0 -translate-x-1/2 cursor-pointer"
-                onMouseEnter={() => handleHover("[brand boulder] Built to carry identities_")}
-                onMouseLeave={handleMouseLeave}
-                onClick={() => handleClick("[brand boulder] Built to carry identities_")}
-            /> */}
             <LazyLoadImage
                 wrapperClassName="absolute w-[228px] top-[20%] right-0 -translate-x-1/2 cursor-pointer"
                 className="w-full"
                 src={`https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/${asteroidHighlighted}/public`}
                 alt="Asteroid"
                 effect="blur"
-                onMouseEnter={() => handleHover("[brand boulder] Built to carry identities_")}
+                onMouseEnter={() => handleHover("[BRAND BOULDER] BUILT TO CARRY IDENTITIES_")}
                 onMouseLeave={handleMouseLeave}
-                onClick={() => handleClick("[brand boulder] Built to carry identities_")}
+                onClick={() => handleClick("[BRAND BOULDER] BUILT TO CARRY IDENTITIES_")}
             />
             {/* <img
                 src={`https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/${stationHighlighted}/public`} alt="Station" 
@@ -202,22 +188,15 @@ const Home = () => {
                 onMouseLeave={handleMouseLeave}
                 onClick={() => handleClick("[UPDATE BASE] App-building in zero-G_")}
             />
-            {/* <img
-                src={`https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/${nebulaHighlighted}/public`} alt="Nebula" 
-                className="absolute w-[508px] top-[5%] left-[10%] cursor-pointer"
-                onMouseEnter={() => handleHover("[UXxplosion] Cosmic clarity in pixels_")}
-                onMouseLeave={handleMouseLeave}
-                onClick={() => handleClick("[UXxplosion] Cosmic clarity in pixels_")}
-            /> */}
             <LazyLoadImage
                 wrapperClassName="absolute w-[558px] top-[2%] left-[3%] cursor-pointer"
                 className="w-full"
                 src={`https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/${nebulaHighlighted}/public`}
                 alt="Nebula"
                 effect="blur"
-                onMouseEnter={() => handleHover("[UXxplosion] Cosmic clarity in pixels_")}
+                onMouseEnter={() => handleHover("[UXXPlOSION] COSMIC CLARITY IN PIXELS_")}
                 onMouseLeave={handleMouseLeave}
-                onClick={() => handleClick("[UXxplosion] Cosmic clarity in pixels_")}
+                onClick={() => handleClick("[UXXPlOSION] COSMIC CLARITY IN PIXELS_")}
             />
             <img 
                 className="absolute w-full h-full z-1 pointer-events-none"
