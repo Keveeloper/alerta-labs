@@ -42,7 +42,7 @@ const Home = () => {
                 setNebulaHighlighted('3745c65f-ceda-4557-f643-11551e716000');
                 setHomeTitle('X DESIGN');
                 break;
-            case '[update base] App-building in zero-G_':
+            case '[UPDATE BASE] App-building in zero-G_':
                 setSatelliteHighlighted('9d447971-ee1b-46d8-6cd0-48bc1c688900');
                 setHomeTitle('APP DEVELOPMENT');
                 break;
@@ -92,7 +92,7 @@ const Home = () => {
                 setSpacialObject(spacialObjectsData.nebula);
                 navigate('/services');
                 break;
-            case '[update base] App-building in zero-G_':
+            case '[UPDATE BASE] App-building in zero-G_':
                 setSpacialObject(spacialObjectsData.satellite);
                 navigate('/services');
                 break;
@@ -106,7 +106,7 @@ const Home = () => {
     }
 
     return (
-        <main className="w-full h-lvh">
+        <main className="w-full h-lvh min-h-[866px]">
             {/* <img
                 src="https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/67101712-efc2-4dcf-3bea-0fbafde64f00/public" alt="solar system background" 
                 className="fixed w-full h-full left-1/2 -translate-x-1/2 object-cover mix-blend-screen"
@@ -188,9 +188,9 @@ const Home = () => {
             {/* <img
                 src={`https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/${satelliteHighlighted}/public`} alt="Satellite" 
                 className="absolute w-[400px] bottom-[5%] left-0 cursor-pointer z-1"
-                onMouseEnter={() => handleHover("[update base] App-building in zero-G_")}
+                onMouseEnter={() => handleHover("[UPDATE BASE] App-building in zero-G_")}
                 onMouseLeave={handleMouseLeave}
-                onClick={() => handleClick("[update base] App-building in zero-G_")}
+                onClick={() => handleClick("[UPDATE BASE] App-building in zero-G_")}
             /> */}
             <LazyLoadImage
                 wrapperClassName="absolute w-[350px] bottom-[5%] left-0 cursor-pointer z-1"
@@ -198,9 +198,9 @@ const Home = () => {
                 src={`https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/${satelliteHighlighted}/public`}
                 alt="Satellite"
                 effect="blur"
-                onMouseEnter={() => handleHover("[update base] App-building in zero-G_")}
+                onMouseEnter={() => handleHover("[UPDATE BASE] App-building in zero-G_")}
                 onMouseLeave={handleMouseLeave}
-                onClick={() => handleClick("[update base] App-building in zero-G_")}
+                onClick={() => handleClick("[UPDATE BASE] App-building in zero-G_")}
             />
             {/* <img
                 src={`https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/${nebulaHighlighted}/public`} alt="Nebula" 

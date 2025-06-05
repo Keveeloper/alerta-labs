@@ -39,7 +39,7 @@ const Services = () => {
                     <div className="w-full h-[15%] flex justify-between items-center text-2xl font-['Space_Mono'] text-white">
                         <div className="w-[80%] flex overflow-auto whitespace-nowrap hide-scrollbar cursor-e-resize">
                             <p className="shrink-0">{spacialObject.title}</p>
-                            {selectedItem && <p className="mx-5 shrink-0">// {selectedItem?.title}</p>}
+                            {/* {selectedItem && <p className="mx-5 shrink-0">// {selectedItem?.title}</p>} */}
                         </div>
                         <button 
                             className="w-[20%] p-5 border rounded-2xl cursor-pointer border-white"
@@ -62,10 +62,10 @@ const Services = () => {
                             </div>
                         :
                             <>
-                                <div id="swiper-prev" className='absolute bottom-[12%] left-[5%] font-[Space_Mono] text-white text-4xl'>
+                                <div id="swiper-prev" className='absolute bottom-[12%] left-[5%] font-[Space_Mono] text-white text-4xl z-2 cursor-pointer'>
                                     {'<'}
                                 </div>
-                                <div id="swiper-next" className='absolute bottom-[12%] right-[5%] font-[Space_Mono] text-white text-4xl'>
+                                <div id="swiper-next" className='absolute bottom-[12%] right-[5%] font-[Space_Mono] text-white text-4xl z-2 cursor-pointer'>
                                     {'>'}
                                 </div>
                                 <Swiper

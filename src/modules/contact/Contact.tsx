@@ -41,14 +41,15 @@ const contact = () => {
       {!isContact && (
         <>
           <img
+
             src="https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/09cb6e8c-0893-4171-0e4a-dce1538b5d00/public"
             alt="astronaut alerta labs"
-            className="absolute bottom-[5%] left-1/2 -translate-x-1/2 h-[500px]"
+            className="absolute bottom-[5%] left-1/2 -translate-x-1/2 h-[500px] b-yellow-200"
           />
           <div className="fixed bottom-[20%] left-1/2 transform -translate-x-1/2">
             <button
               onClick={() => handleContactClick()}
-              className="px-5 py-2 text-white text-2xl rounded-2xl border border-white bg-black cursor-pointer hover:bg-white/20 font-[Exan]"
+              className="px-5 py-2 text-white text-2xl rounded-2xl border border-white bg-black cursor-pointer hover:bg-white hover:text-red font-[Exan]"
             >
               INITIATE CONTACT
             </button>
@@ -60,14 +61,16 @@ const contact = () => {
       {isContact && (
         <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center z-1">
           <div className="text-left space-y-4 w-[600px] mt-[-5rem]" style={{ fontFamily: "Bebas Neue" }}>
-            <h2 className="text-[3rem] mb-4 text-white uppercase mb-[0]">Let us absorb and</h2>
-            <h2 className="text-[3rem] mb-4 text-white uppercase mt-[-15px] mb-[0]">transform your vision_</h2>
+            {/* <h2 className="text-[3rem] mb-4 text-white uppercase mb-[0]">Let us absorb and</h2>
+            <h2 className="text-[3rem] mb-4 text-white uppercase mt-[-15px] mb-[0]">transform your vision_</h2> */}
 
             <form
               onSubmit={handleSubmit}
               className="max-w-3xl mx-auto p-6 bg-[#000000ed] text-white rounded-xl border border-white space-y-4"
             >
               {/* Name + Email in one row */}
+              <h2 className="text-[3rem] mb-4 text-white uppercase mb-[0]">Let us absorb and</h2>
+              <h2 className="text-[3rem] mb-4 text-white uppercase mt-[-15px] mb-[0]">transform your vision_</h2>
               <div className="flex gap-4">
                 <div className="w-1/2">
                   <input
