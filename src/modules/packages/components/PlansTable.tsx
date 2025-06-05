@@ -1,8 +1,10 @@
+import AccordionList, { Feature } from "./AccordionList";
+
 type plansTableParameters = {
     title: string;
     price: string;
     description: string;
-    features: string[]; 
+    features: Feature[]; 
 }
 
 const PlansCard = ({ title, price, description, features }: plansTableParameters) => {
@@ -16,14 +18,17 @@ const PlansCard = ({ title, price, description, features }: plansTableParameters
       <hr className="my-4 border-gray-600" />
 
       <ul className="space-y-2 text-sm">
-        {features.map((item, index) => (
+        {/* {features.map((item, index) => (
           <li key={index} className="font-seismic-latin-variable-span text-base flex justify-between font-seismic-latin-variable text-white font-semibold">
-            <span>&gt; {item}:</span>
+            <span style={{maxWidth: '90%'}}>&gt; {item}:</span>
             <span>
                 <img src="../icons/Vector350.svg" className="" />
             </span>
           </li>
-        ))}
+        ))} */}
+        <div className="p-4">
+          <AccordionList features={features} />
+        </div>
       </ul>
     </div>
   );

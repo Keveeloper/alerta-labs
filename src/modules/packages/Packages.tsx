@@ -10,10 +10,10 @@ const plans = [
     price: '$300',
     description: 'Maintenance, prevention, and updates for your website.',
     features: [
-      'Technical Support',
-      'Tracking Implementation',
-      'Module Updates and Maintenance',
-      'WordPress Plugin Installation and Maintenance',
+      { title: 'Technical Support', content: 'Garantizamos que tu plataforma web esté siempre operativa y optimizada.' },
+      { title: 'Tracking Implementation', content: 'Configuramos herramientas para analizar y optimizar el rendimiento de tu plataforma.' },
+      { title: 'Module Updates and Maintenance', content: 'Implementamos nuevas funciones y optimizamos las existentes.' },
+      { title: 'WordPress Plugin Installation and Maintenance', content: 'Optimizamos y aseguramos el correcto funcionamiento de tu sitio web.' },
     ]
   },
   {
@@ -21,14 +21,14 @@ const plans = [
     price: '$500',
     description: 'E-commerce with API integration & advanced data analysis.',
     features: [
-      'Technical Support',
-      'Tracking Implementation',
-      'Module Updates and Maintenance',
-      'WordPress Plugin Installation and Maintenance',
-      'API Integrations',
-      'Landing Page',
-      'Web Pages',
-      'E-commerce Creation and Maintenance'
+      { title: 'Technical Support', content: 'Garantizamos que tu plataforma web esté siempre operativa y optimizada.' },
+      { title: 'Tracking Implementation', content: 'Configuramos herramientas para analizar y optimizar el rendimiento de tu plataforma.' },
+      { title: 'Module Updates and Maintenance', content: 'Implementamos nuevas funciones y optimizamos las existentes.' },
+      { title: 'WordPress Plugin Installation and Maintenance', content: 'Optimizamos y aseguramos el correcto funcionamiento de tu sitio web.' },
+      { title: 'API Integrations', content: 'Conectamos tu plataforma con cualquier sistema compatible para optimizar operaciones.' },
+      { title: 'Landing Page', content: 'Creación y mantenimiento de páginas estáticas optimizadas para vender tus productos o servicios.' },
+      { title: 'Web Pages', content: 'Desarrollo e implementación de sitios y tiendas online en WordPress adaptadas a tu negocio.' },
+      { title: 'E-commerce Creation and Maintenance', content: 'Desarrollamos y optimizamos tiendas online con plataformas líderes.' },
     ]
   },
   {
@@ -36,16 +36,16 @@ const plans = [
     price: '$750',
     description: 'Includes user traffic generation, email and form optimization.',
     features: [
-      'Technical Support',
-      'Tracking Implementation',
-      'Module Updates and Maintenance',
-      'WordPress Plugin Installation and Maintenance',
-      'API Integrations',
-      'Landing Page',
-      'Web Pages',
-      'E-commerce Creation and Maintenance',
-      'Email Server and Forms',
-      'Traffic Pages'
+      { title: 'Technical Support', content: 'Garantizamos que tu plataforma web esté siempre operativa y optimizada.' },
+      { title: 'Tracking Implementation', content: 'Configuramos herramientas para analizar y optimizar el rendimiento de tu plataforma.' },
+      { title: 'Module Updates and Maintenance', content: 'Implementamos nuevas funciones y optimizamos las existentes.' },
+      { title: 'WordPress Plugin Installation and Maintenance', content: 'Optimizamos y aseguramos el correcto funcionamiento de tu sitio web.' },
+      { title: 'API Integrations', content: 'Conectamos tu plataforma con cualquier sistema compatible para optimizar operaciones.' },
+      { title: 'Landing Page', content: 'Creación y mantenimiento de páginas estáticas optimizadas para vender tus productos o servicios.' },
+      { title: 'Web Pages', content: 'Desarrollo e implementación de sitios y tiendas online en WordPress adaptadas a tu negocio.' },
+      { title: 'E-commerce Creation and Maintenance', content: 'Desarrollamos y optimizamos tiendas online con plataformas líderes.' },
+      { title: 'Email Server and Forms', content: 'Configuración e integración de plataformas de email marketing y sistemas de correo corporativo.' },
+      { title: 'Traffic Pages', content: 'Centralizamos tus enlaces en un solo sitio para optimizar la experiencia del usuario.' },
     ]
   },
   {
@@ -53,18 +53,18 @@ const plans = [
     price: '$1000',
     description: 'Adds app maintenance and Search engine optimization',
     features: [
-      'Technical Support',
-      'Tracking Implementation',
-      'Module Updates and Maintenance',
-      'WordPress Plugin Installation and Maintenance',
-      'API Integrations',
-      'Landing Page',
-      'Web Pages',
-      'E-commerce Creation and Maintenance',
-      'Email Server and Forms',
-      'Traffic Pages',
-      'Mobile App Maintenance',
-      'SEO'
+      { title: 'Technical Support', content: 'Garantizamos que tu plataforma web esté siempre operativa y optimizada.' },
+      { title: 'Tracking Implementation', content: 'Configuramos herramientas para analizar y optimizar el rendimiento de tu plataforma.' },
+      { title: 'Module Updates and Maintenance', content: 'Implementamos nuevas funciones y optimizamos las existentes.' },
+      { title: 'WordPress Plugin Installation and Maintenance', content: 'Optimizamos y aseguramos el correcto funcionamiento de tu sitio web.' },
+      { title: 'API Integrations', content: 'Conectamos tu plataforma con cualquier sistema compatible para optimizar operaciones.' },
+      { title: 'Landing Page', content: 'Creación y mantenimiento de páginas estáticas optimizadas para vender tus productos o servicios.' },
+      { title: 'Web Pages', content: 'Desarrollo e implementación de sitios y tiendas online en WordPress adaptadas a tu negocio.' },
+      { title: 'E-commerce Creation and Maintenance', content: 'Desarrollamos y optimizamos tiendas online con plataformas líderes.' },
+      { title: 'Email Server and Forms', content: 'Configuración e integración de plataformas de email marketing y sistemas de correo corporativo.' },
+      { title: 'Traffic Pages', content: 'Centralizamos tus enlaces en un solo sitio para optimizar la experiencia del usuario.' },
+      { title: 'Mobile App Maintenance', content: 'Optimizamos y actualizamos apps para Android e iOS.' },
+      { title: 'SEO', content: 'Optimizamos tu sitio web para mejorar su posicionamiento en buscadores.' },
     ]
   },
 ];
