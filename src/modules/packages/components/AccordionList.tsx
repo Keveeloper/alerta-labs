@@ -38,7 +38,7 @@ const AccordionList: React.FC<AccordionListProps> = ({ features }) => {
           </div>
 
           {openIndex === index && (
-            <div className="mt-2 pl-4 text-sm text-gray-300">
+            <div className="mt-2 pl-4 text-sm text-gray-300" style={{fontFamily:'seismic-latin-variable'}}>
               {item.content}
             </div>
           )}
