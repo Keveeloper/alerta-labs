@@ -34,8 +34,10 @@ export default function EffectCardsStack({ swiper, on, extendParams }) {
   const setTranslate = () => {
     const { slides, rtlTranslate: rtl } = swiper;
     const params = swiper.params.cardsStackEffect;
-    const R = swiper.size / 2;
-    const rtlMultiplier = rtl ? -1 : 1;
+    // const R = swiper.size / 2;
+    const R = swiper.size / 3;
+    // const rtlMultiplier = rtl ? -1 : 1;
+    const rtlMultiplier = rtl ? -1 : 1.5;
 
     for (let i = 0; i < slides.length; i += 1) {
       const slideEl = slides[i];
