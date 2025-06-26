@@ -29,9 +29,15 @@ const Footer = ({ isPackages }: { isPackages?: boolean  }) => {
       )}
      
       <div className="w-1/2 flex justify-end items-start">
-        <button className="w-[175px] text-center ml-10 px-5 py-2 text-white text-2xl rounded-2xl border border-white cursor-pointer font-[Exan] hover:bg-white/20">
+        {/* <button className="w-[175px] text-center ml-10 px-5 py-2 text-white text-2xl rounded-2xl border border-white cursor-pointer font-[Exan] hover:bg-white/20">
           Portfolio
-        </button>
+        </button> */}
+        <a
+          href="/portfolio"
+          className="ml-10 px-5 py-2 text-white text-2xl rounded-2xl border border-white cursor-pointer font-[Exan] hover:bg-white/20"
+        >
+          Portfolio
+        </a>
         <a
           href="/packages"
           className="ml-10 px-5 py-2 text-white text-2xl rounded-2xl border border-white cursor-pointer font-[Exan] hover:bg-white/20"

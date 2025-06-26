@@ -8,6 +8,7 @@ const Home = lazy(() => import("../modules/home/Home"));
 const Contact = lazy(() => import("../modules/contact/Contact"));
 const Services = lazy(() => import("../modules/services/Services"));
 const PackagesView = lazy(() => import("../modules/packages/Packages"));
+const Portfolio = lazy(() => import("../modules/portfolio/Portfolio"));
 
 const RootRouter = () => {
 
@@ -43,6 +44,16 @@ const RootRouter = () => {
                 path="/packages"
                 element={
                     <PackagesView/>
+                } 
+            />
+            <Route 
+                path="/portfolio"
+                element={
+                    <Suspense fallback={<Loader/>}>
+                        <Layout>
+                            <Portfolio/>
+                        </Layout>
+                    </Suspense>
                 } 
             />
         </Routes>

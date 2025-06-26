@@ -1,0 +1,28 @@
+.demo-slider-container {
+  align-self: center;
+  width: 100%;
+  max-width: 412px;
+  position: relative;
+  padding: 0 16px;
+  box-sizing: border-box;
+  margin: auto 0;
+}
+.demo-slider-wrap {
+  position: relative;
+  padding-bottom: calc(240 / 380 * 100%);
+}
+.demo-slider {
+  flex-shrink: 0;
+  position: absolute;
+  inset: 0;
+}
+.swiper-slide {
+  border-radius: 16px;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: inherit;
+  }
+}
