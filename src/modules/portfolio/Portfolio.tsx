@@ -115,13 +115,10 @@ const Portfolio = () => {
           pagination={{
             clickable: true,
           }}
-          // Añade Mousewheel a los módulos
           modules={[Pagination, Mousewheel]}
-          // Habilita el control con la rueda del ratón
           mousewheel={{
-            releaseOnEdges: true, // Esto permite que el scroll continúe en la página si llegas al final del Swiper
+            releaseOnEdges: true,
           }}
-          // Remueve allowTouchMove={false} para permitir el drag y el movimiento táctil
           className="w-full h-full"
         >
           <SwiperSlide
@@ -138,23 +135,26 @@ const Portfolio = () => {
             >
               {team.map((member) => (
                 // PASO 1: Añadir "group" aquí
-                <SwiperSlide key={member.id} className='group relative w-full h-full border border-white'>
-                  <div className="cards-stack-back w-full h-full ">
-                    <img src={member.memberPhoto} alt="" />
-                  </div>
-                  <div className="cards-stack-front w-full h-full">
-                    <img src={member.memberPhoto} alt="" />
-                  </div>
-                  
-                  {/* PASO 2: Modificar este div */}
-                  <div 
-                    className='absolute pl-7 w-[190%] h-[calc(100%_+_2px)] top-[-1px] right-[-186%] flex flex-col justify-center rounded-r-[16px] border-t border-r border-b border-white bg-black z-2 opacity-0 invisible transition-all duration-300 group-[.swiper-slide-active]:opacity-100 group-[.swiper-slide-active]:visible'
-                  >
-                    <h2 className='text-5xl font-semibold text-white font-[Space_Mono]'>{member.name.toUpperCase()}</h2>
-                    <p className='mb-3 text-xl font-semibold text-white font-[Space_mono]'>{member.title.toUpperCase()}</p>
-                    <p className='font-seismic-latin-variable-span mb-3 w-[90%] text-base text-white'>{member.description_1}</p>
-                    <p className='font-seismic-latin-variable-span w-[90%] text-base text-white'>{member.description_2}</p>
-                  </div>
+                <SwiperSlide 
+                  key={member.id} 
+                  className='group relative w-full h-full border border-white'
+                >
+                    <div className="cards-stack-back w-full h-full filter blur-[2px] group-[.swiper-slide-active]:filter-none">
+                      <img src={member.memberPhoto} alt="" />
+                    </div>
+                    <div className="cards-stack-front w-full h-full filter blur-[2px] group-[.swiper-slide-active]:filter-none">
+                      <img src={member.memberPhoto} alt="" />
+                    </div>
+                    
+                    {/* PASO 2: Modificar este div */}
+                    <div 
+                      className='absolute pl-7 w-[190%] h-[calc(100%_+_2px)] top-[-1px] right-[-186%] flex flex-col justify-center rounded-r-[16px] border-t border-r border-b border-white bg-black z-2 opacity-0 invisible transition-all duration-300 group-[.swiper-slide-active]:opacity-100 group-[.swiper-slide-active]:visible'
+                    >
+                      <h2 className='text-5xl font-semibold text-white font-[Space_Mono]'>{member.name.toUpperCase()}</h2>
+                      <p className='mb-3 text-xl font-semibold text-white font-[Space_mono]'>{member.title.toUpperCase()}</p>
+                      <p className='font-seismic-latin-variable-span mb-3 w-[90%] text-base text-white'>{member.description_1}</p>
+                      <p className='font-seismic-latin-variable-span w-[90%] text-base text-white'>{member.description_2}</p>
+                    </div>
                 </SwiperSlide>
               ))}
             </Swiper>
