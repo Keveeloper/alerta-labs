@@ -199,20 +199,20 @@ const Portfolio = () => {
             >
               <h2 
                 style={{ fontFamily: 'Bebas Neue' }}
-                className='mb-9 text-white text-7xl font-semibold'
+                className='mb-9 text-white text-8xl font-semibold'
               >{'WHY choose us'.toUpperCase()}</h2>
               <div className='w-[90%] flex justify-around items-center'>
                 <div>
                   <h3 className='mb-5 text-white text-2xl font-[Space_Mono] text-center'>EXPERT TEAM</h3>
-                  <p className='m-auto w-[90%] font-seismic-latin-variable-span text-white text-center'>“Skilled in the latest technology and innovative design.”</p>
+                  <p className='m-auto w-[90%] font-seismic-latin-variable-span-portfolio text-white text-center'>“Skilled in the latest technology and innovative design.”</p>
                 </div>
                 <div>
                   <h3 className='mb-5 text-white text-2xl font-[Space_Mono] text-center'>CLIENT-FOCUSED</h3>
-                  <p className='m-auto w-[90%] font-seismic-latin-variable-span text-white text-center'>“We collaborate to deliver results that matter.”</p>
+                  <p className='m-auto w-[90%] font-seismic-latin-variable-span-portfolio text-white text-center'>“We collaborate to deliver results that matter.”</p>
                 </div>
                 <div>
                   <h3 className='mb-5 text-white text-2xl font-[Space_Mono] text-center'>SCALABLE SOLUTIONS</h3>
-                  <p className='m-auto w-[90%] font-seismic-latin-variable-span text-white text-center'>“Future-proof designs that grow with your business.”</p>
+                  <p className='m-auto w-[90%] font-seismic-latin-variable-span-portfolio text-white text-center'>“Future-proof designs that grow with your business.”</p>
                 </div>
               </div>
             </div>

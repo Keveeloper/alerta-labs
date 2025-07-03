@@ -213,6 +213,12 @@ font-display:auto;font-style:normal;font-weight:100;font-stretch:normal;
     font-style: normal;
     font-variation-settings: "SEIS" 0, "wght" 600;
   }
+  .font-seismic-latin-variable-span-portfolio{
+    font-size: 20px;
+    font-family: seismic-latin-variable, sans-serif;
+    font-style: normal;
+    font-variation-settings: "SEIS" 0, "wght" 600;
+  }
 
 @keyframes fly {
   0%,
@@ -252,8 +258,8 @@ font-display:auto;font-style:normal;font-weight:100;font-stretch:normal;
 }
 .swiper-portfolio .swiper-pagination .swiper-pagination-bullet {
   margin-bottom: 40px !important;
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   display: flex !important;
   justify-content: center;
   align-items: center;
