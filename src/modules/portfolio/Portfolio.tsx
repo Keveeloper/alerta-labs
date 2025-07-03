@@ -130,6 +130,12 @@ const Portfolio = () => {
             className='w-full h-full pl-[30%] justify-start items-center'
             style={{display: 'flex'}}
           >  
+            
+          </SwiperSlide>
+          <SwiperSlide
+            className='w-full h-full pl-[30%] justify-start items-center'
+            style={{display: 'flex'}}
+          >  
             <LazyLoadImage
                 wrapperClassName='service-main-image absolute left-20 h-[90%] justify-center items-center'
                 className='h-[90%]'
@@ -176,17 +182,47 @@ const Portfolio = () => {
               <p className='text-2xl text-white font-[Space_Mono]'>{'your next big launch'.toUpperCase()}</p>
             </div>
           </SwiperSlide>
+          
           <SwiperSlide 
             className='w-full h-full justify-center items-center'
             style={{display: 'flex'}}
           >
-            Slide 2
-          </SwiperSlide>
-          <SwiperSlide 
-            className='w-full h-full justify-center items-center'
-            style={{display: 'flex'}}
-          >
-            Slide 3
+            <LazyLoadImage
+                wrapperClassName='h-full justify-center items-center'
+                className='h-full'
+                src="https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/a8f65844-2732-433f-1b11-e36798d4e800/public"
+                alt="Services alerta labs item image"
+                effect="blur" // efecto visual mientras carga
+            />
+            <div 
+              className='absolute w-[65%] h-[40%] top-[37.3%] rounded-[var(--border-radius-20)] border flex flex-col justify-center items-center border-white bg-black'
+            >
+              <h2 
+                style={{ fontFamily: 'Bebas Neue' }}
+                className='mb-9 text-white text-7xl font-semibold'
+              >{'WHY choose us'.toUpperCase()}</h2>
+              <div className='w-[90%] flex justify-around items-center'>
+                <div>
+                  <h3 className='mb-5 text-white text-2xl font-[Space_Mono] text-center'>EXPERT TEAM</h3>
+                  <p className='m-auto w-[90%] font-seismic-latin-variable-span text-white text-center'>“Skilled in the latest technology and innovative design.”</p>
+                </div>
+                <div>
+                  <h3 className='mb-5 text-white text-2xl font-[Space_Mono] text-center'>CLIENT-FOCUSED</h3>
+                  <p className='m-auto w-[90%] font-seismic-latin-variable-span text-white text-center'>“We collaborate to deliver results that matter.”</p>
+                </div>
+                <div>
+                  <h3 className='mb-5 text-white text-2xl font-[Space_Mono] text-center'>SCALABLE SOLUTIONS</h3>
+                  <p className='m-auto w-[90%] font-seismic-latin-variable-span text-white text-center'>“Future-proof designs that grow with your business.”</p>
+                </div>
+              </div>
+            </div>
+            <LazyLoadImage
+                wrapperClassName='service-main-image absolute top-[25%] h-[20%] justify-center items-center'
+                className='h-full'
+                src="https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/ad1a7e41-f265-4f24-a360-b13af2bed200/public"
+                alt="Services alerta labs item image"
+                effect="blur" // efecto visual mientras carga
+            />
           </SwiperSlide>
           <SwiperSlide 
             className='w-full h-full justify-center items-center'
