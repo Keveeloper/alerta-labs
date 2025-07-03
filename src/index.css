@@ -244,3 +244,24 @@ font-display:auto;font-style:normal;font-weight:100;font-stretch:normal;
 .hide-scrollbar::-webkit-scrollbar {
   display: none; /* Chrome, Safari */
 }
+
+/* Swiper portfolio styles */
+.swiper-portfolio .swiper-pagination {
+  margin-right: 30px;
+}
+.swiper-portfolio .swiper-pagination .swiper-pagination-bullet {
+  margin-bottom: 40px !important;
+  width: 40px;
+  height: 40px;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #fff;
+  background-color: transparent;
+}
+.swiper-portfolio .swiper-pagination .swiper-pagination-bullet .internal-pagination {
+  width: 60%;
+  height: 60%;
+  background-color: #fff;
+  border-radius: 50%;
+}

@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 // 2. Importa los módulos de Swiper que quieras usar (opcional)
 // ¡Asegúrate de importar Mousewheel aquí!
 import { Autoplay, Pagination, Mousewheel } from 'swiper/modules';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 // 3. Importa los estilos base de Swiper
 import 'swiper/css';
@@ -107,24 +108,35 @@ const team = [
 ];
 
 const Portfolio = () => {
+  const pagination = {
+    clickable: true,
+    renderBullet: function (index: number, className: string) {
+      return '<span class="' + className + '">' + '<div class="internal-pagination"></div>' + '</span>';
+    },
+  };
   return (
       <section className='w-full h-screen flex justify-center items-center'>
         <Swiper
           loop
           direction={'vertical'}
-          pagination={{
-            clickable: true,
-          }}
+          pagination={pagination}
           modules={[Pagination, Mousewheel]}
           mousewheel={{
             releaseOnEdges: true,
           }}
-          className="w-full h-full"
+          className="swiper-portfolio w-full h-full"
         >
           <SwiperSlide
             className='w-full h-full pl-[30%] justify-start items-center'
             style={{display: 'flex'}}
           >  
+            <LazyLoadImage
+                wrapperClassName='service-main-image absolute left-20 h-[90%] justify-center items-center'
+                className='h-[90%]'
+                src="https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/e81481c5-596c-4c84-920d-2a3110aff100/public"
+                alt="Services alerta labs item image"
+                effect="blur" // efecto visual mientras carga
+            />
             <Swiper
               modules={[Autoplay, Pagination, EffectCardsStack]}
               effect="cards-stack"
@@ -158,33 +170,11 @@ const Portfolio = () => {
                 </SwiperSlide>
               ))}
             </Swiper>
-            {/* <Swiper
-              modules={[Autoplay, Pagination, EffectCardsStack]}
-              effect="cards-stack"
-              loop={true}
-              direction='vertical'
-              className="swiper-cards-component w-[25%] h-[50%] flex justify-center items-center"
-              style={{margin: 0, padding: '40px 0px', zIndex: 1000}}
-            >
-                {team.map((member) => (
-                    <SwiperSlide className='relative w-full h-full border border-white'>
-                      <div className="cards-stack-back w-full h-full ">
-                        <img src={member.memberPhoto} alt="" />
-                      </div>
-                      <div className="cards-stack-front w-full h-full">
-                        <img src={member.memberPhoto} alt="" />
-                      </div>
-                      <div 
-                        className='absolute pl-7 w-[190%] h-[calc(100%_+_2px)] top-[-1px] right-[-185%] flex flex-col justify-center rounded-r-[16px] border-t border-r border-b border-white bg-black z-2'
-                      >
-                        <h2 className='text-5xl font-semibold text-white font-[Space_Mono]'>{member.name.toUpperCase()}</h2>
-                        <p className='mb-3 text-xl font-semibold text-white font-[Space_Mono]'>{member.title.toUpperCase()}</p>
-                        <p className='mb-3 font-seismic-latin-variable-span text-base text-white'>{member.description_1}</p>
-                        <p className='font-seismic-latin-variable-span text-base text-white'>{member.description_2}</p>
-                      </div>
-                    </SwiperSlide>
-                ))}
-            </Swiper> */}
+            <div className='absolute top-[12%] right-[18%]'>
+              <h1 className='text-6xl text-white font-[Space_Mono] font-bold'>{'Meet the Crew'.toUpperCase()}</h1>
+              <p className='text-2xl text-white font-[Space_Mono]'>{'Meet the specialists behind'.toUpperCase()}</p>
+              <p className='text-2xl text-white font-[Space_Mono]'>{'your next big launch'.toUpperCase()}</p>
+            </div>
           </SwiperSlide>
           <SwiperSlide 
             className='w-full h-full justify-center items-center'
