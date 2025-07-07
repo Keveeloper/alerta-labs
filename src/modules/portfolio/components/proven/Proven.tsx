@@ -37,36 +37,40 @@ const cards = [
 
 const Proven = () => {
   return (
-    <div className='m-auto w-2/3 h-2/3 flex gap-5'>
-        <div className='w-[40%] h-full'>
-        <div>
-            <h2 style={{ fontFamily: "Bebas Neue" }} className='text-white text-8xl text-end'>our proven</h2>
-            <h2 style={{ fontFamily: "Bebas Neue" }} className='text-white text-8xl text-end'>development</h2>
-            <h2 style={{ fontFamily: "Bebas Neue" }} className='text-white text-8xl text-end'>process</h2>
-        </div>
-        <div>
-            <p className='font-seismic-latin-variable-span text-white text-end'>Our transparent, collaborative</p>
-            <p className='font-seismic-latin-variable-span text-white text-end'>process keeps you involved</p>
-            <p className='font-seismic-latin-variable-span text-white text-end'>at every stage, from</p>
-            <p className='font-seismic-latin-variable-span text-white text-end'>concept to launch.</p>
-        </div>
+    <div className='absolute left-[3%] w-[80%] h-2/3 flex gap-5'>
+        <div className='w-[45%] h-full'>
+            <div>
+                <h2 style={{ fontFamily: "Bebas Neue" }} className='text-white text-8xl text-end'>our proven</h2>
+                <h2 style={{ fontFamily: "Bebas Neue" }} className='text-white text-8xl text-end'>development</h2>
+                <h2 style={{ fontFamily: "Bebas Neue" }} className='text-white text-8xl text-end'>process</h2>
+            </div>
+            <div>
+                <p className='font-seismic-latin-variable-span-portfolio text-white text-end'>Our transparent, collaborative</p>
+                <p className='font-seismic-latin-variable-span-portfolio text-white text-end'>process keeps you involved</p>
+                <p className='font-seismic-latin-variable-span-portfolio text-white text-end'>at every stage, from</p>
+                <p className='font-seismic-latin-variable-span-portfolio text-white text-end'>concept to launch.</p>
+            </div>
         </div>
         <Swiper
             loop
             direction='horizontal'
             pagination={{ clickable: true }}
             modules={[Pagination]}
-            className="swiper-proven w-[60%] h-full"
+            className="swiper-proven w-[55%] h-full"
         >
             {cards.map((card) => (
-                <SwiperSlide className='w-full flex justify-center items-center border-white border-2 rounded-[var(--border-radius-20)] overflow-hidden' style={{height: '90%'}}>
-                    <LazyLoadImage
-                        wrapperClassName='service-main-image absolute h-full justify-center items-center'
-                        className='h-[90%]'
-                        src={card.image}
-                        alt="Services alerta labs item image"
-                        effect="blur"
-                    />
+                <SwiperSlide className='p-9 w-full flex justify-center items-center border-white border-2 rounded-[var(--border-radius-20)] overflow-hidden' style={{height: '90%'}}>
+                    <div className='mb-5 w-full h-[70%] bg-red-200'>
+                        <LazyLoadImage
+                            wrapperClassName='w-full h-full justify-center items-center'
+                            className='h-full'
+                            src={card.image}
+                            alt="Services alerta labs item image"
+                            effect="blur"
+                        />
+                    </div>
+                    <h3 className='mb-5 text-3xl text-white font-[Exan]'>{card.title.toUpperCase()}</h3>
+                    <p className='font-seismic-latin-variable-span-portfolio text-white'>{card.description}</p>
                 </SwiperSlide>
             ))}
         </Swiper>

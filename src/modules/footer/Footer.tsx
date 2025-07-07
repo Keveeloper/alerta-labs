@@ -36,19 +36,19 @@ const Footer = ({ isPackages }: { isPackages?: boolean  }) => {
           href="/portfolio"
           className="ml-10 px-5 py-2 text-white text-2xl rounded-2xl border border-white cursor-pointer font-[Exan] hover:bg-white/20"
         >
-          Portfolio
+          PORTFOLIO
         </a>
         <a
           href="/packages"
           className="ml-10 px-5 py-2 text-white text-2xl rounded-2xl border border-white cursor-pointer font-[Exan] hover:bg-white/20"
         >
-          Packages
+          PACKAGES
         </a>
         <a
           href="/contact"
           className="w-[175px] text-center ml-10 px-5 py-2 text-white text-2xl rounded-2xl border border-white cursor-pointer font-[Exan] hover:bg-white/20"
         >
-          Contact
+          CONTACT
         </a>
       </div>
     </footer>
