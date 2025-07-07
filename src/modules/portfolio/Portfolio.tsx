@@ -16,6 +16,8 @@ import EffectCardsStack from './effect-cards-stack.esm.js';
 import './effect-cards-stack.scss';
 import './main.scss'
 
+import Proven from './components/proven/Proven.js';
+
 const team = [
   {
     id: 1,
@@ -225,10 +227,10 @@ const Portfolio = () => {
             />
           </SwiperSlide>
           <SwiperSlide 
-            className='w-full h-full justify-center items-center'
-            style={{display: 'flex'}}
+            className='w-full h-full'
+            style={{display: 'flex', alignItems: 'center'}}
           >
-            Slide 4
+            <Proven/>
           </SwiperSlide>
           <SwiperSlide 
             className='w-full h-full justify-center items-center'
