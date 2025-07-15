@@ -17,6 +17,7 @@ import './effect-cards-stack.scss';
 import './main.scss'
 
 import Proven from './components/proven/Proven.js';
+import Contact from '../contact/Contact.js';
 
 const team = [
   {
@@ -236,7 +237,7 @@ const Portfolio = () => {
             className='w-full h-full justify-center items-center'
             style={{display: 'flex'}}
           >
-            Slide 5
+            <Contact/>
           </SwiperSlide>
         </Swiper>
       </section>

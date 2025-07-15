@@ -60,7 +60,7 @@ const Proven = () => {
         >
             {cards.map((card) => (
                 <SwiperSlide className='p-9 w-full flex justify-center items-center border-white border-2 rounded-[var(--border-radius-20)] overflow-hidden' style={{height: '90%'}}>
-                    <div className='mb-5 w-full h-[70%] bg-red-200'>
+                    <div className='mb-5 w-full h-[70%]'>
                         <LazyLoadImage
                             wrapperClassName='w-full h-full justify-center items-center'
                             className='h-full'

@@ -2,8 +2,10 @@ import { useState } from "react";
 import Navbar from "../navbar/Navbar";
 import SocialMediaComponent from "./components/SocialMedia.Component";
 import CanvasComponent from "../shared/components/CanvasComponent";
+import { useLocation } from "react-router";
 
-const contact = () => {
+const Contact = () => {
+  const location = useLocation();
   const [isContact, setIsContact] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
@@ -27,9 +29,9 @@ const contact = () => {
   };
 
   return (
-    <main className="relative w-full h-lvh overflow-hidden">
+    <main className="relative w-full h-screen overflow-hidden">
       <CanvasComponent/>
-      <Navbar />
+      {location.pathname === '/contact' && <Navbar /> }
       <img
         src="https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/67101712-efc2-4dcf-3bea-0fbafde64f00/public"
         alt="solar system background"
@@ -41,6 +43,7 @@ const contact = () => {
           <img
             src="https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/5827b1f3-6cab-47c0-136f-338815997400/public"
             alt="astronaut alerta labs"
+            style={{width: '50%'}}
             className="absolute h-[90%] bottom-[-5%] left-1/2 -translate-x-1/2"
           />
           <div className="fixed bottom-[20%] left-1/2 transform -translate-x-1/2">
@@ -57,8 +60,8 @@ const contact = () => {
               <p className="text-white font-[Exan] text-xl">A GRAVITATIONAL FORCE FOR GROUNDBREAKING IDEAS_</p>
             </div>
             <div>
-              <h2 className="text-white font-[Exan] text-3xl">HELLO@alertacreAtive.com_</h2>
-              <p className="text-white font-[Exan] text-xl">©2025 Alerta Partnership llc</p>
+              <h2 className="text-white font-[Exan] text-3xl">{'HELLO@alertacreAtive.com_'.toUpperCase()}</h2>
+              <p className="text-white font-[Exan] text-xl">{'©2025 Alerta Partnership llc'.toUpperCase()}</p>
             </div>
           </div>
         </>
@@ -147,4 +150,4 @@ We’ll bring it to life with precision and creativity"
   );
 };
 
-export default contact;
+export default Contact;

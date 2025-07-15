@@ -106,7 +106,7 @@ const Home = () => {
     }
 
     return (
-        <main className="w-full h-lvh min-h-[866px]">
+        <main className="w-full h-lvh">
             {/* <img
                 src="https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/67101712-efc2-4dcf-3bea-0fbafde64f00/public" alt="solar system background" 
                 className="fixed w-full h-full left-1/2 -translate-x-1/2 object-cover mix-blend-screen"
