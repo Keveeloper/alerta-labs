@@ -18,6 +18,7 @@ import './main.scss'
 
 import Proven from './components/proven/Proven.js';
 import Contact from '../contact/Contact.js';
+import SwiperController from './components/swiper-controller/SwiperController.js';
 
 const team = [
   {
@@ -117,6 +118,7 @@ const Portfolio = () => {
       return '<span class="' + className + '">' + '<div class="internal-pagination"></div>' + '</span>';
     },
   };
+
   return (
       <section className='w-full h-screen flex justify-center items-center'>
         <Swiper
@@ -184,8 +186,7 @@ const Portfolio = () => {
               <p className='text-2xl text-white font-[Space_Mono]'>{'Meet the specialists behind'.toUpperCase()}</p>
               <p className='text-2xl text-white font-[Space_Mono]'>{'your next big launch'.toUpperCase()}</p>
             </div>
-          </SwiperSlide>
-          
+          </SwiperSlide>     
           <SwiperSlide 
             className='w-full h-full justify-center items-center'
             style={{display: 'flex'}}
@@ -239,6 +240,7 @@ const Portfolio = () => {
           >
             <Contact/>
           </SwiperSlide>
+          <SwiperController totalSlides={5}/>
         </Swiper>
       </section>
   );
