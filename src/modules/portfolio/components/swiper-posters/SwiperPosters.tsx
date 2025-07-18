@@ -40,7 +40,7 @@ const portfolioJobs = [
         image: 'https://swiperjs.com/demos/images/nature-8.jpg'
     },
     {
-        image: 'https://swiperjs.com/demos/images/nature-10.jpg'
+        image: 'https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/4f87c981-ae63-4606-d24c-c741b4a5bd00/public'
     },
 ]
 const SwiperPosters = () => {

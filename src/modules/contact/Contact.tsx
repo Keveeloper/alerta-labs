@@ -86,7 +86,7 @@ const Contact = () => {
                   <input
                     type="text"
                     name="name"
-                    placeholder="Name"
+                    placeholder="Name/company"
                     value={formData.name}
                     onChange={handleChange}
                     required
@@ -108,7 +108,7 @@ const Contact = () => {
               </div>
 
               {/* Business */}
-              <div>
+              {/* <div>
                 <input
                   type="text"
                   name="business"
@@ -117,7 +117,7 @@ const Contact = () => {
                   onChange={handleChange}
                   className="w-full px-4 py-2 rounded-[1rem] border border-white bg-transparent text-white focus:outline-none focus:ring focus:ring-white/30"
                 />
-              </div>
+              </div> */}
 
               {/* Description */}
               <div>
