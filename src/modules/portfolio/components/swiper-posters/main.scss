@@ -28,7 +28,7 @@ body {
     --posters-slider-height: calc(68vw * 1.48);
   }
   @media (orientation: landscape) {
-    --posters-slider-width: calc(80vh / 1.48);
-    --posters-slider-height: 80vh;
+    --posters-slider-width: calc(80vh / 1.1);
+    --posters-slider-height: 70vh;
   }
 }

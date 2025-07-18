@@ -14,6 +14,35 @@ import 'swiper/css/parallax';
 import './posters-slider.scss';
 import './main.scss';
 
+const portfolioJobs = [
+    {
+        image: 'https://swiperjs.com/demos/images/nature-1.jpg'
+    },
+    {
+        image: 'https://swiperjs.com/demos/images/nature-2.jpg'
+    },
+    {
+        image: 'https://swiperjs.com/demos/images/nature-3.jpg'
+    },
+    {
+        image: 'https://swiperjs.com/demos/images/nature-4.jpg'
+    },
+    {
+        image: 'https://swiperjs.com/demos/images/nature-5.jpg'
+    },
+    {
+        image: 'https://swiperjs.com/demos/images/nature-6.jpg'
+    },
+    {
+        image: 'https://swiperjs.com/demos/images/nature-7.jpg'
+    },
+    {
+        image: 'https://swiperjs.com/demos/images/nature-8.jpg'
+    },
+    {
+        image: 'https://swiperjs.com/demos/images/nature-10.jpg'
+    },
+]
 const SwiperPosters = () => {
   // Estado para guardar la instancia de Swiper una vez que se inicializa
   const [swiperInstance, setSwiperInstance] = useState<any>(null);
@@ -80,35 +109,31 @@ const SwiperPosters = () => {
         grabCursor={true}
         parallax={true}
         creativeEffect={{
-          limitProgress: 3,
+          limitProgress: 4,
           perspective: true,
           shadowPerProgress: true,
           prev: {
             shadow: true,
-            translate: ['-90%', 0, -200],
+            translate: ['-90%', 0, -320],
           },
           next: {
             // Empezamos con un valor por defecto, useEffect lo corregirá
             translate: ['100%', 0, 0],
           },
         }}
+        initialSlide={portfolioJobs.length - 1}
+        style={{marginRight: '15%'}}
       >
-        {/* Aquí puedes mapear tus imágenes */}
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-1.jpg" alt="" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-2.jpg" alt="" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-3.jpg" alt="" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-4.jpg" alt="" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-5.jpg" alt="" />
-        </SwiperSlide>
+        {portfolioJobs.map((img) => (
+            <SwiperSlide 
+                style={{justifyContent: 'space-between'}}
+                className='px-7 py-10 flex-col border border-white rounded-[var(--border-radius-20)] bg-black'
+            >
+                <img style={{height: '75%'}} src={img.image} alt="" />
+                <div>Hola mundo</div>
+                <p>Hola cuates</p>
+            </SwiperSlide>
+        ))}
       </Swiper>
     </div>
   );
