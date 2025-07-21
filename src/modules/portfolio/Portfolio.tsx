@@ -21,7 +21,7 @@ const Portfolio = () => {
   const pagination = {
     clickable: true,
     renderBullet: function (index: number, className: string) {
-      return '<span class="' + className + '">' + '<div class="internal-pagination"></div>' + '</span>';
+      return `<span id="internal-pagination-${index}" class="${className}"><div class="internal-pagination"></div></span>`;
     },
   };
 
