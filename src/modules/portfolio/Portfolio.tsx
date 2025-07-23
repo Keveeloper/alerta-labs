@@ -40,7 +40,20 @@ const Portfolio = () => {
           <SwiperSlide
             className='w-full h-full justify-start items-center'
             style={{display: 'flex'}}
-          >  
+          >
+            <div className='absolute top-25 left-20'>
+              <h1 
+                className=' text-6xl leading-[0.5]'
+                style={{ fontFamily: "Bebas Neue" }}
+              >
+                {'Every mission starts with an idea'.toUpperCase()}
+              </h1>
+              <p className='font-[Space_Mono] text-2xl leading-[1.5]'>{'These are the ones we’ve brought to life.'.toUpperCase()}</p>
+              <p 
+                className='text-2xl leading-[0.5] text-[#00F0FF] font-light'
+                style={{ fontFamily: "Bebas Neue", fontWeight: '100' }}
+              >{'Scroll DOWN to see mission control'.toUpperCase()}</p>
+            </div>
             <SwiperPosters/>
           </SwiperSlide>
           <SwiperSlide
@@ -50,8 +63,8 @@ const Portfolio = () => {
             <LazyLoadImage
                 wrapperClassName='service-main-image absolute left-20 h-[90%] justify-center items-center'
                 className='h-[90%]'
-                src="https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/e81481c5-596c-4c84-920d-2a3110aff100/public"
-                alt="Services alerta labs item image"
+                src="https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/49e4319a-a37a-4389-2a55-1b76167be000/public"
+                alt="Astronaut portfolio item image"
                 effect="blur" // efecto visual mientras carga
             />
             <SwiperCards/>

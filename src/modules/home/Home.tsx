@@ -18,7 +18,7 @@ const Home = () => {
     const [nebulaHighlighted, setNebulaHighlighted] = useState<string>('642af0a5-a5a3-4134-fcf7-c785a9f01500');
     const [satelliteHighlighted, setSatelliteHighlighted] = useState<string>('4667d586-b939-47bb-4a00-312799925e00');
     const [asteroidHighlighted, setAsteroidHighlighted] = useState<string>('96444b46-5e0f-4433-4dc0-2f1abc3c1600');
-    const [ astronauthighlighted, setAstronautHighlighted ] = useState<string>('5827b1f3-6cab-47c0-136f-338815997400');
+    const [ astronauthighlighted, setAstronautHighlighted ] = useState<string>('a3980ff6-3869-4b3c-1340-366c8e145000');
     const [ homeTitle, setHomeTitle ] = useState<string>(homeTilteInitialValue);
     const timeoutRef = useRef<number | null>(null);
     
@@ -50,8 +50,9 @@ const Home = () => {
                 setAsteroidHighlighted('e5f7495d-19fa-46b8-9a2f-098f3a727300');
                 setHomeTitle('WHITE LABEL');
                 break;
-            case 'astronaut':
-                setAstronautHighlighted('09cb6e8c-0893-4171-0e4a-dce1538b5d00');
+            case '[ALERTA LINK] MISSION CONTROL_':
+                setAstronautHighlighted('deb8e976-73d2-4e12-c95e-ab24ef20a600');
+                setHomeTitle('COMMAND AGENT');
                 break;
             default:
                 break;
@@ -64,7 +65,7 @@ const Home = () => {
         setNebulaHighlighted('642af0a5-a5a3-4134-fcf7-c785a9f01500');
         setSatelliteHighlighted('4667d586-b939-47bb-4a00-312799925e00');
         setAsteroidHighlighted('96444b46-5e0f-4433-4dc0-2f1abc3c1600');
-        setAstronautHighlighted('5827b1f3-6cab-47c0-136f-338815997400');
+        setAstronautHighlighted('a3980ff6-3869-4b3c-1340-366c8e145000');
         // Cancelamos cualquier timeout anterior
         if (timeoutRef.current) {
             clearTimeout(timeoutRef.current);
@@ -100,6 +101,9 @@ const Home = () => {
                 setSpacialObject(spacialObjectsData.asteroide);
                 navigate('/services');
                 break;
+            case '[ALERTA LINK] MISSION CONTROL_':
+                navigate('/portfolio');
+                break;
             default:
                 break;
         }
@@ -131,14 +135,15 @@ const Home = () => {
                 src={`https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/${astronauthighlighted}/public`}
                 alt="astronaut alerta labs"
                 effect="blur"
-                onMouseEnter={() => handleHover("astronaut")}
+                onMouseEnter={() => handleHover("[ALERTA LINK] MISSION CONTROL_")}
                 onMouseLeave={handleMouseLeave}
+                onClick={() => handleClick("[ALERTA LINK] MISSION CONTROL_")}
             />
             <LazyLoadImage
                 wrapperClassName="absolute w-[213px] top-[8%] right-[20%] -translate-x-1/2 cursor-pointer"
                 className="w-full"
                 src={`https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/${cristalHighlighted}/public`}
-                alt="astronaut alerta labs"
+                alt="Cristal alerta labs"
                 effect="blur"
                 onMouseEnter={() => handleHover("[FUTUREBIT] EXPERIMENTAL TECH, YET ESSENTIAL_")}
                 onMouseLeave={handleMouseLeave}

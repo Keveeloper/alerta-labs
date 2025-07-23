@@ -16,31 +16,58 @@ import './main.scss';
 
 const portfolioJobs = [
     {
-        image: 'https://swiperjs.com/demos/images/nature-1.jpg'
+      name: 'Gato software',
+      logo: '4537c06f-0d35-4284-c498-970c0f587700',
+      type: 'SOFTWARE AS A SERVICE',
+      image: '2086c880-c65a-4cd6-df50-da479501cc00'
     },
     {
-        image: 'https://swiperjs.com/demos/images/nature-2.jpg'
+      name: 'Ojos de tiburón',
+      logo: 'fc16914e-3600-4679-2986-f0a650a47900',
+      type: 'Website',
+      image: '467c5833-01fc-40fc-d32b-1aba76176000'
     },
     {
-        image: 'https://swiperjs.com/demos/images/nature-3.jpg'
+      name: 'Natural',
+      logo: 'be30440c-4b03-4ec6-38c3-f9e435856b00',
+      type: 'Website, e comerce',
+      image: '06f66812-11cf-40ee-4417-404f29363600'
     },
     {
-        image: 'https://swiperjs.com/demos/images/nature-4.jpg'
+      name: 'Debugploy',
+      logo: 'ff9b5e98-5596-43eb-67f0-5e765ee51100',
+      type: 'Website',
+      image: '826ec877-aa57-486f-b94d-8431c2c02700'
     },
     {
-        image: 'https://swiperjs.com/demos/images/nature-5.jpg'
+      name: 'Impormedical',
+      logo: '93822d5c-3823-4948-af48-f2377cb94c00',
+      type: 'E COMERCE',
+      image: '5d98cc75-5529-4098-34fa-ac3538791c00'
     },
     {
-        image: 'https://swiperjs.com/demos/images/nature-6.jpg'
+      name: 'Fluttr',
+      logo: '99989662-d27e-4163-c8e2-b7290b9df800',
+      type: 'Website, LAndingpage, mobile Game',
+      image: '645ce9c7-07c8-4b37-a54f-8021b53dd400'
     },
     {
-        image: 'https://swiperjs.com/demos/images/nature-7.jpg'
+      name: 'GMDVita',
+      logo: 'b94319ad-136e-4a88-1c6c-db175884ef00',
+      type: 'Website',
+      image: 'af11f58a-187f-4a86-ce70-8f8f1072ce00'
     },
     {
-        image: 'https://swiperjs.com/demos/images/nature-8.jpg'
+      name: 'Brain5tormers',
+      logo: 'a1316a42-9459-4ac8-fc86-c454a096eb00',
+      type: 'Website',
+      image: '7f098956-4e9e-4880-8708-d7ace984a200'
     },
     {
-        image: 'https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/4f87c981-ae63-4606-d24c-c741b4a5bd00/public'
+      name: 'Alerta',
+      logo: 'ad1266a6-2a7f-4981-d924-36fc18099800',
+      type: 'Website',
+      image: '4f87c981-ae63-4606-d24c-c741b4a5bd00'
     },
 ]
 const SwiperPosters = () => {
@@ -129,9 +156,9 @@ const SwiperPosters = () => {
                 style={{justifyContent: 'space-between'}}
                 className='px-7 py-10 flex-col border border-white rounded-[var(--border-radius-20)] bg-black'
             >
-                <img style={{height: '75%'}} src={img.image} alt="" />
-                <div>Hola mundo</div>
-                <p>Hola cuates</p>
+                <img style={{height: '75%'}} src={`https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/${img.image}/public`} alt="" />
+                <h2 className='font-[Exan] text-2xl'>{img.type.toUpperCase()}</h2>
+                <img style={{width: '50%', height: '15%', objectFit: 'contain', objectPosition: 'left'}} src={`https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/${img.logo}/public`} alt="" />
             </SwiperSlide>
         ))}
       </Swiper>
