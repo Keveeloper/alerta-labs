@@ -41,7 +41,7 @@ const Contact = () => {
       {!isContact && (
         <>
           <img
-            src="https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/5827b1f3-6cab-47c0-136f-338815997400/public"
+            src="https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/51238595-4148-4d5a-b450-51e838ec2500/public"
             alt="astronaut alerta labs"
             style={{width: '50%'}}
             className="absolute h-[90%] bottom-[-5%] left-1/2 -translate-x-1/2"
