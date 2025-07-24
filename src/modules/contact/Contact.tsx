@@ -46,7 +46,7 @@ const Contact = () => {
             style={{width: '50%'}}
             className="absolute h-[90%] bottom-[-5%] left-1/2 -translate-x-1/2"
           />
-          <div className="fixed bottom-[20%] left-1/2 transform -translate-x-1/2">
+          <div className="absolute bottom-[20%] left-1/2 transform -translate-x-1/2">
             <button
               onClick={() => handleContactClick()}
               className="px-5 py-2 w-[390px] h-15 text-white text-3xl hover:text-black hover:bg-white rounded-2xl border border-white bg-black cursor-pointer font-[Exan]"
