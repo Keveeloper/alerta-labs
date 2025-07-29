@@ -50,15 +50,15 @@ const Services = () => {
                     </div>
                     <div className={`relative w-full h-[85%] border border-white rounded-2xl`}>
                         {showItemDetail ? 
-                            <div className='relative w-full h-full p-8'>
+                            <div className='relative p-5 w-full h-full  flex flex-col justify-around'>
                                 <h2 
                                     className='w-[80%] text-white text-6xl z-1'
                                     style={{fontFamily: 'Bebas Neue'}}
                                 >
                                     {selectedItem?.title}
                                 </h2>
-                                <div className='z-1' dangerouslySetInnerHTML={{ __html: selectedItem?.description ?? '' }} />
-                                <img width={300} className="absolute bottom-0 right-0 z-[-1]" src={selectedItem?.image} alt="" />
+                                <div className='mb-auto z-1' dangerouslySetInnerHTML={{ __html: selectedItem?.description ?? '' }} />
+                                <img width={300} className={`${selectedItem?.isColumn ? 'relative m-auto' : 'absolute'} bottom-0 right-0 z-[-1]`} src={selectedItem?.image} alt="" />
                             </div>
                         :
                             <>

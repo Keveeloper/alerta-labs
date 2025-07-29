@@ -2,11 +2,12 @@ export const spacialObjectsData = {
     cristal: {
         title: 'EMERGING TECH',
         object_image: 'https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/5be5fa8e-4850-4b69-c207-7020d5f28000/public',
-        height: '70%',
+        height: '70%', 
         item: [
             {
                 image: 'https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/6aba3daa-f16a-4f1a-7bf3-5463a01c7700/public',
                 title: 'INTEGRATION AI MACHINE LEARNING',
+                isColumn: false,
                 fontSize: '60px',
                 description: `<p class="font-seismic-latin-variable-span" style="margin-bottom: 20px; width: 90%; color: white; font-size: 18px;">
                                 Alerta develops or integrates systems to make artificial intelligence 
@@ -23,6 +24,7 @@ export const spacialObjectsData = {
             {
                 image: 'https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/c9e42433-1c92-4732-7920-3add69bc2100/public',
                 title: 'AR/VR SOLUTION',
+                isColumn: false,
                 fontSize: '60px',
                 description: `<p class="font-seismic-latin-variable-span" style="margin-bottom: 20px; width: 60%; color: white; font-size: 18px;">
                                 Alerta produces experiences that enhance the ability of your customer 
@@ -40,6 +42,7 @@ export const spacialObjectsData = {
             {
                 image: 'https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/d28e2183-6917-4cb7-42ed-b2f695434800/public',
                 title: 'BLOCKCHAIN NFT',
+                isColumn: false,
                 fontSize: '60px',
                 description: `<p class="font-seismic-latin-variable-span" style="margin-bottom: 20px; width: 50%; color: white; font-size: 18px;">
                                 Add NFTs and cryptocurrency into your brand’s communication strategy with Alerta.
@@ -63,6 +66,7 @@ export const spacialObjectsData = {
             {
                 image: 'https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/a9441983-c906-44c9-f710-8d9ae2563700/public',
                 title: 'UX / UI',
+                isColumn: true,
                 fontSize: '80px',
                 description: `<ul class="font-seismic-latin-variable-span" style="padding-left: 1.2rem; color: white; font-size: 18px; list-style: disc;">
                                 <li>Attractive and intuitive interface design</li>
@@ -73,6 +77,7 @@ export const spacialObjectsData = {
             {
                 image: 'https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/d081cccc-bfa9-4551-ebe1-958f83aa1800/public',
                 title: 'ASSETS',
+                isColumn: true,
                 fontSize: '80px',
                 description: `<ul class="font-seismic-latin-variable-span" style="padding-left: 1.2rem; color: white; font-size: 18px; list-style: disc;">
                                 <li>Attractive and intuitive interface design</li>
@@ -90,6 +95,7 @@ export const spacialObjectsData = {
             {
                 image: 'https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/caf9c96b-5ae7-4445-e1ca-5f8b16d7d900/public',
                 title: 'WEB PRODUCT',
+                isColumn: false,
                 fontSize: '60px', 
                 description: `<ul class="font-seismic-latin-variable-span" style="padding-left: 1.2rem; width: 60%; color: white; font-size: 18px; list-style: disc;">
                                 <li>Tailor-made Websites (Wordpress or code)</li>
@@ -107,8 +113,9 @@ export const spacialObjectsData = {
             {
                 image: 'https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/0cac427a-5da3-4646-0abf-ad9a38ff5d00/public',
                 title: 'WEB DEVELOPMENT',
+                isColumn: false,
                 fontSize: '60px',
-                description: `<ul class="font-seismic-latin-variable-span" style="padding-left: 1.2rem; width: 60%; color: white; font-size: 18px; list-style: disc;">
+                description: `<ul class="mb-auto font-seismic-latin-variable-span" style="padding-left: 1.2rem; width: 60%; color: white; font-size: 18px; list-style: disc;">
                                 <li>Customized APIs</li>
                                 <li>Real time data analysis</li>
                                 <li>Data base management</li>
@@ -121,6 +128,7 @@ export const spacialObjectsData = {
             {
                 image: 'https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/d7df765a-6b46-4479-eab5-faf948dfdc00/public',
                 title: 'WEB TRANSLATION & LOCALIZATION',
+                isColumn: false,
                 fontSize: '60px',
                 description: `<ul class="font-seismic-latin-variable-span" style="padding-left: 1.2rem; width: 60%; color: white; font-size: 18px; list-style: disc;">
                                 <li>Fully automated website translation processes.</li>
@@ -139,6 +147,7 @@ export const spacialObjectsData = {
             {
                 image: 'https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/abbbd0f6-9a2a-476f-3604-90f13476a200/public',
                 title: 'MOBILE & DESKTOP',
+                isColumn: false,
                 fontSize: '70px',
                 description: `<ul class="font-seismic-latin-variable-span" style="padding-left: 1.2rem; color: white; font-size: 18px; list-style: disc;">
                                 <li>Native apps for Android and IOS</li>
@@ -161,6 +170,7 @@ export const spacialObjectsData = {
             {
                 image: 'https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/bf8da037-f6b1-475d-c7ac-534f8172fa00/public',
                 title: 'GAMES',
+                isColumn: false,
                 fontSize: '70px',
                 description: `<ul class="font-seismic-latin-variable-span" style="padding-left: 1.2rem; color: white; font-size: 18px; list-style: disc;">
                                 <li>2D Game Development and design</li>
@@ -192,6 +202,7 @@ export const spacialObjectsData = {
             {
                 image: 'https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/f20bc51e-870d-4164-45fb-8a3b69b08500/public',
                 title: 'WHITE LABEL SOLUTIONS',
+                isColumn: false,
                 fontSize: '60px',
                 description: `<p class="font-seismic-latin-variable-span" style="margin-bottom: 20px; width: 60%; color: white; font-size: 18px;">
                                 Expand your offerings without expanding your team.

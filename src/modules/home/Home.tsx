@@ -17,7 +17,7 @@ const Home = () => {
     const [cristalHighlighted, setCristalHighlighted] = useState<string>('c86ffcab-84fb-4f9c-401b-7eb5d2a69900');
     const [nebulaHighlighted, setNebulaHighlighted] = useState<string>('642af0a5-a5a3-4134-fcf7-c785a9f01500');
     const [satelliteHighlighted, setSatelliteHighlighted] = useState<string>('4667d586-b939-47bb-4a00-312799925e00');
-    const [asteroidHighlighted, setAsteroidHighlighted] = useState<string>('96444b46-5e0f-4433-4dc0-2f1abc3c1600');
+    const [asteroidHighlighted, setAsteroidHighlighted] = useState<string>('0f85095f-b206-4f45-b4aa-ca5575d50b00');
     const [ astronauthighlighted, setAstronautHighlighted ] = useState<string>('a3980ff6-3869-4b3c-1340-366c8e145000');
     const [ homeTitle, setHomeTitle ] = useState<string>(homeTilteInitialValue);
     const timeoutRef = useRef<number | null>(null);
@@ -47,7 +47,7 @@ const Home = () => {
                 setHomeTitle('APP DEVELOPMENT');
                 break;
             case '[BRAND BOULDER] BUILT TO CARRY IDENTITIES_':
-                setAsteroidHighlighted('e5f7495d-19fa-46b8-9a2f-098f3a727300');
+                setAsteroidHighlighted('f7427cea-1112-4bd0-99c6-9a06dabcdf00');
                 setHomeTitle('WHITE LABEL');
                 break;
             case '[ALERTA LINK] MISSION CONTROL_':
@@ -64,7 +64,7 @@ const Home = () => {
         setCristalHighlighted('c86ffcab-84fb-4f9c-401b-7eb5d2a69900');
         setNebulaHighlighted('642af0a5-a5a3-4134-fcf7-c785a9f01500');
         setSatelliteHighlighted('4667d586-b939-47bb-4a00-312799925e00');
-        setAsteroidHighlighted('96444b46-5e0f-4433-4dc0-2f1abc3c1600');
+        setAsteroidHighlighted('0f85095f-b206-4f45-b4aa-ca5575d50b00');
         setAstronautHighlighted('a3980ff6-3869-4b3c-1340-366c8e145000');
         // Cancelamos cualquier timeout anterior
         if (timeoutRef.current) {

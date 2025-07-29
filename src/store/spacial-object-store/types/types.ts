@@ -9,6 +9,7 @@ export interface spacialItem {
     image: string;
     fontSize: string;
     title: string;
+    isColumn: boolean;
     description: string;
 }
 
