@@ -287,3 +287,23 @@ font-display:auto;font-style:normal;font-weight:100;font-stretch:normal;
   background-color: white;
   border-radius: 4px;
 }
+
+/* Estilos para navegadores WebKit (Chrome, Safari, Edge) */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px; /* Ancho de la barra */
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent; /* Fondo del canal -> transparente */
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: white; /* Color de la barra -> blanco */
+  border-radius: 20px;   /* Bordes redondeados para la barra */
+}
+
+/* Estilos para Firefox */
+.custom-scrollbar {
+  scrollbar-width: thin; /* "thin", "auto", o "none" */
+  scrollbar-color: white transparent; /* color de la barra y del fondo */
+}

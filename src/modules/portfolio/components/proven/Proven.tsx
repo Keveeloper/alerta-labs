@@ -69,8 +69,10 @@ const Proven = () => {
                             effect="blur"
                         />
                     </div>
-                    <h3 className='mb-5 text-3xl text-white font-[Exan]'>{card.title.toUpperCase()}</h3>
-                    <p className='font-seismic-latin-variable-span-portfolio text-white'>{card.description}</p>
+                    <div className='h-[30%] overflow-y-scroll custom-scrollbar'>
+                      <h3 className='mb-5 text-3xl text-white font-[Exan]'>{card.title.toUpperCase()}</h3>
+                      <p className='font-seismic-latin-variable-span-portfolio text-white'>{card.description}</p>
+                    </div>
                 </SwiperSlide>
             ))}
         </Swiper>
