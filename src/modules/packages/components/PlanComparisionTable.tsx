@@ -196,9 +196,11 @@ export default function PlanComparisonTable({
         <div className="overflow-y-auto scrollbar-hide" ref={categorySelectorRef}>
           <div className="min-w-[1024px]">
             {/* Original header (non-fixed) */}
-            <div>
-              <TableHeader columnWidth={600}/>
-            </div>
+            {!isFixed && (
+              <div>
+                <TableHeader columnWidth={600}/>
+              </div>
+            )}
 
             {/* Table body */}
             {sections.map((section, idx) => (
