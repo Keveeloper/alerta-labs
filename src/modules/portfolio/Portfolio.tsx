@@ -68,18 +68,21 @@ const Portfolio = () => {
             <SwiperPosters/>
           </SwiperSlide>
           <SwiperSlide
-            className='w-full h-full pl-[30%] justify-start items-center'
+            className='w-full h-full pl-[20%] justify-start items-center
+                       2xl:pl-[30%]'
             style={{display: 'flex'}}
           >  
             <LazyLoadImage
-                wrapperClassName='service-main-image absolute left-20 h-[90%] justify-center items-center'
-                className='h-[90%]'
+                wrapperClassName='service-main-image absolute left-[-5%] h-[80%] justify-center items-center
+                                  2xl:h-[90%] 2xl:left-20'
+                className='h-[100%]'
                 src="https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/49e4319a-a37a-4389-2a55-1b76167be000/public"
                 alt="Astronaut portfolio item image"
                 effect="blur" // efecto visual mientras carga
             />
             <SwiperCards/>
-            <div className='absolute top-[12%] right-[18%]'>
+            <div className='absolute top-[12%] right-[16%]'>
+                            {/* 2xl:right-[18%]'> */}
               <h1 className='text-6xl text-white font-[Space_Mono] font-bold'>{'Meet the Crew'.toUpperCase()}</h1>
               <p className='text-2xl text-white font-[Space_Mono]'>{'Meet the specialists behind'.toUpperCase()}</p>
               <p className='text-2xl text-white font-[Space_Mono]'>{'your next big launch'.toUpperCase()}</p>
@@ -104,15 +107,15 @@ const Portfolio = () => {
                 className='mb-9 text-white text-8xl font-semibold'
               >{'WHY choose us'.toUpperCase()}</h2>
               <div className='w-[90%] flex justify-around items-center'>
-                <div>
+                <div className='h-[150px] flex flex-col justify-between items-center'>
                   <h3 className='mb-5 text-white text-2xl font-[Space_Mono] text-center'>EXPERT TEAM</h3>
                   <p className='m-auto w-[90%] font-seismic-latin-variable-span-portfolio text-white text-center'>“Skilled in the latest technology and innovative design.”</p>
                 </div>
-                <div>
+                <div className='h-[150px] flex flex-col justify-between items-center'>
                   <h3 className='mb-5 text-white text-2xl font-[Space_Mono] text-center'>CLIENT-FOCUSED</h3>
                   <p className='m-auto w-[90%] font-seismic-latin-variable-span-portfolio text-white text-center'>“We collaborate to deliver results that matter.”</p>
                 </div>
-                <div>
+                <div className='h-[150px] flex flex-col justify-between items-center'>
                   <h3 className='mb-5 text-white text-2xl font-[Space_Mono] text-center'>SCALABLE SOLUTIONS</h3>
                   <p className='m-auto w-[90%] font-seismic-latin-variable-span-portfolio text-white text-center'>“Future-proof designs that grow with your business.”</p>
                 </div>
