@@ -35,7 +35,8 @@ const Services = () => {
     return (
         <div className="px-[var(--horizontal-padding)] w-full h-screen flex justify-center items-center">
             <div className="w-full h-[80%] flex justify-between items-center">
-                <div className={`${!showItemDetail ? 'w-[30%]' : 'w-[35%]'} h-[95%]`}>
+                {/* <div className={`${!showItemDetail ? 'w-[30%]' : 'w-[35%]'} h-[95%]`}> */}
+                <div className={`w-[40%] h-[95%]`}>
                     <div className="w-full h-[15%] flex justify-between items-center text-2xl font-['Space_Mono'] text-white">
                         <div className="w-[80%] flex overflow-auto whitespace-nowrap hide-scrollbar cursor-e-resize">
                             <p className="shrink-0">{spacialObject.title}</p>
@@ -57,7 +58,7 @@ const Services = () => {
                                 >
                                     {selectedItem?.title}
                                 </h2>
-                                <div className='mb-auto z-1' dangerouslySetInnerHTML={{ __html: selectedItem?.description ?? '' }} />
+                                <div className='custom-scrollbar mb-auto overflow-y-scroll z-1' dangerouslySetInnerHTML={{ __html: selectedItem?.description ?? '' }} />
                                 <img width={300} className={`${selectedItem?.isColumn ? 'relative m-auto' : 'absolute'} bottom-0 right-0 z-[-1]`} src={selectedItem?.image} alt="" />
                             </div>
                         :
@@ -115,7 +116,7 @@ const Services = () => {
                         }
                     </div>
                 </div>
-                <div className="w-[65%] h-full flex justify-center items-center">
+                <div className="w-[60%] h-full flex justify-center items-center">
                     {/* <img className='w-[70%]' src={spacialObject.object_image} alt=""/> */}
                     <div className={`w-full`} style={{height: spacialObject.height}}>
                         <LazyLoadImage
