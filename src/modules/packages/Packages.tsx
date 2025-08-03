@@ -5,12 +5,12 @@ import Navbar from "../navbar/Navbar";
 import Footer from "../footer/Footer";
 import { useNavigate } from "react-router";
 const plans = [
-{
+  {
     title: 'BASIC',
     price: '$300',
     description: 'Maintenance, prevention, and updates for your website.',
     features: [
-   { title: 'Technical Support', content: 'We ensure your web platform is always operational and optimized.' },
+      { title: 'Technical Support', content: 'We ensure your web platform is always operational and optimized.' },
       { title: 'Tracking Implementation', content: 'We configure tools to analyze and optimize your platform’s performance.' },
       { title: 'Module Updates and Maintenance', content: 'Implementing new features and optimizing existing ones.' },
       { title: 'WordPress Plugin Installation and Maintenance', content: 'Optimizing and ensuring the proper functionality of your website.' },
@@ -118,7 +118,7 @@ const PackagesView = () => {
           src="../icons/x.png"
           alt="close modal"
           onClick={() => navigate(-1)} 
-          className="float-right -mt-[25px] -mr-[4px]"
+          className="float-right -mt-[25px] -mr-[4px] cursor-pointer"
         />
         <div className="custom-scroll h-full max-h-[75vh] overflow-y-scroll p-[15px]" ref={PatterRef}>
           <div>
