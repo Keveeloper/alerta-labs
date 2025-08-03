@@ -51,7 +51,7 @@ const plans = [
   {
     title: 'ULTRA',
     price: '$1000',
-    description: 'Adds app maintenance and Search engine optimization',
+    description: 'Adds app maintenance and Search Engine Optimization',
     features: [
       { title: 'Technical Support', content: 'We ensure your web platform is always operational and optimized.' },
       { title: 'Tracking Implementation', content: 'We configure tools to analyze and optimize your platform’s performance.' },

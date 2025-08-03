@@ -13,7 +13,7 @@ const Footer = ({ isPackages }: { isPackages?: boolean  }) => {
               <a
                 href="/packages#exploreDetail"
               >
-                Click here to break it down & compare 
+                {'Click here to break it down & compare'.toUpperCase()}
               </a>
             </span><br/>
             <p className="text-3xl"  style={{fontFamily: 'Bebas Neue'}}>Choose a plan so powerful<br/> that it bends reality</p>
