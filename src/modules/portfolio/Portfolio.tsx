@@ -41,16 +41,27 @@ const Portfolio = () => {
             className='w-full h-full justify-start items-center'
             style={{display: 'flex'}}
           >
-            <div className='absolute top-25 left-20'>
+            <div className='absolute w-[70%] top-25 left-16
+                            xl:w-auto xl:left-20'>
               <h1 
-                className=' text-6xl leading-[0.5]'
+                className='text-4xl leading-[0.8]
+                           lg:text-4xl lg:leading-[0.5]
+                           xl:text-5xl
+                           2xl:text-6xl'
                 style={{ fontFamily: "Bebas Neue" }}
               >
                 {'Every mission starts with an idea'.toUpperCase()}
               </h1>
-              <p className='font-[Space_Mono] text-2xl leading-[1.5]'>{'These are the ones we’ve brought to life.'.toUpperCase()}</p>
               <p 
-                className='text-2xl leading-[0.5] text-[#00F0FF] font-light'
+                className='mb-2 font-[Space_Mono] leading-[1] 
+                           xl:text-[1.32vw] xl:leading-[1.5]
+                           2xl:text-2xl'
+              >
+                {'These are the ones we’ve brought to life.'.toUpperCase()}
+              </p>
+              <p 
+                className='hidden 
+                           xl:block xl:text-2xl xl:leading-[0.5] xl:text-[#00F0FF] xl:font-light'
                 style={{ fontFamily: "Bebas Neue", fontWeight: '100' }}
               >{'Scroll DOWN to see mission control'.toUpperCase()}</p>
             </div>

@@ -71,18 +71,12 @@ const portfolioJobs = [
     },
 ]
 const SwiperPosters = () => {
-  // Estado para guardar la instancia de Swiper una vez que se inicializa
   const [swiperInstance, setSwiperInstance] = useState<any>(null);
-  // Referencia al contenedor del Swiper para poder medir su tamaño
   const swiperElRef = useRef<any>(null);
 
-  // useEffect se encarga de los "efectos secundarios", como añadir event listeners.
-  // Replicaremos aquí la lógica del 'resize' del archivo original.
   useEffect(() => {
-    // Si la instancia de Swiper o la referencia al elemento no existen, no hacemos nada.
     if (!swiperInstance || !swiperElRef.current) return;
 
-    // La misma función del archivo original para calcular el desplazamiento
     const calcNextOffset = () => {
       const parentWidth = swiperElRef.current.parentElement.offsetWidth;
       const swiperWidth = swiperElRef.current.offsetWidth;
@@ -92,43 +86,29 @@ const SwiperPosters = () => {
       return `${nextOffset * 100}%`;
     };
 
-    // La función que se ejecutará cada vez que la ventana cambie de tamaño
     const onResize = () => {
-      // Verificamos que swiper no esté destruido
       if (swiperInstance.destroyed) return;
-      // Actualizamos dinámicamente los parámetros del efecto
       swiperInstance.params.creativeEffect.next.translate = [
         calcNextOffset(),
         0,
         0,
       ];
-      // Forzamos la actualización de Swiper
       swiperInstance.update();
     };
 
-    // Añadimos el listener
     window.addEventListener('resize', onResize);
-
-    // Llamamos a la función una vez al inicio para establecer el valor inicial
     onResize();
 
-    // ¡MUY IMPORTANTE! La función de limpieza
-    // Se ejecuta cuando el componente se "desmonta" para evitar fugas de memoria.
     return () => {
       window.removeEventListener('resize', onResize);
     };
-  }, [swiperInstance]); // Este efecto se ejecutará solo cuando swiperInstance cambie
+  }, [swiperInstance]); 
 
   return (
-    // Usamos la clase 'posters-slider' en el contenedor principal,
-    // tal como lo esperaba el CSS original.
     <div className="posters-slider">
       <Swiper
-        // Asignamos la referencia al elemento Swiper
         ref={swiperElRef}
-        // Guardamos la instancia de Swiper en nuestro estado cuando esté lista
         onSwiper={setSwiperInstance}
-        // Aquí pasamos TODA la configuración del archivo posters-slider.js
         modules={[Parallax, EffectCreative]}
         effect="creative"
         speed={600}
@@ -144,12 +124,11 @@ const SwiperPosters = () => {
             translate: ['-90%', 0, -320],
           },
           next: {
-            // Empezamos con un valor por defecto, useEffect lo corregirá
             translate: ['100%', 0, 0],
           },
         }}
         initialSlide={portfolioJobs.length - 1}
-        style={{marginRight: '15%'}}
+        style={{marginRight: '12%'}}
       >
         {portfolioJobs.map((img) => (
             <SwiperSlide 
@@ -157,7 +136,7 @@ const SwiperPosters = () => {
                 className='px-7 py-10 flex-col border border-white rounded-[var(--border-radius-20)] bg-black'
             >
                 <img style={{height: '75%'}} src={`https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/${img.image}/public`} alt="" />
-                <h2 className='font-[Exan] text-2xl'>{img.type.toUpperCase()}</h2>
+                <h2 className='font-[Exan] text-2xl'>{img.type.toUpperCase()}Holaaaa</h2>
                 <img style={{width: '50%', height: '15%', objectFit: 'contain', objectPosition: 'left'}} src={`https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/${img.logo}/public`} alt="" />
             </SwiperSlide>
         ))}
