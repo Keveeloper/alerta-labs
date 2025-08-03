@@ -57,7 +57,7 @@ const Contact = () => {
           <div className="absolute px-[var(--horizontal-padding)] py-7 w-full bottom-0 flex justify-between">
             <div>
               <h2 className="text-white font-[Exan] text-3xl"><span className="text-[var(--cyan)]">[ASTRONAUT]</span> LOST IN THOUGHT</h2>
-              <p className="text-white font-[Exan] text-xl">A GRAVITATIONAL FORCE FOR GROUNDBREAKING IDEAS_</p>
+              <p className="text-white font-[Exan] text-xl">A UNIVERSAL FORCE FOR GROUNDBREAKING IDEAS_</p>
             </div>
             <div>
               <h2 className="text-white font-[Exan] text-3xl">{'HELLO@alertacreAtive.com_'.toUpperCase()}</h2>
