@@ -1,6 +1,6 @@
 const Navbar = () => {
   return (
-    <nav className="fixed px-[var(--horizontal-padding)] w-full h-20 top-0 left-0 flex justify-between items-center z-2">
+    <nav className="fixed px-[var(--horizontal-padding)] w-full h-20 top-0 left-0 flex justify-between items-center bg-black z-2">
       <a href="/">
         <img
           src="https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/3a102297-c7f1-4c13-82a7-84d2623d1b00/public"

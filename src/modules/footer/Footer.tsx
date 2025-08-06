@@ -30,24 +30,26 @@ const Footer = ({ isPackages }: { isPackages?: boolean  }) => {
         </div>
       )}
      
-      <div className="w-full flex justify-end items-start
-                      sm:w-1/2">
+      <div className="w-full flex justify-between items-start
+                      sm:w-1/2 sm:justify-end">
         <a
           href="/portfolio"
-          className="hidden ml-10 px-5 py-2 text-white text-2xl rounded-2xl border border-white cursor-pointer font-[Exan] hover:bg-white/20
-                     sm:block"
+          className="hidden ml-0 px-5 py-2 text-white text-2xl rounded-2xl border border-white cursor-pointer font-[Exan] hover:bg-white/20
+                     sm:block sm:ml-10"
         >
           PORTFOLIO
         </a>
         <a
           href="/packages"
-          className="ml-10 px-5 py-2 text-white text-2xl rounded-2xl border border-white cursor-pointer font-[Exan] hover:bg-white/20"
+          className="ml-0 px-5 py-2 text-white text-2xl rounded-2xl border border-white cursor-pointer font-[Exan] hover:bg-white/20
+                     sm:ml-10"
         >
           PACKAGES
         </a>
         <a
           href="/contact"
-          className="w-[175px] text-center ml-10 px-5 py-2 text-white text-2xl rounded-2xl border border-white cursor-pointer font-[Exan] hover:bg-white/20"
+          className="w-[175px] ml-0 text-center px-5 py-2 text-white text-2xl rounded-2xl border border-white cursor-pointer font-[Exan] hover:bg-white/20
+                     sm:ml-10"
         >
           CONTACT
         </a>

@@ -25,25 +25,25 @@ const servicesItems = [
     {
         id: 2,
         name: 'Station',
-        image: getImageUrl('station'),
+        image: getImageUrlMobile('station_mobole'),
         fullHeight: false,
     },
     {
         id: 3,
         name: 'Satellite',
-        image: getImageUrl('satellite'),
+        image: getImageUrlMobile('satellite_mobile'),
         fullHeight: true,
     },
     {
         id: 4,
         name: 'Nebula',
-        image: getImageUrl('nebula'),
+        image: getImageUrlMobile('nebula_mobile'),
         fullHeight: false,
     },
     {
         id: 5,
         name: 'Cristal',
-        image: getImageUrl('cristal'),
+        image: getImageUrlMobile('cristal_mobile'),
         fullHeight: false,
     },
     {
@@ -58,7 +58,7 @@ const servicesItems = [
 const Home = () => {
 
     const { setSpacialObject } = useSpacialObjectStore();
-    const { setTextHovered } = useSpacialStore();
+    const { textHoovered, setTextHovered } = useSpacialStore();
     const navigate = useNavigate();
     const [ stationHighlighted, setStationHighlighted ] = useState<string>(ImagesUrls['station']);
     const [ cristalHighlighted, setCristalHighlighted ] = useState<string>(ImagesUrls['cristal']);
@@ -156,10 +156,42 @@ const Home = () => {
         }
     }
 
+    const handleSlideChange = (realIndex: number) => {
+        switch (realIndex) {
+            case 0:
+                setHomeTitle('COMMAND AGENT');
+                setTextHovered('[ALERTA LINK] MISSION CONTROL_'.toUpperCase());
+                break;
+            case 1:
+                setHomeTitle('WEB SERVICES');
+                setTextHovered('[codecrumb] NEW tech, new tricks_'.toUpperCase());
+                break;
+            case 2:
+                setHomeTitle('APP DEVELOPMENT');
+                setTextHovered('[UPDATE BASE] App-building in zero-G_'.toUpperCase());
+                break;
+            case 3:
+                setHomeTitle('X DESIGN');
+                setTextHovered('[UXXPlOSION] COSMIC CLARITY IN PIXELS_'.toUpperCase());
+                break;
+            case 4:
+                setHomeTitle('EMERGING TECH');
+                setTextHovered('[FUTUREBIT] EXPERIMENTAL TECH, YET ESSENTIAL_'.toUpperCase());
+                break;
+            case 5:
+                setHomeTitle('WHITE LABEL');
+                setTextHovered('[BRAND BOULDER] BUILT TO CARRY IDENTITIES_'.toUpperCase());
+                break;
+        
+            default:
+                break;
+        }
+    }
+
     console.log(getImageUrl('homeBackground'));
     return (
         
-        <main className="w-full h-lvh">
+        <main className="relative w-full h-lvh">
             <LazyLoadImage
                 wrapperClassName='fixed w-full h-full mix-blend-screen'
                 className="w-full h-full object-cover"
@@ -167,25 +199,40 @@ const Home = () => {
                 alt="Alerta labs background space image"
                 effect="blur"
             />
-            <Swiper
-                loop
-                direction={'horizontal'}
-                pagination={{ clickable: true }}
-                // modules={[Pagination]}
-                className="absolute w-full h-2/3 top-[50%] transform -translate-y-1/2 "
-            >
-                {servicesItems.map((serviceItem) => (
-                    <SwiperSlide className="">
-                        <LazyLoadImage
-                            wrapperClassName='service-main-image w-full h-full justify-center items-center '
-                            className={`${serviceItem.fullHeight ? 'h-full' : 'h-[60%]'} object-contain`}
-                            src={serviceItem.image}
-                            alt="Services alerta labs item image"
-                            effect="blur"
-                        />
-                    </SwiperSlide>
-                ))}
-            </Swiper>
+            <div className="absolute w-full h-[calc(100lvh-160px)] top-1/2 -translate-y-1/2 flex flex-col justify-center items-center">
+                <div className="h-[10%] bg-gradient-to-t from-transparent to-black">
+                    <h2 className="m-auto w-[80%] font-semibold text-lg text-center text-white font-[Space_Mono]">{'Swipe left to explore the UNIVERSE'.toUpperCase()}</h2>
+                </div>
+                <Swiper
+                    loop
+                    direction={'horizontal'}
+                    pagination={{ clickable: true }}
+                    // modules={[Pagination]}
+                    className="w-full h-[70%]"
+                    onSlideChange={(swiper) => {
+                        handleSlideChange(swiper.realIndex);
+                    }}
+                >
+                    {servicesItems.map((serviceItem) => (
+                        <SwiperSlide className="">
+                            <LazyLoadImage
+                                wrapperClassName='service-main-image w-full h-full justify-center items-center '
+                                className={`${serviceItem.fullHeight ? 'h-full' : 'h-[60%]'} object-contain`}
+                                src={serviceItem.image}
+                                alt="Services alerta labs item image"
+                                effect="blur"
+                            />
+                        </SwiperSlide>
+                    ))}
+                </Swiper>
+                <div className="py-5 h-[20%] bg-gradient-to-b from-transparent to-black">
+                    <h1 className="text-white text-center text-2xl font-[Space_Mono] font-bold z-2">{homeTitle}</h1>
+                    <p className="m-auto w-[80%] text-base text-white text-center font-[Exan]">
+                        <span className="text-[var(--cyan)]">{textHoovered.split(']')[0]}{']'}</span>
+                        {textHoovered.split(']')[1]}
+                    </p>
+                </div>
+            </div>
             <div className="hidden">
                 <LazyLoadImage
                     wrapperClassName="absolute w-[400px] bottom-[5%] left-1/2 -translate-x-1/2 cursor-pointer"
@@ -248,15 +295,16 @@ const Home = () => {
                     onClick={() => handleClick("[UXXPlOSION] COSMIC CLARITY IN PIXELS_")}
                 />
             </div>
-            {/* <img 
-                className="absolute w-full h-full z-1 pointer-events-none"
+            <img 
+                className="absolute w-full h-full z-1 pointer-events-none opacity-80
+                           sm:opacity-100"
                 src="https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/d2a95ff8-65a1-439b-cc90-ded1b8d0aa00/public" 
                 alt="vignette" 
             />
-            {homeTitle === homeTilteInitialValue && 
+            {/* {homeTitle === homeTilteInitialValue && 
                 <p className="absolute left-[5%] bottom-26 text-white text-2xl font-[Space_Mono] font-bold z-2">CHOOSE YOUR PATH AND</p>
-            }
-            <h1 className="absolute left-[5%] bottom-15 text-white text-5xl font-[Space_Mono] font-bold z-2">{homeTitle}</h1> */}
+            } */}
+            {/* <h1 className="absolute left-[5%] bottom-15 text-white text-5xl font-[Space_Mono] font-bold z-2">{homeTitle}</h1> */}
         </main>
     );
 
