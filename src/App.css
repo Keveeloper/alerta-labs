@@ -12,11 +12,11 @@
 
 .custom-scroll {
   scrollbar-width: thin;
-  scrollbar-color: white transparent; /* Para Firefox */
+  scrollbar-color: white transparent;
 }
 
 .custom-scroll::-webkit-scrollbar {
-  width: 10px; /* Puedes ajustar el ancho aquí */
+  width: 10px; 
 }
 
 .custom-scroll::-webkit-scrollbar-track {
@@ -26,5 +26,5 @@
 .custom-scroll::-webkit-scrollbar-thumb {
   background-color: white;
   border-radius: 10px;
-  border: 2px solid white; /* Borde blanco */
+  border: 2px solid white;
 }

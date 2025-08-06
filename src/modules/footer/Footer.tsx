@@ -5,7 +5,8 @@ const Footer = ({ isPackages }: { isPackages?: boolean  }) => {
   const { textHoovered } = useSpacialStore();
 
   return (
-    <footer className="fixed px-[var(--horizontal-padding)] w-full h-20 flex bottom-0 left-0 z-2">
+    <footer className="fixed px-[var(--horizontal-padding)] w-full h-20 flex justify-around bottom-0 left-0 z-2 bg-black
+                       sm:bg-transparent">
       {isPackages ? (
          <div className="w-1/2 mt-[-20px]">
           <p className="text-2xl text-white font-[Exan]">
@@ -20,7 +21,8 @@ const Footer = ({ isPackages }: { isPackages?: boolean  }) => {
           </p>
         </div>
       ) : (
-        <div className="w-1/2 flex items-center">
+        <div className="hidden w-1/2 items-center
+                        sm:flex">
           <p className="text-xl text-white font-[Exan]">
             <span className="text-[var(--cyan)]">{textHoovered.split(']')[0]}{']'}</span>
             {textHoovered.split(']')[1]}
@@ -28,13 +30,12 @@ const Footer = ({ isPackages }: { isPackages?: boolean  }) => {
         </div>
       )}
      
-      <div className="w-1/2 flex justify-end items-start">
-        {/* <button className="w-[175px] text-center ml-10 px-5 py-2 text-white text-2xl rounded-2xl border border-white cursor-pointer font-[Exan] hover:bg-white/20">
-          Portfolio
-        </button> */}
+      <div className="w-full flex justify-end items-start
+                      sm:w-1/2">
         <a
           href="/portfolio"
-          className="ml-10 px-5 py-2 text-white text-2xl rounded-2xl border border-white cursor-pointer font-[Exan] hover:bg-white/20"
+          className="hidden ml-10 px-5 py-2 text-white text-2xl rounded-2xl border border-white cursor-pointer font-[Exan] hover:bg-white/20
+                     sm:block"
         >
           PORTFOLIO
         </a>

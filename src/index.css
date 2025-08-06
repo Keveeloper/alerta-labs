@@ -244,12 +244,12 @@ font-display:auto;font-style:normal;font-weight:100;font-stretch:normal;
 
 /* Hide scrolls */
 .hide-scrollbar {
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none;  /* IE 10+ */
+  scrollbar-width: none; 
+  -ms-overflow-style: none;
 }
 
 .hide-scrollbar::-webkit-scrollbar {
-  display: none; /* Chrome, Safari */
+  display: none; 
 }
 
 /* Swiper portfolio styles */
@@ -290,20 +290,20 @@ font-display:auto;font-style:normal;font-weight:100;font-stretch:normal;
 
 /* Estilos para navegadores WebKit (Chrome, Safari, Edge) */
 .custom-scrollbar::-webkit-scrollbar {
-  width: 8px; /* Ancho de la barra */
+  width: 8px;
 }
 
 .custom-scrollbar::-webkit-scrollbar-track {
-  background: transparent; /* Fondo del canal -> transparente */
+  background: transparent;
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
-  background-color: white; /* Color de la barra -> blanco */
-  border-radius: 20px;   /* Bordes redondeados para la barra */
+  background-color: white; 
+  border-radius: 20px;
 }
 
 /* Estilos para Firefox */
 .custom-scrollbar {
-  scrollbar-width: thin; /* "thin", "auto", o "none" */
-  scrollbar-color: white transparent; /* color de la barra y del fondo */
+  scrollbar-width: thin; 
+  scrollbar-color: white transparent;
 }

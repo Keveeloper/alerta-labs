@@ -1,24 +1,64 @@
 import { useState } from "react";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination } from 'swiper/modules';
 import useSpacialStore from "../../store/SpacialStore";
 import { useNavigate } from "react-router";
 import useSpacialObjectStore from "../../store/spacial-object-store/SpacialObjectsStore";
 import { spacialObjectsData } from "./spacial-objects/spacial-objects-data";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { useRef } from "react";
+import { getImageUrl, ImagesUrls } from "../../shared/image-url/image-urls";
+
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 const homeTilteInitialValue = 'EXPLORE THE UNIVERSE';
+const servicesItems = [
+    {
+        id: 1,
+        name: 'Astronaut',
+        image: getImageUrl('astronaut'),
+    },
+    {
+        id: 2,
+        name: 'Station',
+        image: getImageUrl('station'),
+    },
+    {
+        id: 3,
+        name: 'Satellite',
+        image: getImageUrl('satellite'),
+    },
+    {
+        id: 4,
+        name: 'Nebula',
+        image: getImageUrl('nebula'),
+    },
+    {
+        id: 5,
+        name: 'Cristal',
+        image: getImageUrl('cristal'),
+    },
+    {
+        id: 6,
+        name: 'Asteroid',
+        image: getImageUrl('asteroid'),
+    },
+
+];
 
 const Home = () => {
 
     const { setSpacialObject } = useSpacialObjectStore();
     const { setTextHovered } = useSpacialStore();
     const navigate = useNavigate();
-    const [stationHighlighted, setStationHighlighted] = useState<string>('1cd060bc-6e36-4286-3d92-234765af0300');
-    const [cristalHighlighted, setCristalHighlighted] = useState<string>('c86ffcab-84fb-4f9c-401b-7eb5d2a69900');
-    const [nebulaHighlighted, setNebulaHighlighted] = useState<string>('642af0a5-a5a3-4134-fcf7-c785a9f01500');
-    const [satelliteHighlighted, setSatelliteHighlighted] = useState<string>('4667d586-b939-47bb-4a00-312799925e00');
-    const [asteroidHighlighted, setAsteroidHighlighted] = useState<string>('0f85095f-b206-4f45-b4aa-ca5575d50b00');
-    const [ astronauthighlighted, setAstronautHighlighted ] = useState<string>('a3980ff6-3869-4b3c-1340-366c8e145000');
+    const [ stationHighlighted, setStationHighlighted ] = useState<string>(ImagesUrls['station']);
+    const [ cristalHighlighted, setCristalHighlighted ] = useState<string>(ImagesUrls['cristal']);
+    const [ nebulaHighlighted, setNebulaHighlighted ] = useState<string>(ImagesUrls['nebula']);
+    const [ satelliteHighlighted, setSatelliteHighlighted ] = useState<string>(ImagesUrls['satellite']);
+    const [ asteroidHighlighted, setAsteroidHighlighted ] = useState<string>(ImagesUrls['asteroid']);
+    const [ astronauthighlighted, setAstronautHighlighted ] = useState<string>(ImagesUrls['astronaut']);
     const [ homeTitle, setHomeTitle ] = useState<string>(homeTilteInitialValue);
     const timeoutRef = useRef<number | null>(null);
     
@@ -39,7 +79,7 @@ const Home = () => {
                 setHomeTitle('EMERGING TECH');
                 break;
             case '[UXXPlOSION] COSMIC CLARITY IN PIXELS_':
-                setNebulaHighlighted('3745c65f-ceda-4557-f643-11551e716000');
+                setNebulaHighlighted('a7fdfdbc-9728-4d11-ac67-a0ff7eebe600');
                 setHomeTitle('X DESIGN');
                 break;
             case '[UPDATE BASE] App-building in zero-G_':
@@ -62,7 +102,7 @@ const Home = () => {
     const handleMouseLeave = () => {
         setStationHighlighted('1cd060bc-6e36-4286-3d92-234765af0300');
         setCristalHighlighted('c86ffcab-84fb-4f9c-401b-7eb5d2a69900');
-        setNebulaHighlighted('642af0a5-a5a3-4134-fcf7-c785a9f01500');
+        setNebulaHighlighted('843780a4-94af-4d9e-6e5f-c101aa487800');
         setSatelliteHighlighted('4667d586-b939-47bb-4a00-312799925e00');
         setAsteroidHighlighted('0f85095f-b206-4f45-b4aa-ca5575d50b00');
         setAstronautHighlighted('a3980ff6-3869-4b3c-1340-366c8e145000');
@@ -109,101 +149,99 @@ const Home = () => {
         }
     }
 
+    console.log(getImageUrl('homeBackground'));
     return (
+        
         <main className="w-full h-lvh">
-            {/* <img
-                src="https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/67101712-efc2-4dcf-3bea-0fbafde64f00/public" alt="solar system background" 
-                className="fixed w-full h-full left-1/2 -translate-x-1/2 object-cover mix-blend-screen"
-            /> */}
             <LazyLoadImage
                 wrapperClassName='fixed w-full h-full mix-blend-screen'
                 className="w-full h-full object-cover"
-                src="https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/67101712-efc2-4dcf-3bea-0fbafde64f00/public"
+                src={getImageUrl('homeBackground')}
                 alt="Alerta labs background space image"
                 effect="blur"
             />
-            {/* <img
-                src={`https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/${astronauthighlighted}/public`}
-                alt="astronaut alerta labs" 
-                className="absolute w-[400px] bottom-[8%] left-1/2 -translate-x-1/2 cursor-pointer"
-                onMouseEnter={() => handleHover("astronaut")}
-                onMouseLeave={handleMouseLeave}
-            /> */}
-            <LazyLoadImage
-                wrapperClassName="absolute w-[400px] bottom-[5%] left-1/2 -translate-x-1/2 cursor-pointer"
-                className="w-full"
-                src={`https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/${astronauthighlighted}/public`}
-                alt="astronaut alerta labs"
-                effect="blur"
-                onMouseEnter={() => handleHover("[ALERTA LINK] MISSION CONTROL_")}
-                onMouseLeave={handleMouseLeave}
-                onClick={() => handleClick("[ALERTA LINK] MISSION CONTROL_")}
-            />
-            <LazyLoadImage
-                wrapperClassName="absolute w-[213px] top-[8%] right-[20%] -translate-x-1/2 cursor-pointer"
-                className="w-full"
-                src={`https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/${cristalHighlighted}/public`}
-                alt="Cristal alerta labs"
-                effect="blur"
-                onMouseEnter={() => handleHover("[FUTUREBIT] EXPERIMENTAL TECH, YET ESSENTIAL_")}
-                onMouseLeave={handleMouseLeave}
-                onClick={() => handleClick("[FUTUREBIT] EXPERIMENTAL TECH, YET ESSENTIAL_")}
-            />
-            <LazyLoadImage
-                wrapperClassName="absolute w-[228px] top-[20%] right-0 -translate-x-1/2 cursor-pointer"
-                className="w-full"
-                src={`https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/${asteroidHighlighted}/public`}
-                alt="Asteroid"
-                effect="blur"
-                onMouseEnter={() => handleHover("[BRAND BOULDER] BUILT TO CARRY IDENTITIES_")}
-                onMouseLeave={handleMouseLeave}
-                onClick={() => handleClick("[BRAND BOULDER] BUILT TO CARRY IDENTITIES_")}
-            />
-            {/* <img
-                src={`https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/${stationHighlighted}/public`} alt="Station" 
-                className="absolute w-[320px] bottom-[15%] right-[5%] cursor-pointer"
-                onMouseEnter={() => handleHover("[codecrumb] NEW tech, new tricks_")}
-                onMouseLeave={handleMouseLeave}
-                onClick={() => handleClick("[codecrumb] NEW tech, new tricks_")}
-            /> */}
-            <LazyLoadImage
-                wrapperClassName="absolute w-[320px] bottom-[15%] right-[5%] cursor-pointer"
-                className="w-full"
-                src={`https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/${stationHighlighted}/public`}
-                alt="Station"
-                effect="blur"
-                onMouseEnter={() => handleHover("[codecrumb] NEW tech, new tricks_")}
-                onMouseLeave={handleMouseLeave}
-                onClick={() => handleClick("[codecrumb] NEW tech, new tricks_")}
-            />
-            {/* <img
-                src={`https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/${satelliteHighlighted}/public`} alt="Satellite" 
-                className="absolute w-[400px] bottom-[5%] left-0 cursor-pointer z-1"
-                onMouseEnter={() => handleHover("[UPDATE BASE] App-building in zero-G_")}
-                onMouseLeave={handleMouseLeave}
-                onClick={() => handleClick("[UPDATE BASE] App-building in zero-G_")}
-            /> */}
-            <LazyLoadImage
-                wrapperClassName="absolute w-[350px] bottom-[5%] left-0 cursor-pointer z-1"
-                className="w-full"
-                src={`https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/${satelliteHighlighted}/public`}
-                alt="Satellite"
-                effect="blur"
-                onMouseEnter={() => handleHover("[UPDATE BASE] App-building in zero-G_")}
-                onMouseLeave={handleMouseLeave}
-                onClick={() => handleClick("[UPDATE BASE] App-building in zero-G_")}
-            />
-            <LazyLoadImage
-                wrapperClassName="absolute w-[558px] top-[2%] left-[3%] cursor-pointer"
-                className="w-full"
-                src={`https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/${nebulaHighlighted}/public`}
-                alt="Nebula"
-                effect="blur"
-                onMouseEnter={() => handleHover("[UXXPlOSION] COSMIC CLARITY IN PIXELS_")}
-                onMouseLeave={handleMouseLeave}
-                onClick={() => handleClick("[UXXPlOSION] COSMIC CLARITY IN PIXELS_")}
-            />
-            <img 
+            <Swiper
+                loop
+                direction={'horizontal'}
+                pagination={{ clickable: true }}
+                modules={[Pagination]}
+                className=""
+            >
+                {servicesItems.map((serviceItem) => (
+                    <SwiperSlide>
+                        <LazyLoadImage
+                            wrapperClassName='w-full h-full justify-center items-center'
+                            className='h-full'
+                            src={serviceItem.image}
+                            alt="Services alerta labs item image"
+                            effect="blur"
+                        />
+                    </SwiperSlide>
+                ))}
+            </Swiper>
+            <div className="hidden">
+                <LazyLoadImage
+                    wrapperClassName="absolute w-[400px] bottom-[5%] left-1/2 -translate-x-1/2 cursor-pointer"
+                    className="w-full"
+                    src={`https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/${astronauthighlighted}/public`}
+                    alt="astronaut alerta labs"
+                    effect="blur"
+                    onMouseEnter={() => handleHover("[ALERTA LINK] MISSION CONTROL_")}
+                    onMouseLeave={handleMouseLeave}
+                    onClick={() => handleClick("[ALERTA LINK] MISSION CONTROL_")}
+                />
+                <LazyLoadImage
+                    wrapperClassName="absolute w-[213px] top-[8%] right-[20%] -translate-x-1/2 cursor-pointer"
+                    className="w-full"
+                    src={`https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/${cristalHighlighted}/public`}
+                    alt="Cristal alerta labs"
+                    effect="blur"
+                    onMouseEnter={() => handleHover("[FUTUREBIT] EXPERIMENTAL TECH, YET ESSENTIAL_")}
+                    onMouseLeave={handleMouseLeave}
+                    onClick={() => handleClick("[FUTUREBIT] EXPERIMENTAL TECH, YET ESSENTIAL_")}
+                />
+                <LazyLoadImage
+                    wrapperClassName="absolute w-[228px] top-[20%] right-0 -translate-x-1/2 cursor-pointer"
+                    className="w-full"
+                    src={`https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/${asteroidHighlighted}/public`}
+                    alt="Asteroid"
+                    effect="blur"
+                    onMouseEnter={() => handleHover("[BRAND BOULDER] BUILT TO CARRY IDENTITIES_")}
+                    onMouseLeave={handleMouseLeave}
+                    onClick={() => handleClick("[BRAND BOULDER] BUILT TO CARRY IDENTITIES_")}
+                />
+                <LazyLoadImage
+                    wrapperClassName="absolute w-[320px] bottom-[15%] right-[5%] cursor-pointer"
+                    className="w-full"
+                    src={`https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/${stationHighlighted}/public`}
+                    alt="Station"
+                    effect="blur"
+                    onMouseEnter={() => handleHover("[codecrumb] NEW tech, new tricks_")}
+                    onMouseLeave={handleMouseLeave}
+                    onClick={() => handleClick("[codecrumb] NEW tech, new tricks_")}
+                />
+                <LazyLoadImage
+                    wrapperClassName="absolute w-[350px] bottom-[5%] left-0 cursor-pointer z-1"
+                    className="w-full"
+                    src={`https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/${satelliteHighlighted}/public`}
+                    alt="Satellite"
+                    effect="blur"
+                    onMouseEnter={() => handleHover("[UPDATE BASE] App-building in zero-G_")}
+                    onMouseLeave={handleMouseLeave}
+                    onClick={() => handleClick("[UPDATE BASE] App-building in zero-G_")}
+                />
+                <LazyLoadImage
+                    wrapperClassName="absolute w-[558px] top-[2%] left-[3%] cursor-pointer"
+                    className="w-full"
+                    src={`https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/${nebulaHighlighted}/public`}
+                    alt="Nebula"
+                    effect="blur"
+                    onMouseEnter={() => handleHover("[UXXPlOSION] COSMIC CLARITY IN PIXELS_")}
+                    onMouseLeave={handleMouseLeave}
+                    onClick={() => handleClick("[UXXPlOSION] COSMIC CLARITY IN PIXELS_")}
+                />
+            </div>
+            {/* <img 
                 className="absolute w-full h-full z-1 pointer-events-none"
                 src="https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/d2a95ff8-65a1-439b-cc90-ded1b8d0aa00/public" 
                 alt="vignette" 
@@ -211,7 +249,7 @@ const Home = () => {
             {homeTitle === homeTilteInitialValue && 
                 <p className="absolute left-[5%] bottom-26 text-white text-2xl font-[Space_Mono] font-bold z-2">CHOOSE YOUR PATH AND</p>
             }
-            <h1 className="absolute left-[5%] bottom-15 text-white text-5xl font-[Space_Mono] font-bold z-2">{homeTitle}</h1>
+            <h1 className="absolute left-[5%] bottom-15 text-white text-5xl font-[Space_Mono] font-bold z-2">{homeTitle}</h1> */}
         </main>
     );
 
