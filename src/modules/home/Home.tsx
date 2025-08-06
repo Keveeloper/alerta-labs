@@ -12,38 +12,45 @@ import { getImageUrl, ImagesUrls } from "../../shared/image-url/image-urls";
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import { getImageUrlMobile } from "../../shared/image-url/image-urls-mobile";
 
 const homeTilteInitialValue = 'EXPLORE THE UNIVERSE';
 const servicesItems = [
     {
         id: 1,
         name: 'Astronaut',
-        image: getImageUrl('astronaut'),
+        image: getImageUrlMobile('astronaut_mobile'),
+        fullHeight: true,
     },
     {
         id: 2,
         name: 'Station',
         image: getImageUrl('station'),
+        fullHeight: false,
     },
     {
         id: 3,
         name: 'Satellite',
         image: getImageUrl('satellite'),
+        fullHeight: true,
     },
     {
         id: 4,
         name: 'Nebula',
         image: getImageUrl('nebula'),
+        fullHeight: false,
     },
     {
         id: 5,
         name: 'Cristal',
         image: getImageUrl('cristal'),
+        fullHeight: false,
     },
     {
         id: 6,
         name: 'Asteroid',
         image: getImageUrl('asteroid'),
+        fullHeight: false,
     },
 
 ];
@@ -164,14 +171,14 @@ const Home = () => {
                 loop
                 direction={'horizontal'}
                 pagination={{ clickable: true }}
-                modules={[Pagination]}
-                className=""
+                // modules={[Pagination]}
+                className="absolute w-full h-2/3 top-[50%] transform -translate-y-1/2 "
             >
                 {servicesItems.map((serviceItem) => (
-                    <SwiperSlide>
+                    <SwiperSlide className="">
                         <LazyLoadImage
-                            wrapperClassName='w-full h-full justify-center items-center'
-                            className='h-full'
+                            wrapperClassName='service-main-image w-full h-full justify-center items-center '
+                            className={`${serviceItem.fullHeight ? 'h-full' : 'h-[60%]'} object-contain`}
                             src={serviceItem.image}
                             alt="Services alerta labs item image"
                             effect="blur"
