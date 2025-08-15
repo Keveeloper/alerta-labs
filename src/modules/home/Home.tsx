@@ -13,6 +13,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { getImageUrlMobile } from "../../shared/image-url/image-urls-mobile";
+import { useCustomNavigation } from "../shared/hooks/services-hooks/useServicesNavigation";
 
 const homeTilteInitialValue = 'EXPLORE THE UNIVERSE';
 const servicesItems = [
@@ -20,36 +21,42 @@ const servicesItems = [
         id: 1,
         name: 'Astronaut',
         image: getImageUrlMobile('astronaut_mobile'),
+        navigateValue: '/portfolio',
         fullHeight: true,
     },
     {
         id: 2,
         name: 'Station',
-        image: getImageUrlMobile('station_mobole'),
+        image: getImageUrlMobile('station_mobile'),
+        navigateValue: '[codecrumb] NEW tech, new tricks_',
         fullHeight: false,
     },
     {
         id: 3,
         name: 'Satellite',
         image: getImageUrlMobile('satellite_mobile'),
+        navigateValue: '[UPDATE BASE] App-building in zero-G_',
         fullHeight: true,
     },
     {
         id: 4,
         name: 'Nebula',
         image: getImageUrlMobile('nebula_mobile'),
+        navigateValue: '[UXXPlOSION] COSMIC CLARITY IN PIXELS_',
         fullHeight: false,
     },
     {
         id: 5,
         name: 'Cristal',
         image: getImageUrlMobile('cristal_mobile'),
+        navigateValue: '[FUTUREBIT] EXPERIMENTAL TECH, YET ESSENTIAL_',
         fullHeight: false,
     },
     {
         id: 6,
         name: 'Asteroid',
         image: getImageUrl('asteroid'),
+        navigateValue: '[BRAND BOULDER] BUILT TO CARRY IDENTITIES_',
         fullHeight: false,
     },
 
@@ -59,6 +66,7 @@ const Home = () => {
 
     const { setSpacialObject } = useSpacialObjectStore();
     const { textHoovered, setTextHovered } = useSpacialStore();
+    const handleNavigation = useCustomNavigation();
     const navigate = useNavigate();
     const [ stationHighlighted, setStationHighlighted ] = useState<string>(ImagesUrls['station']);
     const [ cristalHighlighted, setCristalHighlighted ] = useState<string>(ImagesUrls['cristal']);
@@ -221,6 +229,7 @@ const Home = () => {
                                 src={serviceItem.image}
                                 alt="Services alerta labs item image"
                                 effect="blur"
+                                onClick={() => handleNavigation(serviceItem.navigateValue || '')}
                             />
                         </SwiperSlide>
                     ))}

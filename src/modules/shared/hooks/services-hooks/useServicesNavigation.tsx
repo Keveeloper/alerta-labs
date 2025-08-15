@@ -2,12 +2,18 @@ import { useNavigate } from "react-router";
 import useSpacialObjectStore from "../../../../store/spacial-object-store/SpacialObjectsStore";
 import { spacialObjectsData } from "../../../home/spacial-objects/spacial-objects-data";
 
-export const userServicesNavigation = () => {
+export const useCustomNavigation = () => {
     const navigate = useNavigate();
     const { setSpacialObject } = useSpacialObjectStore();
 
     const handleNavigation = (text: string, onClose?: () => void) => {
         switch (text) {
+            case '/packages':
+                navigate(text);
+                break;
+            case '/portfolio':
+                navigate(text);
+                break;
             case '[codecrumb] NEW tech, new tricks_':
                 setSpacialObject(spacialObjectsData.station);
                 navigate('/services');

@@ -9,7 +9,7 @@ import MuiAccordionSummary, {
   accordionSummaryClasses,
 } from '@mui/material/AccordionSummary';
 import MuiAccordionDetails from '@mui/material/AccordionDetails';
-import { userServicesNavigation } from '../shared/hooks/services-hooks/useServicesNavigation';
+import { useCustomNavigation } from '../shared/hooks/services-hooks/useServicesNavigation';
 
 const style = {
   position: 'absolute' as 'absolute',
@@ -70,7 +70,7 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [expanded, setExpanded] = useState<string | false>('');
 
-  const handleNavigation = userServicesNavigation();
+  const handleNavigation = useCustomNavigation();
 
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -110,7 +110,10 @@ const Navbar = () => {
       <Slide direction="left" in={open} mountOnEnter unmountOnExit>
         <div style={style}>
           <div className='py-3 border-b border-white'>
-            <p className='font-[Exan] text-white text-xl font-semibold'>
+            <p 
+              className='font-[Exan] text-white text-xl font-semibold'
+              onClick={() => handleNavigation('/portfolio', () => handleClose())}
+            >
               PORTFOLIO
             </p>
           </div>
@@ -162,7 +165,10 @@ const Navbar = () => {
             </AccordionDetails>
           </Accordion>
           <div className='py-3 border-b border-white'>
-            <p className='font-[Exan] text-white text-xl font-bold'>
+            <p 
+              className='font-[Exan] text-white text-xl font-bold'
+              onClick={() => handleNavigation('/packages', () => handleClose())}
+            >
               PACKAGES
             </p>
           </div>
