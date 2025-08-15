@@ -42,13 +42,17 @@ const Accordion = styled((props: AccordionProps) => (
 
 const AccordionSummary = styled((props: AccordionSummaryProps) => (
   <MuiAccordionSummary
-    expandIcon={<ArrowForwardIosSharpIcon sx={{ fontSize: '0.9rem' }} />}
+    expandIcon={<ArrowForwardIosSharpIcon sx={{ fontSize: '0.9rem', color: 'white' }} />}
     {...props}
   />
 ))(({ theme }) => ({
+  paddingLeft: 0,
   backgroundColor: 'rgba(0, 0, 0, 1)',
-  flexDirection: 'row-reverse',
+  flexDirection: 'row',
   border: 'none',
+  '& span': {
+    marginLeft: '0 !important',
+  },
   [`& .${accordionSummaryClasses.expandIconWrapper}.${accordionSummaryClasses.expanded}`]:
     {
       transform: 'rotate(90deg)',
@@ -62,14 +66,15 @@ const AccordionSummary = styled((props: AccordionSummaryProps) => (
 }));
 
 const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
-  padding: theme.spacing(2),
-  borderTop: '1px solid rgba(0, 0, 0, .125)',
+  // padding: theme.spacing(2),
+  padding: `0 0 0 ${theme.spacing(2)}`,
+  // borderTop: '1px solid rgba(0, 0, 0, .125)',
 }));
 
 const Navbar = () => {
 
   const [open, setOpen] = useState(false);
-  const [expanded, setExpanded] = useState<string | false>('panel1');
+  const [expanded, setExpanded] = useState<string | false>('');
 
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -128,12 +133,31 @@ const Navbar = () => {
               <p className='text-white text-xl'>SERVICES</p>
             </AccordionSummary>
             <AccordionDetails>
-              <Typography>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-                malesuada lacus ex, sit amet blandit leo lobortis eget. Lorem ipsum dolor
-                sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
-                sit amet blandit leo lobortis eget.
-              </Typography>
+              <div className='py-3 border-b border-white'>
+                <p className='font-[Exan] text-white text-xl font-light'>
+                  WEB DEVELOPMENT
+                </p>
+              </div>
+              <div className='py-3 border-b border-white'>
+                <p className='font-[Exan] text-white text-xl font-semibold'>
+                  APP DEVELOPMENT
+                </p>
+              </div>
+              <div className='py-3 border-b border-white'>
+                <p className='font-[Exan] text-white text-xl font-semibold'>
+                  X DESIGN
+                </p>
+              </div>
+              <div className='py-3 border-b border-white'>
+                <p className='font-[Exan] text-white text-xl font-semibold'>
+                  EMERGING TECH
+                </p>
+              </div>
+              <div className='py-3'>
+                <p className='font-[Exan] text-white text-xl font-semibold'>
+                  WHITE LABEL
+                </p>
+              </div>
             </AccordionDetails>
           </Accordion>
           <div className='py-3 border-b border-white'>
