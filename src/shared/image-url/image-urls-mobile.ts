@@ -8,6 +8,7 @@ export const ImagesUrlsMobile: imageUrlMobileInterface = {
     satellite_mobile: '6f431d1f-8806-43bc-64de-1412e1ee2a00',
     nebula_mobile: '5a606854-e3bc-42d5-91e7-0377bd61a600',
     cristal_mobile: 'cd1da9fe-1223-4ed3-d279-2769f6715800',
+    home_background_mobile: '02651477-c0ce-45e1-963e-b354255a1400',
 }
 
 export const getImageUrlMobile = (imageValue: ImageKey) => `${import.meta.env.VITE_CDN_BASE_URL}${ImagesUrlsMobile[imageValue]}/public`;

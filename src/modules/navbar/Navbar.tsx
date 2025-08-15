@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { use, useState } from 'react';
 import Modal from '@mui/material/Modal';
 import { Slide } from '@mui/material';
 import { styled } from '@mui/material/styles';
@@ -9,7 +9,7 @@ import MuiAccordionSummary, {
   accordionSummaryClasses,
 } from '@mui/material/AccordionSummary';
 import MuiAccordionDetails from '@mui/material/AccordionDetails';
-import Typography from '@mui/material/Typography';
+import { userServicesNavigation } from '../shared/hooks/services-hooks/useServicesNavigation';
 
 const style = {
   position: 'absolute' as 'absolute',
@@ -29,12 +29,8 @@ const style = {
 const Accordion = styled((props: AccordionProps) => (
   <MuiAccordion disableGutters elevation={0} square {...props} />
 ))(({ theme }) => ({
-  // border: `1px solid ${theme.palette.divider}`,
   borderBottom: `1px solid white`,
   background: 'rgba(0, 0, 0, 1)',
-  // '&:not(:last-child)': {
-  //   borderBottom: 0,
-  // },
   '&::before': {
     display: 'none',
   },
@@ -66,15 +62,15 @@ const AccordionSummary = styled((props: AccordionSummaryProps) => (
 }));
 
 const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
-  // padding: theme.spacing(2),
   padding: `0 0 0 ${theme.spacing(2)}`,
-  // borderTop: '1px solid rgba(0, 0, 0, .125)',
 }));
 
 const Navbar = () => {
 
   const [open, setOpen] = useState(false);
   const [expanded, setExpanded] = useState<string | false>('');
+
+  const handleNavigation = userServicesNavigation();
 
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -108,7 +104,7 @@ const Navbar = () => {
         aria-describedby="modal-modal-description"
         disableAutoFocus={true}
         BackdropProps={{
-          style: { backgroundColor: 'rgba(0, 0, 0, 0)' } // Fully transparent
+          style: { backgroundColor: 'rgba(0, 0, 0, 0)' }
         }}
       >
       <Slide direction="left" in={open} mountOnEnter unmountOnExit>
@@ -118,43 +114,48 @@ const Navbar = () => {
               PORTFOLIO
             </p>
           </div>
-          <div className='py-3 border-b border-white'>
-            <p className='font-[Exan] text-white text-xl font-bold'>
-              ABOUT
-            </p>
-          </div>
-          {/* <div className='py-3 border-b border-white'>
-            <p className='font-[Exan] text-white text-xl font-bold'>
-              SERVICES
-            </p>
-          </div> */}
           <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
             <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
               <p className='text-white text-xl'>SERVICES</p>
             </AccordionSummary>
             <AccordionDetails>
               <div className='py-3 border-b border-white'>
-                <p className='font-[Exan] text-white text-xl font-light'>
-                  WEB DEVELOPMENT
+                <p 
+                  className='font-[Exan] text-white text-xl font-light'
+                  onClick={() => handleNavigation('[codecrumb] NEW tech, new tricks_', () => handleClose())}
+                >
+                  WEB SERVICES
                 </p>
               </div>
               <div className='py-3 border-b border-white'>
-                <p className='font-[Exan] text-white text-xl font-semibold'>
+                <p 
+                  className='font-[Exan] text-white text-xl font-semibold'
+                  onClick={() => handleNavigation('[UPDATE BASE] App-building in zero-G_', () => handleClose())}
+                >
                   APP DEVELOPMENT
                 </p>
               </div>
               <div className='py-3 border-b border-white'>
-                <p className='font-[Exan] text-white text-xl font-semibold'>
+                <p 
+                  className='font-[Exan] text-white text-xl font-semibold'
+                  onClick={() => handleNavigation('[UXXPlOSION] COSMIC CLARITY IN PIXELS_', () => handleClose())}
+                >
                   X DESIGN
                 </p>
               </div>
               <div className='py-3 border-b border-white'>
-                <p className='font-[Exan] text-white text-xl font-semibold'>
+                <p 
+                  className='font-[Exan] text-white text-xl font-semibold'
+                  onClick={() => handleNavigation('[FUTUREBIT] EXPERIMENTAL TECH, YET ESSENTIAL_', () => handleClose())}
+                >
                   EMERGING TECH
                 </p>
               </div>
               <div className='py-3'>
-                <p className='font-[Exan] text-white text-xl font-semibold'>
+                <p 
+                  className='font-[Exan] text-white text-xl font-semibold'
+                  onClick={() => handleNavigation('[BRAND BOULDER] BUILT TO CARRY IDENTITIES_', () => handleClose())}
+                >
                   WHITE LABEL
                 </p>
               </div>

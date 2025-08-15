@@ -195,12 +195,12 @@ const Home = () => {
             <LazyLoadImage
                 wrapperClassName='fixed w-full h-full mix-blend-screen'
                 className="w-full h-full object-cover"
-                src={getImageUrl('homeBackground')}
+                src={getImageUrlMobile('home_background_mobile')}
                 alt="Alerta labs background space image"
                 effect="blur"
             />
             <div className="absolute w-full h-[calc(100lvh-160px)] top-1/2 -translate-y-1/2 flex flex-col justify-center items-center">
-                <div className="h-[10%] bg-gradient-to-t from-transparent to-black">
+                <div className="h-[10%] w-full bg-gradient-to-t from-transparent to-black">
                     <h2 className="m-auto w-[80%] font-semibold text-lg text-center text-white font-[Space_Mono]">{'Swipe to explore the UNIVERSE'.toUpperCase()}</h2>
                 </div>
                 <Swiper
@@ -217,7 +217,7 @@ const Home = () => {
                         <SwiperSlide className="">
                             <LazyLoadImage
                                 wrapperClassName='service-main-image w-full h-full justify-center items-center '
-                                className={`${serviceItem.fullHeight ? 'h-full' : 'h-[60%]'} object-contain`}
+                                className={`${serviceItem.fullHeight ? 'h-full' : 'h-[70%]'} object-contain`}
                                 src={serviceItem.image}
                                 alt="Services alerta labs item image"
                                 effect="blur"
@@ -225,7 +225,7 @@ const Home = () => {
                         </SwiperSlide>
                     ))}
                 </Swiper>
-                <div className="py-5 h-[20%] bg-gradient-to-b from-transparent to-black">
+                <div className="py-5 w-full h-[20%] bg-gradient-to-b from-transparent to-black">
                     <h1 className="text-white text-center text-2xl font-[Space_Mono] font-bold z-2">{homeTitle}</h1>
                     <p className="m-auto w-[80%] text-base text-white text-center font-[Exan]">
                         <span className="text-[var(--cyan)]">{textHoovered.split(']')[0]}{']'}</span>
