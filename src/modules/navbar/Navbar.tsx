@@ -1,4 +1,84 @@
+import { useState } from 'react';
+import Modal from '@mui/material/Modal';
+import { Slide } from '@mui/material';
+import { styled } from '@mui/material/styles';
+import ArrowForwardIosSharpIcon from '@mui/icons-material/ArrowForwardIosSharp';
+import MuiAccordion, { AccordionProps } from '@mui/material/Accordion';
+import MuiAccordionSummary, {
+  AccordionSummaryProps,
+  accordionSummaryClasses,
+} from '@mui/material/AccordionSummary';
+import MuiAccordionDetails from '@mui/material/AccordionDetails';
+import Typography from '@mui/material/Typography';
+
+const style = {
+  position: 'absolute' as 'absolute',
+  paddingLeft: '20px' as '20px',
+  width: '60%' as '60%',
+  top: '80px' as '80px',
+  right: 0,
+  border: '2px solid #fff' as '2px solid #fff',
+  borderRight: 'none' as 'none',
+  borderTopLeftRadius: '20px' as '20px',
+  borderBottomLeftRadius: '20px' as '20px',
+  background: '#000' as '#000',
+  opacity: 0.9,
+  p: 4,
+};
+
+const Accordion = styled((props: AccordionProps) => (
+  <MuiAccordion disableGutters elevation={0} square {...props} />
+))(({ theme }) => ({
+  // border: `1px solid ${theme.palette.divider}`,
+  borderBottom: `1px solid white`,
+  background: 'rgba(0, 0, 0, 1)',
+  // '&:not(:last-child)': {
+  //   borderBottom: 0,
+  // },
+  '&::before': {
+    display: 'none',
+  },
+}));
+
+const AccordionSummary = styled((props: AccordionSummaryProps) => (
+  <MuiAccordionSummary
+    expandIcon={<ArrowForwardIosSharpIcon sx={{ fontSize: '0.9rem' }} />}
+    {...props}
+  />
+))(({ theme }) => ({
+  backgroundColor: 'rgba(0, 0, 0, 1)',
+  flexDirection: 'row-reverse',
+  border: 'none',
+  [`& .${accordionSummaryClasses.expandIconWrapper}.${accordionSummaryClasses.expanded}`]:
+    {
+      transform: 'rotate(90deg)',
+    },
+  [`& .${accordionSummaryClasses.content}`]: {
+    marginLeft: theme.spacing(1),
+  },
+  ...theme.applyStyles('dark', {
+    backgroundColor: 'rgba(255, 255, 255, .05)',
+  }),
+}));
+
+const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
+  padding: theme.spacing(2),
+  borderTop: '1px solid rgba(0, 0, 0, .125)',
+}));
+
 const Navbar = () => {
+
+  const [open, setOpen] = useState(false);
+  const [expanded, setExpanded] = useState<string | false>('panel1');
+
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
+  const handleChange =
+    (panel: string) => (event: React.SyntheticEvent, newExpanded: boolean) => {
+      setExpanded(newExpanded ? panel : false);
+    };
+
   return (
     <nav className="fixed px-[var(--horizontal-padding)] w-full h-20 top-0 left-0 flex justify-between items-center bg-black z-2">
       <a href="/">
@@ -6,15 +86,69 @@ const Navbar = () => {
           src="https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/3a102297-c7f1-4c13-82a7-84d2623d1b00/public"
           alt="Alerta labs logo png"
           className="w-[200px] cursor-pointer
-                     sm:w-[280px]"
+                    sm:w-[280px]"
         />
       </a>
       <img
         src="https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/c184e61c-2329-4c66-c753-12d21a40f400/public"
         alt="Alerta labs logo png"
         className="cursor-pointer
-                   sm:hidden"
+                  sm:hidden"
+        onClick={handleOpen}
       />
+      <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+        disableAutoFocus={true}
+        BackdropProps={{
+          style: { backgroundColor: 'rgba(0, 0, 0, 0)' } // Fully transparent
+        }}
+      >
+      <Slide direction="left" in={open} mountOnEnter unmountOnExit>
+        <div style={style}>
+          <div className='py-3 border-b border-white'>
+            <p className='font-[Exan] text-white text-xl font-semibold'>
+              PORTFOLIO
+            </p>
+          </div>
+          <div className='py-3 border-b border-white'>
+            <p className='font-[Exan] text-white text-xl font-bold'>
+              ABOUT
+            </p>
+          </div>
+          {/* <div className='py-3 border-b border-white'>
+            <p className='font-[Exan] text-white text-xl font-bold'>
+              SERVICES
+            </p>
+          </div> */}
+          <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
+            <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
+              <p className='text-white text-xl'>SERVICES</p>
+            </AccordionSummary>
+            <AccordionDetails>
+              <Typography>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+                malesuada lacus ex, sit amet blandit leo lobortis eget. Lorem ipsum dolor
+                sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
+                sit amet blandit leo lobortis eget.
+              </Typography>
+            </AccordionDetails>
+          </Accordion>
+          <div className='py-3 border-b border-white'>
+            <p className='font-[Exan] text-white text-xl font-bold'>
+              PACKAGES
+            </p>
+          </div>
+          <div className='py-3 border-b border-white'>
+            <p className='font-[Exan] text-white text-xl font-bold'>
+              CONTACT
+            </p>
+          </div>
+        </div>
+      </Slide>
+      </Modal>
     </nav>
   );
 };

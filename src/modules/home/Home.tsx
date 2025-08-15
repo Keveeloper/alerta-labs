@@ -201,7 +201,7 @@ const Home = () => {
             />
             <div className="absolute w-full h-[calc(100lvh-160px)] top-1/2 -translate-y-1/2 flex flex-col justify-center items-center">
                 <div className="h-[10%] bg-gradient-to-t from-transparent to-black">
-                    <h2 className="m-auto w-[80%] font-semibold text-lg text-center text-white font-[Space_Mono]">{'Swipe left to explore the UNIVERSE'.toUpperCase()}</h2>
+                    <h2 className="m-auto w-[80%] font-semibold text-lg text-center text-white font-[Space_Mono]">{'Swipe to explore the UNIVERSE'.toUpperCase()}</h2>
                 </div>
                 <Swiper
                     loop
