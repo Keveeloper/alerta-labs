@@ -234,9 +234,9 @@ const Home = () => {
                         </SwiperSlide>
                     ))}
                 </Swiper>
-                <div className="py-5 w-full h-[20%] bg-gradient-to-b from-transparent to-black">
+                <div className="py-5 w-full h-[20%] bg-gradient-to-b flex flex-col justify-center items-center from-transparent via-black to-black">
                     <h1 className="text-white text-center text-2xl font-[Space_Mono] font-bold z-2">{homeTitle}</h1>
-                    <p className="m-auto w-[80%] text-base text-white text-center font-[Exan]">
+                    <p className="w-[80%] text-base text-white text-center font-[Exan]">
                         <span className="text-[var(--cyan)]">{textHoovered.split(']')[0]}{']'}</span>
                         {textHoovered.split(']')[1]}
                     </p>

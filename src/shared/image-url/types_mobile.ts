@@ -5,4 +5,5 @@ export interface imageUrlMobileInterface {
     nebula_mobile: string;
     cristal_mobile: string;
     home_background_mobile: string;
+    shadow_mobile: string;
 }
