@@ -241,7 +241,7 @@ const PackagesView = () => {
   }, []);
 
   return (
-    <>
+    <div className="relative w-full h-screen">
       {/* Background image */}
       <img
         loading="lazy"
@@ -251,14 +251,17 @@ const PackagesView = () => {
       />
 
       {/* Container */}
-      <div className="w-full h-full p-[100px] bg-black/80 backdrop-blur custom-container">
+      {/* <div className="w-full h-full p-[100px] bg-black/80 backdrop-blur custom-container"> */}
+      <div className="w-full h-full pt-25 pb-60 px-2 bg-black/80 backdrop-blur custom-container
+      md:pt-20 md:pb-40 md:px-25">
         <Navbar />
         <img
           loading="lazy"
           src="../icons/x.png"
           alt="close modal"
           onClick={() => navigate(-1)} 
-          className="float-right -mt-[25px] -mr-[4px] cursor-pointer"
+          className="absolute right-6 top-18 cursor-pointer z-100
+                     md:top-13 md:right-32"
         />
         <div className="custom-scroll h-full max-h-[75vh] overflow-y-scroll p-[15px]" ref={PatterRef}>
           <div>
@@ -286,7 +289,7 @@ const PackagesView = () => {
         </div>
         <Footer isPackages/>
       </div>
-    </>
+    </div>
   );
 };
 export default PackagesView;

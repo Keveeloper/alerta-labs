@@ -1,8 +1,8 @@
 @media (max-width: 640px) {
   /* Estilos para móviles */
     .custom-container{
-        padding: 100px 10px 10px 0;
-        height: 80vh;
+        /* padding: 100px 10px 10px 0; */
+        height: 100vh;
     }
     .custom-h2{
         font-size: 34px;

@@ -5,18 +5,21 @@ const Footer = ({ isPackages }: { isPackages?: boolean  }) => {
   const { textHoovered } = useSpacialStore();
 
   return (
-    <footer className="fixed px-[var(--horizontal-padding)] w-full h-20 flex justify-around bottom-0 left-0 z-2 bg-blue">
+    <footer className={`fixed px-[var(--horizontal-padding)] w-full ${isPackages ? 'py-5 h-60 md:h-40' : 'h-20'} flex flex-col justify-around bottom-0 left-0 z-2 bg-black
+                       md:flex-row`}>
       {isPackages ? (
-         <div className="w-1/2 mt-[-20px] bg-yellow-200">
+         <div className="w-full
+                         md:w-1/2">
           <p className="text-2xl text-white font-[Exan]">
-            <span className="text-[var(--cyan)] text-[1rem]">
+            <span className="block w-[80%] text-[var(--cyan)] text-[1rem]">
               <a
                 href="/packages#exploreDetail"
               >
                 {'Click here to break it down & compare'.toUpperCase()}
               </a>
             </span><br/>
-            <p className="text-3xl"  style={{fontFamily: 'Bebas Neue'}}>Choose a plan so powerful<br/> that it bends reality</p>
+            <p className="mb-4 text-3xl text-center leading-none
+                          md:mb-0 md:text-start"  style={{fontFamily: 'Bebas Neue'}}>Choose a plan so powerful<br/> that it bends reality</p>
           </p>
         </div>
       ) : (
