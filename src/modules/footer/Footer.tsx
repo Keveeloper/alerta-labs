@@ -5,10 +5,9 @@ const Footer = ({ isPackages }: { isPackages?: boolean  }) => {
   const { textHoovered } = useSpacialStore();
 
   return (
-    <footer className="fixed px-[var(--horizontal-padding)] w-full h-20 flex justify-around bottom-0 left-0 z-2 bg-black
-                       sm:bg-transparent">
+    <footer className="fixed px-[var(--horizontal-padding)] w-full h-20 flex justify-around bottom-0 left-0 z-2 bg-blue">
       {isPackages ? (
-         <div className="w-1/2 mt-[-20px]">
+         <div className="w-1/2 mt-[-20px] bg-yellow-200">
           <p className="text-2xl text-white font-[Exan]">
             <span className="text-[var(--cyan)] text-[1rem]">
               <a
