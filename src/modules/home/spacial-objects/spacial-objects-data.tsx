@@ -9,6 +9,7 @@ export const spacialObjectsData = {
                 title: 'INTEGRATION AI MACHINE LEARNING',
                 isColumn: false,
                 fontSize: '60px',
+                fontSizeMobile: '40px',
                 description: `<p class="font-seismic-latin-variable-span" style="margin-bottom: 20px; width: 90%; color: white; font-size: 18px;">
                                 Alerta develops or integrates systems to make artificial intelligence 
                                 work for the requirements of your brand or business. 
@@ -26,6 +27,7 @@ export const spacialObjectsData = {
                 title: 'AR/VR SOLUTION',
                 isColumn: false,
                 fontSize: '60px',
+                fontSizeMobile: '40px',
                 description: `<p class="font-seismic-latin-variable-span" style="margin-bottom: 20px; width: 60%; color: white; font-size: 18px;">
                                 Alerta produces experiences that enhance the ability of your customer 
                                 to interact with your products or services.
@@ -44,6 +46,7 @@ export const spacialObjectsData = {
                 title: 'BLOCKCHAIN NFT',
                 isColumn: false,
                 fontSize: '60px',
+                fontSizeMobile: '40px',
                 description: `<p class="font-seismic-latin-variable-span" style="margin-bottom: 20px; width: 50%; color: white; font-size: 18px;">
                                 Add NFTs and cryptocurrency into your brand’s communication strategy with Alerta.
                               </p>
@@ -68,6 +71,7 @@ export const spacialObjectsData = {
                 title: 'UX / UI',
                 isColumn: true,
                 fontSize: '80px',
+                fontSizeMobile: '60px',
                 description: `<ul class="font-seismic-latin-variable-span" style="padding-left: 1.2rem; color: white; font-size: 18px; list-style: disc;">
                                 <li>Attractive and intuitive interface design</li>
                                 <li>Disruptive experience design</li>
@@ -79,6 +83,7 @@ export const spacialObjectsData = {
                 title: 'ASSETS',
                 isColumn: true,
                 fontSize: '80px',
+                fontSizeMobile: '60px',
                 description: `<ul class="font-seismic-latin-variable-span" style="padding-left: 1.2rem; color: white; font-size: 18px; list-style: disc;">
                                 <li>Attractive and intuitive interface design</li>
                                 <li>Disruptive experience design</li>
@@ -96,7 +101,8 @@ export const spacialObjectsData = {
                 image: 'https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/caf9c96b-5ae7-4445-e1ca-5f8b16d7d900/public',
                 title: 'WEB PRODUCT',
                 isColumn: false,
-                fontSize: '60px', 
+                fontSize: '60px',
+                fontSizeMobile: '50px',
                 description: `<ul class="font-seismic-latin-variable-span" style="padding-left: 1.2rem; width: 60%; color: white; font-size: 18px; list-style: disc;">
                                 <li>Tailor-made Websites (Wordpress or code)</li>
                                 <li>Landing pages</li>
@@ -115,6 +121,7 @@ export const spacialObjectsData = {
                 title: 'WEB DEVELOPMENT',
                 isColumn: false,
                 fontSize: '60px',
+                fontSizeMobile: '50px',
                 description: `<ul class="mb-auto font-seismic-latin-variable-span" style="padding-left: 1.2rem; width: 60%; color: white; font-size: 18px; list-style: disc;">
                                 <li>Customized APIs</li>
                                 <li>Real time data analysis</li>
@@ -130,6 +137,7 @@ export const spacialObjectsData = {
                 title: 'WEB TRANSLATION & LOCALIZATION',
                 isColumn: false,
                 fontSize: '60px',
+                fontSizeMobile: '50px',
                 description: `<ul class="font-seismic-latin-variable-span" style="padding-left: 1.2rem; width: 60%; color: white; font-size: 18px; list-style: disc;">
                                 <li>Fully automated website translation processes.</li>
                                 <li>Multilingual content management with real-time updates.</li>
@@ -149,6 +157,7 @@ export const spacialObjectsData = {
                 title: 'MOBILE & DESKTOP',
                 isColumn: false,
                 fontSize: '70px',
+                fontSizeMobile: '50px',
                 description: `<ul class="font-seismic-latin-variable-span" style="padding-left: 1.2rem; color: white; font-size: 18px; list-style: disc;">
                                 <li>Native apps for Android and IOS</li>
                                 <li>UX/UI App Design</li>
@@ -172,6 +181,7 @@ export const spacialObjectsData = {
                 title: 'GAMES',
                 isColumn: false,
                 fontSize: '70px',
+                fontSizeMobile: '50px',
                 description: `<ul class="font-seismic-latin-variable-span" style="padding-left: 1.2rem; color: white; font-size: 18px; list-style: disc;">
                                 <li>2D Game Development and design</li>
                                 <li>3D Game Development and design</li>
@@ -204,6 +214,7 @@ export const spacialObjectsData = {
                 title: 'WHITE LABEL SOLUTIONS',
                 isColumn: false,
                 fontSize: '60px',
+                fontSizeMobile: '40px',
                 description: `<p class="font-seismic-latin-variable-span" style="margin-bottom: 20px; width: 60%; color: white; font-size: 18px;">
                                 Expand your offerings without expanding your team.
                               </p>

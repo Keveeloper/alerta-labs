@@ -6,4 +6,5 @@ export interface imageUrlMobileInterface {
     cristal_mobile: string;
     home_background_mobile: string;
     shadow_mobile: string;
+    vialactea_mobile?: string;
 }

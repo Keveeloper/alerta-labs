@@ -7,6 +7,7 @@ import { useNavigate } from 'react-router';
 import { useState } from 'react';
 import { spacialItem } from '../../store/spacial-object-store/types/types';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
+import { getImageUrlMobile } from '../../shared/image-url/image-urls-mobile';
 
 const Services = () => {
 
@@ -15,8 +16,6 @@ const Services = () => {
     const [ showItemDetail, setShowItemDetail ] = useState<boolean>(false);
     const [ selectedItem, setSelectedItem ] = useState<spacialItem | null>(null);
     const [ activeIndex, setActiveIndex ] = useState<number>(0);
-
-    console.log(spacialObject.height);
     
     const goBack = () => {
         setSelectedItem(null);
@@ -34,10 +33,21 @@ const Services = () => {
 
     return (
         <div className="px-[var(--horizontal-padding)] w-full h-screen flex justify-center items-center">
+            <LazyLoadImage
+                wrapperClassName={`absolute service-main-image w-full h-full justify-center items-center mix-blend-screen
+                                   md:flex`}
+                className={`h-full w-full object-cover
+                            md:hidden`}
+                src={getImageUrlMobile('vialactea_mobile')}
+                alt="services main alerta labs image"
+                effect="blur"
+            />
             <div className="w-full h-[80%] flex justify-between items-center">
                 {/* <div className={`${!showItemDetail ? 'w-[30%]' : 'w-[35%]'} h-[95%]`}> */}
-                <div className={`w-[40%] h-[95%]`}>
-                    <div className="w-full h-[15%] flex justify-between items-center text-2xl font-['Space_Mono'] text-white">
+                <div className={`w-full h-[95%] z-1
+                                md:w-[40%]`}>
+                    <div className="hidden w-full h-[15%] justify-between items-center text-2xl font-['Space_Mono'] text-white
+                                    md:flex">
                         <div className="w-[80%] flex overflow-auto whitespace-nowrap hide-scrollbar cursor-e-resize">
                             <p className="shrink-0">{spacialObject.title}</p>
                             {/* {selectedItem && <p className="mx-5 shrink-0">// {selectedItem?.title}</p>} */}
@@ -49,7 +59,7 @@ const Services = () => {
                             {'<<'}
                         </button>
                     </div>
-                    <div className={`relative w-full h-[85%] border border-white rounded-2xl`}>
+                    <div className={`relative w-full h-[85%] border border-white rounded-2xl backdrop-blur-sm`}>
                         {showItemDetail ? 
                             <div className='relative p-5 w-full h-full  flex flex-col justify-around'>
                                 <h2 
@@ -70,7 +80,7 @@ const Services = () => {
                                     {'>'}
                                 </div>
                                 <Swiper
-                                    className='alerta-labs-swiper w-full h-full cursor-pointer'
+                                    className='alerta-labs-swiper w-full h-full cursor-pointer backdrop-blur-lg'
                                     navigation={{
                                         prevEl: '#swiper-prev',
                                         nextEl: '#swiper-next',
@@ -84,7 +94,10 @@ const Services = () => {
                                         setActiveIndex(swiper.activeIndex);
                                     }}
                                 >
-                                    {spacialObject.item.map((item, index) => (
+                                    {spacialObject.item.map((item, index) => {
+                                        console.log('item.fontSizeMobile: ', item.fontSizeMobile);
+                                        
+                                        return(
                                         <SwiperSlide 
                                             key={index}
                                             className='w-full h-full'
@@ -94,7 +107,7 @@ const Services = () => {
                                                 {/* <img className='h-[100%]' src={item.image} alt=""/> */}
                                                 <LazyLoadImage
                                                     wrapperClassName='service-main-image h-full justify-center items-center'
-                                                    className='h-[90%]'
+                                                    className='h-[90%] object-contain'
                                                     src={item.image}
                                                     alt="Services alerta labs item image"
                                                     effect="blur" // efecto visual mientras carga
@@ -103,20 +116,31 @@ const Services = () => {
                                             <hr className='mx-16 text-white'/>
                                             <div className='px-5 w-full h-[30%] flex justify-center items-center'>
                                                 <h2 
-                                                    className={`w-[80%] text-white leading-normal`}
+                                                    className={`hidden w-[80%] text-white leading-normal
+                                                               md:block`}
                                                     style={{fontFamily: 'Bebas Neue', fontSize: item.fontSize, lineHeight: 0.8}}
+                                                >
+                                                    {item.title}
+                                                </h2>
+                                                
+                                                
+                                                <h2 
+                                                    className={`w-[80%] text-white leading-normal
+                                                               md:hidden`}
+                                                    style={{fontFamily: 'Bebas Neue', fontSize: item.fontSizeMobile, lineHeight: 0.8}}
                                                 >
                                                     {item.title}
                                                 </h2>
                                             </div>
                                         </SwiperSlide>
-                                    ))}
+                                    )})}
                                 </Swiper>
                             </>
                         }
                     </div>
                 </div>
-                <div className="w-[60%] h-full flex justify-center items-center">
+                <div className="absolute h-1/2 flex justify-center items-center z-0
+                                md:relative md:w-[60%] md:h-full md:flex md:justify-center md:items-center">
                     {/* <img className='w-[70%]' src={spacialObject.object_image} alt=""/> */}
                     <div className={`w-full`} style={{height: spacialObject.height}}>
                         <LazyLoadImage

@@ -10,6 +10,7 @@ export const ImagesUrlsMobile: imageUrlMobileInterface = {
     cristal_mobile: 'cd1da9fe-1223-4ed3-d279-2769f6715800',
     home_background_mobile: '02651477-c0ce-45e1-963e-b354255a1400',
     shadow_mobile: '5ae0320a-83b8-4b6d-3a13-cacdc47cde00',
+    vialactea_mobile: '58620657-c880-4aa5-366f-278d0cf58f00',
 }
 
 export const getImageUrlMobile = (imageValue: ImageKey) => `${import.meta.env.VITE_CDN_BASE_URL}${ImagesUrlsMobile[imageValue]}/public`;

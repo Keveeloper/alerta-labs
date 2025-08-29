@@ -8,6 +8,7 @@ export interface spacialObject {
 export interface spacialItem {
     image: string;
     fontSize: string;
+    fontSizeMobile: string;
     title: string;
     isColumn: boolean;
     description: string;
