@@ -8,11 +8,16 @@ import { useState } from 'react';
 import { spacialItem } from '../../store/spacial-object-store/types/types';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { getImageUrlMobile } from '../../shared/image-url/image-urls-mobile';
+import { useIsMobile } from '../shared/hooks/useIsMobile';
+import { spacialObjectsData } from '../home/spacial-objects/spacial-objects-data';
 
 const Services = () => {
 
     const navigate = useNavigate();
-    const { spacialObject } = useSpacialObjectStore();
+    const { spacialObjectKey } = useSpacialObjectStore();
+    const isMobile = useIsMobile();
+    const spacialObject: any = spacialObjectsData(isMobile)[spacialObjectKey];
+    // const { spacialObject } = useSpacialObjectStore();
     const [ showItemDetail, setShowItemDetail ] = useState<boolean>(false);
     const [ selectedItem, setSelectedItem ] = useState<spacialItem | null>(null);
     const [ activeIndex, setActiveIndex ] = useState<number>(0);
@@ -59,17 +64,23 @@ const Services = () => {
                             {'<<'}
                         </button>
                     </div>
-                    <div className={`relative w-full h-[85%] border border-white rounded-2xl backdrop-blur-sm`}>
+                    <div className={`relative w-full h-[85%] border border-white rounded-2xl bg-black/30 overflow-hidden`}>
                         {showItemDetail ? 
-                            <div className='relative p-5 w-full h-full  flex flex-col justify-around'>
+                            <div className='relative p-5 w-full h-full  flex flex-col justify-around backdrop-blur-sm'>
                                 <h2 
-                                    className='w-[80%] text-white text-6xl z-1'
+                                    className='mb-15 w-[80%] text-white text-5xl z-1
+                                               md:mb-5 md:text-6xl'
                                     style={{fontFamily: 'Bebas Neue'}}
                                 >
                                     {selectedItem?.title}
                                 </h2>
                                 <div className='custom-scrollbar mb-auto overflow-y-scroll z-1' dangerouslySetInnerHTML={{ __html: selectedItem?.description ?? '' }} />
-                                <img width={300} className={`${selectedItem?.isColumn ? 'relative m-auto' : 'absolute'} bottom-0 right-0 z-[-1]`} src={selectedItem?.image} alt="" />
+                                <img 
+                                    className={`w-[120px] ${selectedItem?.isColumn ? 'relative m-auto' : 'absolute'} top-5 right-0 z-[-1]
+                                                md:bottom-0 md:right-0 md:top-auto`}
+                                    src={selectedItem?.image} 
+                                    alt="" 
+                                />
                             </div>
                         :
                             <>
@@ -80,7 +91,7 @@ const Services = () => {
                                     {'>'}
                                 </div>
                                 <Swiper
-                                    className='alerta-labs-swiper w-full h-full cursor-pointer backdrop-blur-lg'
+                                    className='alerta-labs-swiper w-full h-full cursor-pointer backdrop-blur-sm'
                                     navigation={{
                                         prevEl: '#swiper-prev',
                                         nextEl: '#swiper-next',

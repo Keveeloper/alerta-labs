@@ -15,6 +15,8 @@ export interface spacialItem {
 }
 
 export interface SpacialObjectsInterface {
-  spacialObject: spacialObject;
-  setSpacialObject: (item: spacialObject) => void;
+  // spacialObject: spacialObject;
+  // setSpacialObject: (item: spacialObject) => void;
+  spacialObjectKey: string;
+  setSpacialObjectKey: (key: string) => void;
 }
