@@ -4,16 +4,19 @@ import 'swiper/css/navigation';
 import { Navigation } from 'swiper/modules';
 import useSpacialObjectStore from '../../store/spacial-object-store/SpacialObjectsStore';
 import { useNavigate } from 'react-router';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { spacialItem } from '../../store/spacial-object-store/types/types';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { getImageUrlMobile } from '../../shared/image-url/image-urls-mobile';
 import { useIsMobile } from '../shared/hooks/useIsMobile';
 import { spacialObjectsData } from '../home/spacial-objects/spacial-objects-data';
+import ServiceInfo from '../home/components/service-info/ServiceInfo';
+import useSpacialStore from '../../store/SpacialStore';
 
 const Services = () => {
 
     const navigate = useNavigate();
+    const { homeTitle, textHoovered } = useSpacialStore();
     const { spacialObjectKey } = useSpacialObjectStore();
     const isMobile = useIsMobile();
     const spacialObject: any = spacialObjectsData(isMobile)[spacialObjectKey];
@@ -30,6 +33,25 @@ const Services = () => {
             navigate('/');
         }
     }
+
+    useEffect(() => {
+        setSelectedItem(null);
+        setShowItemDetail(false);
+    }, [spacialObjectKey]);
+
+    useEffect(() => {
+        const handleKeyDown = (event: KeyboardEvent) => {
+            if (event.key === 'Escape') {
+                goBack();
+            }
+        };
+
+        window.addEventListener('keydown', handleKeyDown);
+
+        return () => {
+            window.removeEventListener('keydown', handleKeyDown);
+        };
+    }, [showItemDetail]);
 
     const gotToItemDetail = (item: spacialItem) => {
         setShowItemDetail(true);
@@ -77,9 +99,10 @@ const Services = () => {
                                 <div className='custom-scrollbar mb-auto overflow-y-scroll z-1' dangerouslySetInnerHTML={{ __html: selectedItem?.description ?? '' }} />
                                 <img 
                                     className={`w-[120px] ${selectedItem?.isColumn ? 'relative m-auto' : 'absolute'} top-5 right-0 z-[-1]
-                                                md:bottom-0 md:right-0 md:top-auto`}
+                                                md:w-md:bottom-0 md:right-0 md:top-auto`}
                                     src={selectedItem?.image} 
-                                    alt="" 
+                                    alt=""
+                                    onClick={() => goBack()}
                                 />
                             </div>
                         :
@@ -105,7 +128,7 @@ const Services = () => {
                                         setActiveIndex(swiper.activeIndex);
                                     }}
                                 >
-                                    {spacialObject.item.map((item, index) => {
+                                    {spacialObject.item.map((item: spacialItem, index: number) => {
                                         console.log('item.fontSizeMobile: ', item.fontSizeMobile);
                                         
                                         return(
@@ -149,6 +172,8 @@ const Services = () => {
                             </>
                         }
                     </div>
+                    <ServiceInfo homeTitle={homeTitle} textHoovered={textHoovered}/>
+                {/* </div> */}
                 </div>
                 <div className="absolute h-1/2 flex justify-center items-center z-0
                                 md:relative md:w-[60%] md:h-full md:flex md:justify-center md:items-center">

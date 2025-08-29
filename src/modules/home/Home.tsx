@@ -14,6 +14,8 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { getImageUrlMobile } from "../../shared/image-url/image-urls-mobile";
 import { useCustomNavigation } from "../shared/hooks/services-hooks/useServicesNavigation";
+import ServiceInfo from "./components/service-info/ServiceInfo";
+import { useIsMobile } from "../shared/hooks/useIsMobile";
 
 const homeTilteInitialValue = 'EXPLORE THE UNIVERSE';
 const servicesItems = [
@@ -64,8 +66,10 @@ const servicesItems = [
 
 const Home = () => {
 
-    const { setSpacialObject } = useSpacialObjectStore();
-    const { textHoovered, setTextHovered } = useSpacialStore();
+    const { setSpacialObjectKey } = useSpacialObjectStore();
+    // const isMobile = useIsMobile();
+    // const spacialObject: any = spacialObjectsData(isMobile)[spacialObjectKey];
+    const { textHoovered, setTextHovered, homeTitle, setHomeTitle } = useSpacialStore();
     const handleNavigation = useCustomNavigation();
     const navigate = useNavigate();
     const [ stationHighlighted, setStationHighlighted ] = useState<string>(ImagesUrls['station']);
@@ -74,7 +78,7 @@ const Home = () => {
     const [ satelliteHighlighted, setSatelliteHighlighted ] = useState<string>(ImagesUrls['satellite']);
     const [ asteroidHighlighted, setAsteroidHighlighted ] = useState<string>(ImagesUrls['asteroid']);
     const [ astronauthighlighted, setAstronautHighlighted ] = useState<string>(ImagesUrls['astronaut']);
-    const [ homeTitle, setHomeTitle ] = useState<string>(homeTilteInitialValue);
+    // const [ homeTitle, setHomeTitle ] = useState<string>(homeTilteInitialValue);
     const timeoutRef = useRef<number | null>(null);
     
     const handleHover = (text: string) => {
@@ -137,23 +141,28 @@ const Home = () => {
     const handleClick = (text: string) => {
         switch (text) {
             case '[codecrumb] NEW tech, new tricks_':
-                setSpacialObject(spacialObjectsData.station);
+                // setSpacialObject(spacialObjectsData.station);
+                setSpacialObjectKey('station');
                 navigate('/services');
                 break;
             case '[FUTUREBIT] EXPERIMENTAL TECH, YET ESSENTIAL_':
-                setSpacialObject(spacialObjectsData.cristal);
+                // setSpacialObject(spacialObjectsData.cristal);
+                setSpacialObjectKey('cristal');
                 navigate('/services');
                 break;
             case '[UXXPlOSION] COSMIC CLARITY IN PIXELS_':
-                setSpacialObject(spacialObjectsData.nebula);
+                // setSpacialObject(spacialObjectsData.nebula);
+                setSpacialObjectKey('nebula');
                 navigate('/services');
                 break;
             case '[UPDATE BASE] App-building in zero-G_':
-                setSpacialObject(spacialObjectsData.satellite);
+                // setSpacialObject(spacialObjectsData.satellite);
+                setSpacialObjectKey('satellite');
                 navigate('/services');
                 break;
             case '[BRAND BOULDER] BUILT TO CARRY IDENTITIES_':
-                setSpacialObject(spacialObjectsData.asteroide);
+                // setSpacialObject(spacialObjectsData.asteroide);
+                setSpacialObjectKey('asteroide');
                 navigate('/services');
                 break;
             case '[ALERTA LINK] MISSION CONTROL_':
@@ -234,13 +243,8 @@ const Home = () => {
                         </SwiperSlide>
                     ))}
                 </Swiper>
-                <div className="py-5 w-full h-[20%] bg-gradient-to-b flex flex-col justify-center items-center from-transparent via-black to-black">
-                    <h1 className="text-white text-center text-2xl font-[Space_Mono] font-bold z-2">{homeTitle}</h1>
-                    <p className="w-[80%] text-base text-white text-center font-[Exan]">
-                        <span className="text-[var(--cyan)]">{textHoovered.split(']')[0]}{']'}</span>
-                        {textHoovered.split(']')[1]}
-                    </p>
-                </div>
+                <ServiceInfo homeTitle={homeTitle} textHoovered={textHoovered} />
+
             </div>
             <div className="hidden">
                 <LazyLoadImage
