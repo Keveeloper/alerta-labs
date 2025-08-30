@@ -41,8 +41,8 @@ const Portfolio = () => {
             className='w-full h-full justify-start items-center'
             style={{display: 'flex'}}
           >
-            <div className='absolute w-[70%] top-25 left-16
-                            xl:w-auto xl:left-20'>
+            <div className='absolute w-[70%] top-25 left-[var(--horizontal-padding)]
+                            xl:w-auto'>
               <h1 
                 className='text-4xl leading-[0.8]
                            lg:text-4xl lg:leading-[0.5]

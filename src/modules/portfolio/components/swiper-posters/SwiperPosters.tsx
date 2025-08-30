@@ -13,6 +13,7 @@ import 'swiper/css/parallax';
 // Estilos personalizados de la librería que compraste
 import './posters-slider.scss';
 import './main.scss';
+import { useIsMobile } from '../../../shared/hooks/useIsMobile';
 
 const portfolioJobs = [
     {
@@ -73,6 +74,7 @@ const portfolioJobs = [
 const SwiperPosters = () => {
   const [swiperInstance, setSwiperInstance] = useState<any>(null);
   const swiperElRef = useRef<any>(null);
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     if (!swiperInstance || !swiperElRef.current) return;
@@ -128,7 +130,7 @@ const SwiperPosters = () => {
           },
         }}
         initialSlide={portfolioJobs.length - 1}
-        style={{marginRight: '12%'}}
+        style={{marginRight: isMobile ? 'auto' : '12%', marginLeft: isMobile ? '5%' : 'auto'}}
       >
         {portfolioJobs.map((img) => (
             <SwiperSlide 

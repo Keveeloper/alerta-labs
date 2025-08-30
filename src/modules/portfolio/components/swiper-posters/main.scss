@@ -24,7 +24,7 @@ body {
 // Custom sizes for demo
 .posters-slider {
   @media (orientation: portrait) {
-    --posters-slider-width: 68vw;
+    --posters-slider-width: 80vw;
     --posters-slider-height: calc(68vw * 1.48);
   }
   @media (orientation: landscape) {
