@@ -103,6 +103,7 @@ const team = [
 ];
 
 const SwiperCards = () => {
+  
     return(
         <Swiper
             modules={[Pagination, EffectCardsStack]}
@@ -124,8 +125,9 @@ const SwiperCards = () => {
                     <img src={member.memberPhoto} alt="" />
                 </div>
                 
-                <div 
-                    className='absolute pl-7 w-[190%] h-[calc(100%_+_2px)] top-[-1px] right-[-186%] flex flex-col justify-center rounded-r-[16px] border-t border-r border-b border-white bg-black z-2 opacity-0 invisible transition-all duration-300 group-[.swiper-slide-active]:opacity-100 group-[.swiper-slide-active]:visible'
+                <div
+                    className='hidden absolute pl-7 w-[190%] h-[calc(100%_+_2px)] top-[-1px] right-[-186%] flex-col justify-center rounded-r-[16px] border-t border-r border-b border-white bg-black z-2 opacity-0 invisible transition-all duration-300 group-[.swiper-slide-active]:opacity-100 group-[.swiper-slide-active]:visible
+                               md:flex'
                 >
                     <h2 className='text-4xl font-semibold text-white font-[Space_Mono]'>{member.name.toUpperCase()}</h2>
                     <p className='mb-3 text-xl font-semibold text-white font-[Space_mono]'>{member.title.toUpperCase()}</p>

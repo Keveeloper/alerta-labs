@@ -16,8 +16,10 @@ import Contact from '../contact/Contact.js';
 import SwiperController from './components/swiper-controller/SwiperController.js';
 import SwiperCards from './components/swiper-cards/SwiperCards.js';
 import SwiperPosters from './components/swiper-posters/SwiperPosters.js';
+import useSpacialStore from '../../store/SpacialStore.js';
 
 const Portfolio = () => {
+  const { textHoovered } = useSpacialStore();
   const pagination = {
     clickable: true,
     renderBullet: function (index: number, className: string) {
@@ -66,6 +68,30 @@ const Portfolio = () => {
               >{'Scroll DOWN to see mission control'.toUpperCase()}</p>
             </div>
             <SwiperPosters/>
+            <div className='absolute w-[90%] flex flex-col items-center bottom-25 left-[var(--horizontal-padding)]
+                            md:absolute md:block md:w-[70%] xl:w-auto'>
+              <p 
+                className='mb-2 font-[Space_Mono] leading-[1] 
+                           xl:text-[1.32vw] xl:leading-[1.5]
+                           2xl:text-2xl'
+              >
+                {'explore our'.toUpperCase()}
+              </p>
+              <h2
+                className='text-4xl leading-[0.8]
+                           lg:text-4xl lg:leading-[0.5]
+                           xl:text-5xl
+                           2xl:text-6xl'
+                style={{ fontFamily: "Bebas Neue" }}
+              >
+                {'completed expeditions'.toUpperCase()}
+              </h2>
+              <p className="w-[100%] text-base text-white text-center font-[Exan]
+                            md:hidden">
+                  <span className="text-[var(--cyan)]">{textHoovered.split(']')[0]}{']'}</span>
+                  {textHoovered.split(']')[1]}
+              </p>
+            </div>
           </SwiperSlide>
           <SwiperSlide
             className='w-full h-full pl-[20%] justify-start items-center

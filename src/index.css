@@ -272,15 +272,14 @@ font-display:auto;font-style:normal;font-weight:100;font-stretch:normal;
   background-color: #fff;
   border-radius: 50%;
 }
-
-.swiper-proven .swiper-pagination {
+.swiper-portfolio .swiper-proven .swiper-pagination {
   position: absolute;
   margin: 0;
-  bottom: -20%;
   display: flex;
   justify-content: space-around;
 }
-.swiper-proven .swiper-pagination .swiper-pagination-bullet {
+.swiper-portfolio .swiper-proven .swiper-pagination .swiper-pagination-bullet {
+  margin-bottom: 0;
   margin: 0 !important;
   width: 15%;
   height: 10px;
