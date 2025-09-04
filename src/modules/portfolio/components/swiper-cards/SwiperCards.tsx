@@ -110,8 +110,9 @@ const SwiperCards = () => {
             effect="cards-stack"
             loop={true}
             direction='vertical'
-            className="swiper-cards-component w-[30%] h-[50%] flex justify-center items-center"
-            style={{ margin: 0, padding: '40px 0px', zIndex: 1000 }}
+            className="swiper-cards-component w-[77%] h-[40%] flex justify-center items-center
+                       md:w-[30%] md:h-[50%]"
+            style={{ margin: 0, padding: '40px 0px', zIndex: 1000}}
         >
             {team.map((member) => (
             <SwiperSlide 

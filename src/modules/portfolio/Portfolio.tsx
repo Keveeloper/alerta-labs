@@ -94,24 +94,30 @@ const Portfolio = () => {
             </div>
           </SwiperSlide>
           <SwiperSlide
-            className='w-full h-full pl-[20%] justify-start items-center
-                       2xl:pl-[30%]'
+            className='w-full items-center flex-col-reverse justify-end
+                       2xl:pl-[30%]
+                       md:h-full md:pl-[20%] md:flex-row md:justify-start'
             style={{display: 'flex'}}
           >  
             <LazyLoadImage
                 wrapperClassName='service-main-image absolute left-[-5%] h-[80%] justify-center items-center
                                   2xl:h-[90%] 2xl:left-20'
-                className='h-[100%]'
+                className='hidden h-[100%]
+                           md:block'
                 src="https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/49e4319a-a37a-4389-2a55-1b76167be000/public"
                 alt="Astronaut portfolio item image"
                 effect="blur" // efecto visual mientras carga
             />
             <SwiperCards/>
-            <div className='absolute top-[12%] right-[16%]'>
+            <div className='block mt-[25%] mb-[20%] w-[80%] h-auto top-[12%]
+                            md:absolute md:mt-0 md:w-auto md:right-[16%] md:left-auto md:-translate-x-0'>
                             {/* 2xl:right-[18%]'> */}
-              <h1 className='text-6xl text-white font-[Space_Mono] font-bold'>{'Meet the Crew'.toUpperCase()}</h1>
-              <p className='text-2xl text-white font-[Space_Mono]'>{'Meet the specialists behind'.toUpperCase()}</p>
-              <p className='text-2xl text-white font-[Space_Mono]'>{'your next big launch'.toUpperCase()}</p>
+              <h1 className='text-3xl text-white font-[Space_Mono] font-bold
+                             md:text-6xl'>{'Meet the Crew'.toUpperCase()}</h1>
+              <p className='text-base text-white font-[Space_Mono]
+                            md:text-2xl'>{'Meet the specialists behind'.toUpperCase()}</p>
+              <p className='text-base text-white font-[Space_Mono]
+                            md:text-2xl'>{'your next big launch'.toUpperCase()}</p>
             </div>
           </SwiperSlide>     
           <SwiperSlide 
