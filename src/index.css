@@ -219,6 +219,12 @@ font-display:auto;font-style:normal;font-weight:100;font-stretch:normal;
     font-style: normal;
     font-variation-settings: "SEIS" 0, "wght" 600;
   }
+  .font-seismic-latin-variable-span-portfolio-mobile{
+    font-size: 16px;
+    font-family: seismic-latin-variable, sans-serif;
+    font-style: normal;
+    font-variation-settings: "SEIS" 0, "wght" 600;
+  }
 
 @keyframes fly {
   0%,

@@ -125,37 +125,56 @@ const Portfolio = () => {
             style={{display: 'flex'}}
           >
             <LazyLoadImage
-                wrapperClassName='h-full justify-center items-center'
-                className='h-full'
+                wrapperClassName='absolute h-1/3 top-[12.5%] justify-center items-center
+                                  md:h-full md:top-0'
+                className='h-[10%]
+                           md:h-full'
                 src="https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/a8f65844-2732-433f-1b11-e36798d4e800/public"
                 alt="Services alerta labs item image"
                 effect="blur" // efecto visual mientras carga
             />
             <div 
-              className='absolute w-[65%] h-[40%] top-[37.3%] rounded-[var(--border-radius-20)] border flex flex-col justify-center items-center border-white bg-black'
+              className='absolute p-5 w-[75%] h-auto top-[25.3%] rounded-[var(--border-radius-20)] border flex flex-col justify-center items-center border-white bg-black
+                         md:p-0 md:w-[65%] md:h-[40%] md:top-[37.3%]'
             >
               <h2 
                 style={{ fontFamily: 'Bebas Neue' }}
-                className='mb-9 text-white text-8xl font-semibold'
+                className='mb-2 text-white text-4xl font-semibold
+                           md:mb-9 md:text-8xl'
               >{'WHY choose us'.toUpperCase()}</h2>
-              <div className='w-[90%] flex justify-around items-center'>
-                <div className='h-[150px] flex flex-col justify-between items-center'>
-                  <h3 className='mb-5 text-white text-2xl font-[Space_Mono] text-center'>EXPERT TEAM</h3>
-                  <p className='m-auto w-[90%] font-seismic-latin-variable-span-portfolio text-white text-center'>“Skilled in the latest technology and innovative design.”</p>
+              <div className='w-[90%] flex flex-col justify-around items-center
+                              md:flex-row'>
+                <div className='h-auto flex flex-col justify-between items-start
+                                md:h-[150px] md:items-center'>
+                  <h3 className='mb-2 text-white text-xl font-[Space_Mono] font-semibold text-left
+                                 md:mb-5 md:text-center md:text-2xl'>EXPERT TEAM</h3>
+                  <p className='m-0 w-[90%] font-seismic-latin-variable-span-portfolio text-white text-left
+                                md:m-auto md:text-center'>“Skilled in the latest technology and innovative design.”</p>
                 </div>
-                <div className='h-[150px] flex flex-col justify-between items-center'>
-                  <h3 className='mb-5 text-white text-2xl font-[Space_Mono] text-center'>CLIENT-FOCUSED</h3>
-                  <p className='m-auto w-[90%] font-seismic-latin-variable-span-portfolio text-white text-center'>“We collaborate to deliver results that matter.”</p>
+                <div className='mt-2 h-auto flex flex-col justify-between items-start
+                                md:mt-0 md:h-[150px] md:items-center'>
+                  <h3 className='mb-2 text-white text-xl font-[Space_Mono] font-semibold text-left
+                                 md:mb-5 md:text-center md:text-2xl'>CLIENT-FOCUSED</h3>
+                  {/* <h3 className='mb-5 text-white text-2xl font-[Space_Mono] text-center'>CLIENT-FOCUSED</h3> */}
+                  <p className='m-0 w-[90%] font-seismic-latin-variable-span-portfolio text-white text-left
+                                md:m-auto md:text-center'>"We collaborate to deliver results that matter.”</p>
+                  {/* <p className='m-auto w-[90%] font-seismic-latin-variable-span-portfolio text-white text-center'>“We collaborate to deliver results that matter.”</p> */}
                 </div>
-                <div className='h-[150px] flex flex-col justify-between items-center'>
-                  <h3 className='mb-5 text-white text-2xl font-[Space_Mono] text-center'>SCALABLE SOLUTIONS</h3>
-                  <p className='m-auto w-[90%] font-seismic-latin-variable-span-portfolio text-white text-center'>“Future-proof designs that grow with your business.”</p>
+                <div className='mt-2 h-auto flex flex-col justify-between items-start
+                                md:mt-0 md:h-[150px] md:items-center'>
+                  <h3 className='mb-2 text-white text-xl font-[Space_Mono] font-semibold text-left
+                                 md:mb-5 md:text-center md:text-2xl'>SCALABLE SOLUTIONS</h3>
+                  {/* <h3 className='mb-5 text-white text-2xl font-[Space_Mono] text-center'>SCALABLE SOLUTIONS</h3> */}
+                  <p className='m-0 w-[90%] font-seismic-latin-variable-span-portfolio text-white text-left
+                                md:m-auto md:text-center'>“Future-proof designs that grow with your business.”</p>
+                  {/* <p className='m-auto w-[90%] font-seismic-latin-variable-span-portfolio text-white text-center'>“Future-proof designs that grow with your business.”</p> */}
                 </div>
               </div>
             </div>
             <LazyLoadImage
-                wrapperClassName='service-main-image absolute top-[25%] h-[20%] justify-center items-center'
-                className='h-full'
+                wrapperClassName='service-main-image absolute w-[70%] top-[22.5%] h-auto justify-center items-center 
+                                  md:w-auto md:h-[20%] md:top-[25%]'
+                className='w-full h-full object-contain'
                 src="https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/ad1a7e41-f265-4f24-a360-b13af2bed200/public"
                 alt="Services alerta labs item image"
                 effect="blur" // efecto visual mientras carga
