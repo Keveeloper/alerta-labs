@@ -214,12 +214,6 @@ font-display:auto;font-style:normal;font-weight:100;font-stretch:normal;
     font-variation-settings: "SEIS" 0, "wght" 600;
   }
   .font-seismic-latin-variable-span-portfolio{
-    font-size: 20px;
-    font-family: seismic-latin-variable, sans-serif;
-    font-style: normal;
-    font-variation-settings: "SEIS" 0, "wght" 600;
-  }
-  .font-seismic-latin-variable-span-portfolio-mobile{
     font-size: 16px;
     font-family: seismic-latin-variable, sans-serif;
     font-style: normal;
@@ -326,5 +320,14 @@ font-display:auto;font-style:normal;font-weight:100;font-stretch:normal;
     align-items: center;
     border: 2px solid #fff;
     background-color: transparent;
+  }
+  .font-seismic-latin-variable-span-portfolio{
+    font-size: 50px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .font-seismic-latin-variable-span-portfolio{
+    font-size: 20px;
   }
 }

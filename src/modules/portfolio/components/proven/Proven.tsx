@@ -37,18 +37,28 @@ const cards = [
 
 const Proven = () => {
   return (
-    <div className='absolute left-[3%] w-[80%] h-2/3 flex gap-5'>
-        <div className='w-[45%] h-full'>
-            <div>
+    <div className='m-auto w-[90%] h-[80%] left-auto flex flex-col items-start gap-5
+    md:m-0 md:w-[80%] md:h-2/3 md:flex-row md:left-[3%]'>
+        <div className='w-full h-auto
+        md:w-[45%] md:h-full'>
+            <div className='hidden md:block'>
                 <h2 style={{ fontFamily: "Bebas Neue" }} className='text-white text-8xl text-end'>our proven</h2>
                 <h2 style={{ fontFamily: "Bebas Neue" }} className='text-white text-8xl text-end'>development</h2>
                 <h2 style={{ fontFamily: "Bebas Neue" }} className='text-white text-8xl text-end'>process</h2>
             </div>
-            <div>
+            {/* mobile */}
+            <div className='block md:hidden'>
+                <h2 style={{ fontFamily: "Bebas Neue" }} className='text-white text-2xl text-start'>our proven development process</h2>
+            </div>
+            <div className='hidden md:block'>
                 <p className='font-seismic-latin-variable-span-portfolio text-white text-end'>Our transparent, collaborative</p>
                 <p className='font-seismic-latin-variable-span-portfolio text-white text-end'>process keeps you involved</p>
                 <p className='font-seismic-latin-variable-span-portfolio text-white text-end'>at every stage, from</p>
                 <p className='font-seismic-latin-variable-span-portfolio text-white text-end'>concept to launch.</p>
+            </div>
+            {/* mobile */}
+            <div className='block md:hidden'>
+                <p className='font-seismic-latin-variable-span-portfolio text-white text-start'>Our transparent, collaborative process keeps you involved at every stage, from concept to launch.</p>
             </div>
         </div>
         <Swiper
@@ -56,10 +66,16 @@ const Proven = () => {
             direction='horizontal'
             pagination={{ clickable: true }}
             modules={[Pagination]}
-            className="swiper-proven w-[55%] h-full"
+            className="swiper-proven w-[93%] h-full
+            md:w-[55%]"
+            style={{ margin: 0 }}
         >
             {cards.map((card) => (
-                <SwiperSlide className='p-9 w-full flex justify-center items-center border-white border-2 rounded-[var(--border-radius-20)] overflow-hidden' style={{height: '90%'}}>
+                <SwiperSlide 
+                  className='p-3 w-full flex justify-center items-center border-white border-2 rounded-[var(--border-radius-20)] overflow-hidden
+                             md:p-9' 
+                  style={{height: '90%'}}
+                >
                     <div className='mb-5 w-full h-[70%]'>
                         <LazyLoadImage
                             wrapperClassName='w-full h-full justify-center items-center'
@@ -70,7 +86,8 @@ const Proven = () => {
                         />
                     </div>
                     <div className='h-[30%] overflow-y-scroll custom-scrollbar'>
-                      <h3 className='mb-5 text-3xl text-white font-[Exan]'>{card.title.toUpperCase()}</h3>
+                      <h3 className='mb-1 text-base text-white font-[Exan] font-semibold
+                                     md:mb-5 md:text-3xl'>{card.title.toUpperCase()}</h3>
                       <p className='font-seismic-latin-variable-span-portfolio text-white'>{card.description}</p>
                     </div>
                 </SwiperSlide>
