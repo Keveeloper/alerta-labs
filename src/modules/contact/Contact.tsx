@@ -3,8 +3,13 @@ import Navbar from "../navbar/Navbar";
 import SocialMediaComponent from "./components/SocialMedia.Component";
 import CanvasComponent from "../shared/components/CanvasComponent";
 import { useLocation } from "react-router";
+import { useIsMobile } from "../shared/hooks/useIsMobile";
+import { getImageUrlMobile } from "../../shared/image-url/image-urls-mobile";
+import { getImageUrl } from "../../shared/image-url/image-urls";
 
 const Contact = () => {
+
+  const isMobile = useIsMobile();
   const location = useLocation();
   const [isContact, setIsContact] = useState(false);
   const [formData, setFormData] = useState({
@@ -33,7 +38,7 @@ const Contact = () => {
       <CanvasComponent/>
       {location.pathname === '/contact' && <Navbar /> }
       <img
-        src="https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/67101712-efc2-4dcf-3bea-0fbafde64f00/public"
+        src={`${isMobile ? getImageUrlMobile('home_background_mobile') : getImageUrl('homeBackground')}`}
         alt="solar system background"
         className="absolute w-full h-full left-1/2 -translate-x-1/2 object-cover mix-blend-screen"
       />
@@ -43,25 +48,34 @@ const Contact = () => {
           <img
             src="https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/51238595-4148-4d5a-b450-51e838ec2500/public"
             alt="astronaut alerta labs"
-            style={{width: '50%'}}
+            style={{width: isMobile ? '100%' : '50%', height: isMobile ? '80%' : 'auto'}}
             className="absolute h-[90%] bottom-[-5%] left-1/2 -translate-x-1/2"
           />
-          <div className="absolute bottom-[20%] left-1/2 transform -translate-x-1/2">
+          <div className="absolute w-[60%] bottom-[20%] left-1/2 transform -translate-x-1/2
+                          md:w-auto">
             <button
               onClick={() => handleContactClick()}
-              className="px-5 py-2 w-[390px] h-15 text-white text-3xl hover:text-black hover:bg-white rounded-2xl border border-white bg-black cursor-pointer font-[Exan]"
+              className="px-5 py-2 w-full h-15 text-white text-xl hover:text-black hover:bg-white rounded-2xl border border-white bg-black cursor-pointer font-[Exan]
+                         md:w-[390px] md:text-3xl"
             >
               INITIATE CONTACT
             </button>
           </div>
-          <div className="absolute px-[var(--horizontal-padding)] py-7 w-full bottom-0 flex justify-between">
-            <div>
-              <h2 className="text-white font-[Exan] text-3xl"><span className="text-[var(--cyan)]">[ASTRONAUT]</span> LOST IN THOUGHT</h2>
-              <p className="text-white font-[Exan] text-xl">A UNIVERSAL FORCE FOR GROUNDBREAKING IDEAS_</p>
+          <div className="absolute px-0 py-0 w-full bottom-0 flex flex-col justify-between
+                          md:flex-row md:px-[var(--horizontal-padding)] md:py-7">
+            <div className="w-full h-1/2 bg-gradient-to-b from-transparent to-black
+                            md:to-transparent">
+              <h2 className="text-white font-[Exan] text-base text-center
+                             md:text-3xl md:text-start"><span className="text-[var(--cyan)]">[ASTRONAUT] </span><span className="text-red-500">LOST IN THOUGHT</span></h2>
+              <p className="text-white font-[Exan] text-base text-center
+                            md:text-xl md:text-start">A UNIVERSAL FORCE FOR GROUNDBREAKING IDEAS_</p>
             </div>
-            <div>
-              <h2 className="text-white font-[Exan] text-3xl">{'HELLO@alertacreAtive.com_'.toUpperCase()}</h2>
-              <p className="text-white font-[Exan] text-xl">{'©2025 Alerta Partnership llc'.toUpperCase()}</p>
+            <div className="w-full h-1/2 bg-black
+                            md:bg-transparent">
+              <h2 className="text-white font-[Exan] text-base font-semibold text-center
+                             md:text-3xl md:text-end">{'HELLO@alertacreAtive.com_'.toUpperCase()}</h2>
+              <p className="text-white font-[Exan] text-base text-center
+                            md:text-xl md:text-end">{'©2025 Alerta Partnership llc'.toUpperCase()}</p>
             </div>
           </div>
         </>
@@ -124,7 +138,7 @@ const Contact = () => {
                 <textarea
                   name="description"
                   placeholder="Add a note. Talk to us about your next project.
-We’ll bring it to life with precision and creativity"
+                               We’ll bring it to life with precision and creativity"
                   value={formData.description}
                   onChange={handleChange}
                   className="w-full px-4 py-2 rounded-tl-[16px] rounded-tr-[16px] rounded-bl-[16px] rounded-br-[0px] border border-white bg-transparent text-white focus:outline-none focus:ring focus:ring-white/30"
