@@ -205,7 +205,6 @@ const Home = () => {
         }
     }
 
-    console.log(getImageUrl('homeBackground'));
     return (
         
         <main className="relative w-full h-lvh">
@@ -218,14 +217,14 @@ const Home = () => {
             />
             <div className="absolute w-full h-[calc(100lvh-160px)] top-1/2 -translate-y-1/2 flex flex-col justify-center items-center">
                 <div className="h-[10%] w-full bg-gradient-to-t from-transparent to-black">
-                    <h2 className="m-auto w-[80%] font-semibold text-lg text-center text-white font-[Space_Mono]">{'Swipe to explore the UNIVERSE'.toUpperCase()}</h2>
+                    <h2 className="m-auto w-[80%] font-semibold text-base text-center text-white font-[Space_Mono]">{'Swipe to explore the UNIVERSE'.toUpperCase()}</h2>
                 </div>
                 <Swiper
                     loop
                     direction={'horizontal'}
                     pagination={{ clickable: true }}
                     // modules={[Pagination]}
-                    className="w-full h-[70%]"
+                    className="w-full h-full"
                     onSlideChange={(swiper) => {
                         handleSlideChange(swiper.realIndex);
                     }}
@@ -309,7 +308,7 @@ const Home = () => {
                 />
             </div>
             <img 
-                className="absolute w-full h-full z-1 pointer-events-none opacity-80
+                className="absolute w-full h-full z-1 pointer-events-none opacity-80 object-fit
                            sm:opacity-100"
                 src="https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/d2a95ff8-65a1-439b-cc90-ded1b8d0aa00/public" 
                 alt="vignette" 
