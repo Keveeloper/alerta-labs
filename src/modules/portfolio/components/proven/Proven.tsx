@@ -76,16 +76,18 @@ const Proven = () => {
                              md:p-9' 
                   style={{height: '90%'}}
                 >
-                    <div className='mb-5 w-full h-[70%]'>
+                    <div className='mb-3 w-full h-[60%]
+                                    md:mb-5 md:h-[70%]'>
                         <LazyLoadImage
-                            wrapperClassName='w-full h-full justify-center items-center'
+                            wrapperClassName='w-full h-full justify-center items-center rounded-xl'
                             className='h-full'
                             src={card.image}
                             alt="Services alerta labs item image"
                             effect="blur"
                         />
                     </div>
-                    <div className='h-[30%] overflow-y-scroll custom-scrollbar'>
+                    <div className='h-[40%] overflow-y-scroll custom-scrollbar
+                                    md:h-[30%]'>
                       <h3 className='mb-1 text-base text-white font-[Exan] font-semibold
                                      md:mb-5 md:text-3xl'>{card.title.toUpperCase()}</h3>
                       <p className='font-seismic-latin-variable-span-portfolio text-white'>{card.description}</p>

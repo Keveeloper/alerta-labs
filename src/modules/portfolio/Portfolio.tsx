@@ -46,7 +46,7 @@ const Portfolio = () => {
             <div className='absolute w-[70%] top-25 left-[var(--horizontal-padding)]
                             xl:w-auto'>
               <h1 
-                className='text-4xl leading-[0.8]
+                className='text-2xl leading-[0.8]
                            lg:text-4xl lg:leading-[0.5]
                            xl:text-5xl
                            2xl:text-6xl'
@@ -71,14 +71,14 @@ const Portfolio = () => {
             <div className='absolute w-[90%] flex flex-col items-center bottom-25 left-[var(--horizontal-padding)]
                             md:absolute md:block md:w-[70%] xl:w-auto'>
               <p 
-                className='mb-2 font-[Space_Mono] leading-[1] 
+                className='mb-2 font-[Space_Mono] leading-[1] text-base 
                            xl:text-[1.32vw] xl:leading-[1.5]
                            2xl:text-2xl'
               >
                 {'explore our'.toUpperCase()}
               </p>
               <h2
-                className='text-4xl leading-[0.8]
+                className='text-2xl leading-[0.8]
                            lg:text-4xl lg:leading-[0.5]
                            xl:text-5xl
                            2xl:text-6xl'

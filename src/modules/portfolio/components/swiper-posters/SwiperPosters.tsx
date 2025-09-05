@@ -135,10 +135,12 @@ const SwiperPosters = () => {
         {portfolioJobs.map((img) => (
             <SwiperSlide 
                 style={{justifyContent: 'space-between'}}
-                className='px-7 py-10 flex-col border border-white rounded-[var(--border-radius-20)] bg-black'
+                className='p-5 flex-col border border-white rounded-[var(--border-radius-20)] bg-black
+                           md:px-7 md:py-10'
             >
                 <img style={{height: '75%'}} src={`https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/${img.image}/public`} alt="" />
-                <h2 className='font-[Exan] text-2xl'>{img.type.toUpperCase()}Holaaaa</h2>
+                <h2 className='font-[Exan] text-xl
+                               md:text-2xl'>{img.type.toUpperCase()}</h2>
                 <img style={{width: '50%', height: '15%', objectFit: 'contain', objectPosition: 'left'}} src={`https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/${img.logo}/public`} alt="" />
             </SwiperSlide>
         ))}

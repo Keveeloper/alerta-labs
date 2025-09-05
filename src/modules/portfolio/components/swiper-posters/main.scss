@@ -25,7 +25,7 @@ body {
 .posters-slider {
   @media (orientation: portrait) {
     --posters-slider-width: 80vw;
-    --posters-slider-height: calc(68vw * 1.48);
+    --posters-slider-height: calc(60vw * 1.48);
   }
   @media (orientation: landscape) {
     --posters-slider-width: calc(80vh / 1.1);
