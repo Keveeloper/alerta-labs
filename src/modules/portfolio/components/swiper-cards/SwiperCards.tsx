@@ -2,6 +2,9 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper/modules';
 import EffectCardsStack from './effect-cards-stack.esm';
 
+import Box from '@mui/material/Box';
+import Modal from '@mui/material/Modal';
+
 // 3. Importa los estilos base de Swiper
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -10,8 +13,25 @@ import 'swiper/css/pagination';
 // 4. ¡IMPORTANTE! Importa el MÓDULO y los ESTILOS de tu efecto personalizado
 import './effect-cards-stack.scss';
 import './main.scss'
+import { useState } from 'react';
+import { SwiperCardTeamMember } from './types';
 
-const team = [
+const style = {
+  position: 'absolute',
+  width: '90%',
+  height: '70%',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  bgcolor: 'black',
+  border: '1px solid white',
+  borderRadius: '16px',
+  boxShadow: 24,
+  overflow: 'hidden',
+  paddingBottom: 4
+};
+
+const team: SwiperCardTeamMember[] = [
   {
     id: 1,
     name: 'Johann',
@@ -104,7 +124,13 @@ const team = [
 
 const SwiperCards = () => {
   
+  const [selectedMember, setSelectedMember] = useState<SwiperCardTeamMember | null>(null);
+
+  const handleOpen = (member: SwiperCardTeamMember) => setSelectedMember(member);
+  const handleClose = () => setSelectedMember(null);
+
     return(
+      <>
         <Swiper
             modules={[Pagination, EffectCardsStack]}
             effect="cards-stack"
@@ -115,29 +141,52 @@ const SwiperCards = () => {
             style={{ margin: 0, padding: '40px 0px', zIndex: 1000}}
         >
             {team.map((member) => (
-            <SwiperSlide 
-                key={member.id} 
-                className='group relative w-full h-full border border-white'
-            >
-                <div className="cards-stack-back w-full h-full filter blur-[2px] group-[.swiper-slide-active]:filter-none">
-                    <img src={member.memberPhoto} alt="" />
-                </div>
-                <div className="cards-stack-front w-full h-full filter blur-[2px] group-[.swiper-slide-active]:filter-none">
-                    <img src={member.memberPhoto} alt="" />
-                </div>
-                
-                <div
-                    className='hidden absolute pl-7 w-[190%] h-[calc(100%_+_2px)] top-[-1px] right-[-186%] flex-col justify-center rounded-r-[16px] border-t border-r border-b border-white bg-black z-2 opacity-0 invisible transition-all duration-300 group-[.swiper-slide-active]:opacity-100 group-[.swiper-slide-active]:visible
-                               md:flex'
-                >
-                    <h2 className='text-4xl font-semibold text-white font-[Space_Mono]'>{member.name.toUpperCase()}</h2>
-                    <p className='mb-3 text-xl font-semibold text-white font-[Space_mono]'>{member.title.toUpperCase()}</p>
-                    <p className='font-seismic-latin-variable-span mb-3 w-[90%] text-base text-white'>{member.description_1}</p>
-                    <p className='font-seismic-latin-variable-span w-[90%] text-base text-white'>{member.description_2}</p>
-                </div>
-            </SwiperSlide>
+              <SwiperSlide 
+                  key={member.id} 
+                  className='group relative w-full h-full border border-white'
+              >
+                  <div className="cards-stack-back w-full h-full filter blur-[2px] group-[.swiper-slide-active]:filter-none">
+                      <img src={member.memberPhoto} alt="" />
+                  </div>
+                  <div className="cards-stack-front w-full h-full filter blur-[2px] group-[.swiper-slide-active]:filter-none">
+                      <img src={member.memberPhoto} alt="" onClick={() => handleOpen(member)}/>
+                  </div>
+                  
+                  <div
+                      className='hidden absolute pl-7 w-[190%] h-[calc(100%_+_2px)] top-[-1px] right-[-186%] flex-col justify-center rounded-r-[16px] border-t border-r border-b border-white bg-black z-2 opacity-0 invisible transition-all duration-300 group-[.swiper-slide-active]:opacity-100 group-[.swiper-slide-active]:visible
+                                md:flex'
+                  >
+                      <h2 className='text-4xl font-semibold text-white font-[Space_Mono]'>{member.name.toUpperCase()}</h2>
+                      <p className='mb-3 text-xl font-semibold text-white font-[Space_mono]'>{member.title.toUpperCase()}</p>
+                      <p className='font-seismic-latin-variable-span mb-3 w-[90%] text-base text-white'>{member.description_1}</p>
+                      <p className='font-seismic-latin-variable-span w-[90%] text-base text-white'>{member.description_2}</p>
+                  </div>
+              </SwiperSlide>
             ))}
         </Swiper>
+        <Modal
+          open={Boolean(selectedMember)} // El modal se abre si selectedMember tiene datos
+          onClose={handleClose}
+          aria-labelledby="modal-modal-title"
+          aria-describedby="modal-modal-description"
+          disableAutoFocus={true}
+        >
+          <Box sx={style}>
+            {/* Mostramos el contenido solo si hay un miembro seleccionado */}
+            {selectedMember && (
+              <>
+                <img className='mb-5' src={selectedMember.memberPhoto} alt="" />
+                <div className='px-4 overflow-auto h-[200px]'>
+                  <h2 className='text-4xl font-semibold text-white font-[Space_Mono] uppercase'>{selectedMember.name}</h2>
+                  <p className='mb-3 text-xl font-semibold text-white font-[Space_mono] uppercase'>{selectedMember.title}</p>
+                  <p className='font-seismic-latin-variable-span mb-3 w-[90%] text-base text-white'>{selectedMember.description_1}</p>
+                  <p className='font-seismic-latin-variable-span w-[90%] text-base text-white'>{selectedMember.description_2}</p>
+                </div>
+              </>
+            )}
+          </Box>
+        </Modal>
+      </>
     );
 }
 
