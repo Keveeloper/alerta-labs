@@ -6,7 +6,7 @@ const Footer = ({ isPackages }: { isPackages?: boolean  }) => {
 
   return (
     <footer className={`fixed px-[var(--horizontal-padding)] w-full ${isPackages ? 'py-5 h-60 md:h-40' : 'h-20'} flex flex-col justify-around bottom-0 left-0 z-2 bg-black
-                       md:flex-row`}>
+                       md:flex-row md:bg-transparent`}>
       {isPackages ? (
          <div className="w-full
                          md:w-1/2">

@@ -13,6 +13,7 @@ import 'swiper/css/pagination';
 import { getImageUrlMobile } from "../../shared/image-url/image-urls-mobile";
 import { useCustomNavigation } from "../shared/hooks/services-hooks/useServicesNavigation";
 import ServiceInfo from "./components/service-info/ServiceInfo";
+import { useIsMobile } from "../shared/hooks/useIsMobile";
 
 const homeTilteInitialValue = 'EXPLORE THE UNIVERSE';
 const servicesItems = [
@@ -63,6 +64,7 @@ const servicesItems = [
 
 const Home = () => {
 
+    const isMobile = useIsMobile();
     const { setSpacialObjectKey } = useSpacialObjectStore();
     const { textHoovered, setTextHovered, homeTitle, setHomeTitle } = useSpacialStore();
     const handleNavigation = useCustomNavigation();
@@ -201,11 +203,12 @@ const Home = () => {
             <LazyLoadImage
                 wrapperClassName='fixed w-full h-full mix-blend-screen'
                 className="w-full h-full object-cover"
-                src={getImageUrlMobile('home_background_mobile')}
+                src={isMobile ? getImageUrlMobile('home_background_mobile') : getImageUrl('homeBackground')}
                 alt="Alerta labs background space image"
                 effect="blur"
             />
-            <div className="absolute w-full h-[calc(100lvh-160px)] top-1/2 -translate-y-1/2 flex flex-col justify-center items-center">
+            <div className="absolute w-full h-[calc(100lvh-160px)] top-1/2 -translate-y-1/2 flex flex-col justify-center items-center
+                            md:hidden">
                 <div className="h-[10%] w-full bg-gradient-to-t from-transparent to-black">
                     <h2 className="m-auto w-[80%] font-semibold text-base text-center text-white font-[Space_Mono]">{'Swipe to explore the UNIVERSE'.toUpperCase()}</h2>
                 </div>
@@ -234,7 +237,7 @@ const Home = () => {
                 <ServiceInfo homeTitle={homeTitle} textHoovered={textHoovered} />
 
             </div>
-            <div className="hidden">
+            <div className="hidden md:block">
                 <LazyLoadImage
                     wrapperClassName="absolute w-[400px] bottom-[5%] left-1/2 -translate-x-1/2 cursor-pointer"
                     className="w-full"

@@ -99,7 +99,7 @@ const Services = () => {
                                 <div className='custom-scrollbar mb-auto overflow-y-scroll z-1' dangerouslySetInnerHTML={{ __html: selectedItem?.description ?? '' }} />
                                 <img 
                                     className={`w-[120px] ${selectedItem?.isColumn ? 'relative m-auto' : 'absolute'} top-5 right-0 z-[-1]
-                                                md:w-md:bottom-0 md:right-0 md:top-auto`}
+                                                md:w-[250px] md:bottom-0 md:right-0 md:top-auto`}
                                     src={selectedItem?.image} 
                                     alt=""
                                     onClick={() => goBack()}
