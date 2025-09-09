@@ -36,6 +36,13 @@ const Contact = () => {
   return (
     <main className="relative w-full h-screen overflow-hidden">
       <CanvasComponent/>
+      <img 
+          className="absolute w-full h-full z-1 pointer-events-none opacity-80 object-fit
+                      sm:opacity-100 md:z-0"
+          src={getImageUrl('vignette')}
+          alt="vignette"
+          style={{objectFit: 'fill'}}
+      />
       {location.pathname === '/contact' && <Navbar /> }
       <img
         src={`${isMobile ? getImageUrlMobile('home_background_mobile') : getImageUrl('homeBackground')}`}
@@ -83,20 +90,25 @@ const Contact = () => {
 
       {/* Form Section */}
       {isContact && (
-        <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center z-1">
-          <div className="text-left space-y-4 w-[600px] mt-[-5rem]" style={{ fontFamily: "Bebas Neue" }}>
+        <div className="relative w-full h-full flex items-center justify-center z-1">
+          <div className="relative w-[70%] h-auto text-left left-3.5
+                          md:w-[600px] md:h-auto md:left-0" style={{ fontFamily: "Bebas Neue" }}>
             {/* <h2 className="text-[3rem] mb-4 text-white uppercase mb-[0]">Let us absorb and</h2>
             <h2 className="text-[3rem] mb-4 text-white uppercase mt-[-15px] mb-[0]">transform your vision_</h2> */}
 
             <form
               onSubmit={handleSubmit}
-              className="max-w-3xl mx-auto p-6 bg-[#000000ed] text-white rounded-xl border border-white space-y-4"
+              className="w-full h-full p-6 bg-[#000000ed] text-white rounded-xl border border-white space-y-4
+              md:w-auto md:h-auto"
             >
               {/* Name + Email in one row */}
-              <h2 className="text-[3rem] mb-4 text-white uppercase mb-[0]">Let us absorb and</h2>
-              <h2 className="text-[3rem] mb-4 text-white uppercase mt-[-15px] mb-[0]">transform your vision_</h2>
-              <div className="flex gap-4">
-                <div className="w-1/2">
+              <h2 className="text-4xl text-white uppercase
+                             md:text-[3rem]">Let us absorb and</h2>
+              <h2 className="text-4xl text-white uppercase mt-[-15px]
+                             md:text-[3rem]">transform your vision_</h2>
+              <div className="flex flex-col gap-4
+                              md:flex-row">
+                <div className="w-full md:w-1/2">
                   <input
                     type="text"
                     name="name"
@@ -108,7 +120,7 @@ const Contact = () => {
                   />
                 </div>
 
-                <div className="w-1/2">
+                <div className="w-full md:w-1/2">
                   <input
                     type="email"
                     name="email"
@@ -141,7 +153,8 @@ const Contact = () => {
                                We’ll bring it to life with precision and creativity"
                   value={formData.description}
                   onChange={handleChange}
-                  className="w-full px-4 py-2 rounded-tl-[16px] rounded-tr-[16px] rounded-bl-[16px] rounded-br-[0px] border border-white bg-transparent text-white focus:outline-none focus:ring focus:ring-white/30"
+                  className="w-full min-h-[150px] px-4 py-2 rounded-tl-[16px] rounded-tr-[16px] rounded-bl-[16px] rounded-br-[0px] border border-white bg-transparent text-white focus:outline-none focus:ring focus:ring-white/30
+                             md:min-h-[110px]"
                 />
               </div>
 
@@ -155,6 +168,13 @@ const Contact = () => {
                 </button>
                 </div>
             </form>
+          </div>
+          <div className="absolute p-5 w-full h-auto bottom-0 bg-gradient-to-b from-transparent to-black
+                          md:bg-transparent">
+            <h2 className="text-white font-[Exan] text-base font-semibold text-center
+                            md:text-3xl">{'HELLO@alertacreAtive.com_'.toUpperCase()}</h2>
+            <p className="text-white font-[Exan] text-base text-center
+                          md:text-xl">{'©2025 Alerta Partnership llc'.toUpperCase()}</p>
           </div>
         </div>
       )}

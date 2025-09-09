@@ -7,4 +7,5 @@ export interface imageUrlInterface {
     cristal: string;
     asteroid: string;
     astronaut: string;
+    vignette: string;
 }

@@ -310,7 +310,7 @@ const Home = () => {
             <img 
                 className="absolute w-full h-full z-1 pointer-events-none opacity-80 object-fit
                            sm:opacity-100"
-                src="https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/d2a95ff8-65a1-439b-cc90-ded1b8d0aa00/public" 
+                src={getImageUrl('vignette')}
                 alt="vignette" 
             />
             {/* {homeTitle === homeTilteInitialValue && 
