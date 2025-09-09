@@ -1,5 +1,3 @@
-const plans = ['BASIC', 'MEDIUM', 'PRO', 'ULTRA'];
-
 const CheckIcon = () => (
   <svg className="w-6 h-6 text-green-400" fill="currentColor" viewBox="0 0 24 24">
     <path d="M20.285 6.709l-11.285 11.291-5.285-5.291 1.414-1.414 3.871 3.877 9.871-9.877z" />

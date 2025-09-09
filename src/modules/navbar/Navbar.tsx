@@ -1,4 +1,4 @@
-import { use, useState } from 'react';
+import { useState } from 'react';
 import Modal from '@mui/material/Modal';
 import { Slide } from '@mui/material';
 import { styled } from '@mui/material/styles';
@@ -28,7 +28,7 @@ const style = {
 
 const Accordion = styled((props: AccordionProps) => (
   <MuiAccordion disableGutters elevation={0} square {...props} />
-))(({ theme }) => ({
+))(() => ({
   borderBottom: `1px solid white`,
   background: 'rgba(0, 0, 0, 1)',
   '&::before': {

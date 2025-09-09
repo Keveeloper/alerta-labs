@@ -1,10 +1,8 @@
 import { useState } from "react";
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination } from 'swiper/modules';
 import useSpacialStore from "../../store/SpacialStore";
 import { useNavigate } from "react-router";
 import useSpacialObjectStore from "../../store/spacial-object-store/SpacialObjectsStore";
-import { spacialObjectsData } from "./spacial-objects/spacial-objects-data";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { useRef } from "react";
 import { getImageUrl, ImagesUrls } from "../../shared/image-url/image-urls";
@@ -15,7 +13,6 @@ import 'swiper/css/pagination';
 import { getImageUrlMobile } from "../../shared/image-url/image-urls-mobile";
 import { useCustomNavigation } from "../shared/hooks/services-hooks/useServicesNavigation";
 import ServiceInfo from "./components/service-info/ServiceInfo";
-import { useIsMobile } from "../shared/hooks/useIsMobile";
 
 const homeTilteInitialValue = 'EXPLORE THE UNIVERSE';
 const servicesItems = [
@@ -67,8 +64,6 @@ const servicesItems = [
 const Home = () => {
 
     const { setSpacialObjectKey } = useSpacialObjectStore();
-    // const isMobile = useIsMobile();
-    // const spacialObject: any = spacialObjectsData(isMobile)[spacialObjectKey];
     const { textHoovered, setTextHovered, homeTitle, setHomeTitle } = useSpacialStore();
     const handleNavigation = useCustomNavigation();
     const navigate = useNavigate();
@@ -141,27 +136,22 @@ const Home = () => {
     const handleClick = (text: string) => {
         switch (text) {
             case '[codecrumb] NEW tech, new tricks_':
-                // setSpacialObject(spacialObjectsData.station);
                 setSpacialObjectKey('station');
                 navigate('/services');
                 break;
             case '[FUTUREBIT] EXPERIMENTAL TECH, YET ESSENTIAL_':
-                // setSpacialObject(spacialObjectsData.cristal);
                 setSpacialObjectKey('cristal');
                 navigate('/services');
                 break;
             case '[UXXPlOSION] COSMIC CLARITY IN PIXELS_':
-                // setSpacialObject(spacialObjectsData.nebula);
                 setSpacialObjectKey('nebula');
                 navigate('/services');
                 break;
             case '[UPDATE BASE] App-building in zero-G_':
-                // setSpacialObject(spacialObjectsData.satellite);
                 setSpacialObjectKey('satellite');
                 navigate('/services');
                 break;
             case '[BRAND BOULDER] BUILT TO CARRY IDENTITIES_':
-                // setSpacialObject(spacialObjectsData.asteroide);
                 setSpacialObjectKey('asteroide');
                 navigate('/services');
                 break;
@@ -223,7 +213,6 @@ const Home = () => {
                     loop
                     direction={'horizontal'}
                     pagination={{ clickable: true }}
-                    // modules={[Pagination]}
                     className="w-full h-full"
                     onSlideChange={(swiper) => {
                         handleSlideChange(swiper.realIndex);
