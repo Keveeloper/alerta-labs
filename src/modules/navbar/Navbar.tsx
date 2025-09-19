@@ -143,7 +143,7 @@ const Navbar = () => {
               <div className='py-3 border-b border-white'>
                 <p 
                   className='font-[Exan] text-white text-xl font-semibold'
-                  onClick={() => handleNavigation('[UXXPlOSION] COSMIC CLARITY IN PIXELS_', () => handleClose())}
+                  onClick={() => handleNavigation('[UX-XPlOSION] COSMIC CLARITY IN PIXELS_', () => handleClose())}
                 >
                   X DESIGN
                 </p>

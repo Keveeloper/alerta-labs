@@ -9,11 +9,14 @@ import { EffectCreative, Parallax } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/effect-creative';
 import 'swiper/css/parallax';
+import 'swiper/css/navigation';
 
 // Estilos personalizados de la librería que compraste
 import './posters-slider.scss';
 import './main.scss';
 import { useIsMobile } from '../../../shared/hooks/useIsMobile';
+
+import { Navigation } from 'swiper/modules';
 
 const portfolioJobs = [
     {
@@ -71,6 +74,7 @@ const portfolioJobs = [
       image: '4f87c981-ae63-4606-d24c-c741b4a5bd00'
     },
 ]
+
 const SwiperPosters = () => {
   const [swiperInstance, setSwiperInstance] = useState<any>(null);
   const swiperElRef = useRef<any>(null);
@@ -108,10 +112,29 @@ const SwiperPosters = () => {
 
   return (
     <div className="posters-slider">
+      <div 
+        id="swiper-posters-prev" 
+        className='hidden absolute bottom-1/2 translate-y-1/2 left-[5%] font-[Space_Mono] text-white text-4xl z-2 cursor-pointer
+                   md:block'
+>
+          {'<'}
+      </div>
+      <div 
+        id="swiper-posters-next" 
+        className='hidden absolute bottom-1/2 translate-y-1/2 right-[7%] font-[Space_Mono] text-white text-4xl z-2 cursor-pointer
+                   md:block'
+      >
+          {'>'}
+      </div>
       <Swiper
         ref={swiperElRef}
         onSwiper={setSwiperInstance}
-        modules={[Parallax, EffectCreative]}
+        loop={true}
+        navigation={{
+            prevEl: '#swiper-posters-prev',
+            nextEl: '#swiper-posters-next',
+        }}
+        modules={[Parallax, EffectCreative, Navigation]}
         effect="creative"
         speed={600}
         resistanceRatio={0}

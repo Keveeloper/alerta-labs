@@ -42,7 +42,7 @@ const servicesItems = [
         id: 4,
         name: 'Nebula',
         image: getImageUrlMobile('nebula_mobile'),
-        navigateValue: '[UXXPlOSION] COSMIC CLARITY IN PIXELS_',
+        navigateValue: '[UX-XPlOSION] COSMIC CLARITY IN PIXELS_',
         fullHeight: false,
     },
     {
@@ -94,7 +94,7 @@ const Home = () => {
                 setCristalHighlighted('b6af95e2-98c6-4d16-576c-75c04cf87100');
                 setHomeTitle('EMERGING TECH');
                 break;
-            case '[UXXPlOSION] COSMIC CLARITY IN PIXELS_':
+            case '[UX-XPlOSION] COSMIC CLARITY IN PIXELS_':
                 setNebulaHighlighted('a7fdfdbc-9728-4d11-ac67-a0ff7eebe600');
                 setHomeTitle('X DESIGN');
                 break;
@@ -145,7 +145,7 @@ const Home = () => {
                 setSpacialObjectKey('cristal');
                 navigate('/services');
                 break;
-            case '[UXXPlOSION] COSMIC CLARITY IN PIXELS_':
+            case '[UX-XPlOSION] COSMIC CLARITY IN PIXELS_':
                 setSpacialObjectKey('nebula');
                 navigate('/services');
                 break;
@@ -181,7 +181,7 @@ const Home = () => {
                 break;
             case 3:
                 setHomeTitle('X DESIGN');
-                setTextHovered('[UXXPlOSION] COSMIC CLARITY IN PIXELS_'.toUpperCase());
+                setTextHovered('[UX-XPlOSION] COSMIC CLARITY IN PIXELS_'.toUpperCase());
                 break;
             case 4:
                 setHomeTitle('EMERGING TECH');
@@ -294,9 +294,9 @@ const Home = () => {
                     src={`https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/${nebulaHighlighted}/public`}
                     alt="Nebula"
                     effect="blur"
-                    onMouseEnter={() => handleHover("[UXXPlOSION] COSMIC CLARITY IN PIXELS_")}
+                    onMouseEnter={() => handleHover("[UX-XPlOSION] COSMIC CLARITY IN PIXELS_")}
                     onMouseLeave={handleMouseLeave}
-                    onClick={() => handleClick("[UXXPlOSION] COSMIC CLARITY IN PIXELS_")}
+                    onClick={() => handleClick("[UX-XPlOSION] COSMIC CLARITY IN PIXELS_")}
                 />
             </div>
             <img 

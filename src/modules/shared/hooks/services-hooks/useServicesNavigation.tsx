@@ -21,7 +21,7 @@ export const useCustomNavigation = () => {
                 setSpacialObjectKey('cristal');
                 navigate('/services');
                 break;
-            case '[UXXPlOSION] COSMIC CLARITY IN PIXELS_':
+            case '[UX-XPlOSION] COSMIC CLARITY IN PIXELS_':
                 setSpacialObjectKey('nebula');
                 navigate('/services');
                 break;
