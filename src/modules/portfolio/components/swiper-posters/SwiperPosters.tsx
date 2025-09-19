@@ -34,7 +34,7 @@ const portfolioJobs = [
     {
       name: 'Natural',
       logo: 'be30440c-4b03-4ec6-38c3-f9e435856b00',
-      type: 'Website, e comerce',
+      type: 'Website, e-commerce',
       image: '06f66812-11cf-40ee-4417-404f29363600'
     },
     {
@@ -46,7 +46,7 @@ const portfolioJobs = [
     {
       name: 'Impormedical',
       logo: '93822d5c-3823-4948-af48-f2377cb94c00',
-      type: 'E COMERCE',
+      type: 'E-COMMERCE',
       image: '5d98cc75-5529-4098-34fa-ac3538791c00'
     },
     {
@@ -65,7 +65,7 @@ const portfolioJobs = [
       name: 'Brain5tormers',
       logo: 'a1316a42-9459-4ac8-fc86-c454a096eb00',
       type: 'Website',
-      image: '7f098956-4e9e-4880-8708-d7ace984a200'
+      image: 'a1bad900-84b1-4391-8719-2d7851820d00'
     },
     {
       name: 'Alerta',
