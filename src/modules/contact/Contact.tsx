@@ -54,7 +54,7 @@ const Contact = () => {
         <>
           <img
             src="https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/51238595-4148-4d5a-b450-51e838ec2500/public"
-            alt="astronaut alerta labs"
+            alt="astronaut alerta lab"
             style={{width: isMobile ? '100%' : '50%', height: isMobile ? '80%' : 'auto'}}
             className="absolute h-[90%] bottom-[-5%] left-1/2 -translate-x-1/2"
           />
@@ -149,8 +149,7 @@ const Contact = () => {
               <div>
                 <textarea
                   name="description"
-                  placeholder="Add a note. Talk to us about your next project.
-                               We’ll bring it to life with precision and creativity"
+                  placeholder="Add a note. Talk to us about your next project. We’ll bring it to life with precision and creativity"
                   value={formData.description}
                   onChange={handleChange}
                   className="w-full min-h-[150px] px-4 py-2 rounded-tl-[16px] rounded-tr-[16px] rounded-bl-[16px] rounded-br-[0px] border border-white bg-transparent text-white focus:outline-none focus:ring focus:ring-white/30

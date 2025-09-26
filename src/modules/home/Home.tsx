@@ -204,7 +204,7 @@ const Home = () => {
                 wrapperClassName='fixed w-full h-full mix-blend-screen'
                 className="w-full h-full object-cover"
                 src={isMobile ? getImageUrlMobile('home_background_mobile') : getImageUrl('homeBackground')}
-                alt="Alerta labs background space image"
+                alt="Alerta lab background space image"
                 effect="blur"
             />
             <div className="absolute w-full h-[calc(100lvh-160px)] top-1/2 -translate-y-1/2 flex flex-col justify-center items-center
@@ -227,7 +227,7 @@ const Home = () => {
                                 wrapperClassName='service-main-image w-full h-full justify-center items-center '
                                 className={`${serviceItem.fullHeight ? 'h-full' : 'h-[70%]'} object-contain`}
                                 src={serviceItem.image}
-                                alt="Services alerta labs item image"
+                                alt="Services alerta lab item image"
                                 effect="blur"
                                 onClick={() => handleNavigation(serviceItem.navigateValue || '')}
                             />
@@ -242,7 +242,7 @@ const Home = () => {
                     wrapperClassName="absolute w-[400px] bottom-[5%] left-1/2 -translate-x-1/2 cursor-pointer"
                     className="w-full"
                     src={`https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/${astronauthighlighted}/public`}
-                    alt="astronaut alerta labs"
+                    alt="astronaut alerta lab"
                     effect="blur"
                     onMouseEnter={() => handleHover("[ALERTA LINK] MISSION CONTROL_")}
                     onMouseLeave={handleMouseLeave}
@@ -252,7 +252,7 @@ const Home = () => {
                     wrapperClassName="absolute w-[213px] top-[8%] right-[20%] -translate-x-1/2 cursor-pointer"
                     className="w-full"
                     src={`https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/${cristalHighlighted}/public`}
-                    alt="Cristal alerta labs"
+                    alt="Cristal alerta lab"
                     effect="blur"
                     onMouseEnter={() => handleHover("[FUTUREBIT] EXPERIMENTAL TECH, YET ESSENTIAL_")}
                     onMouseLeave={handleMouseLeave}

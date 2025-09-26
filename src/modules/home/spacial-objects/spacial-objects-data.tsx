@@ -71,14 +71,12 @@ export const spacialObjectsData = (isMobile: boolean): any => {
               {
                   image: 'https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/a9441983-c906-44c9-f710-8d9ae2563700/public',
                   title: 'UX / UI',
-                  isColumn: isMobile ? false : true,
+                  isColumn: isMobile ? false : false,
                   fontSize: '80px',
                   fontSizeMobile: '60px',
-                  description: `<ul class="font-seismic-latin-variable-span" style="padding-left: 1.2rem; color: white; font-size: 18px; list-style: disc;">
-                                  <li>Attractive and intuitive interface design</li>
-                                  <li>Disruptive experience design</li>
-                                  <li>Three.JS Web experiences</li>
-                                </ul>`
+                  description: `<p class="font-seismic-latin-variable-span" style="margin-bottom: 10px; width: 80%; 10px; color: white; font-size: 18px;">We craft unique and functional interfaces that elevate digital experiences.</p>
+                  <p class="font-seismic-latin-variable-span" style="margin-bottom: 10px; width: 80%; color: white; font-size: 18px;">Our UX/UI design process blends attractive and intuitive interfaces with disruptive experience design and immersive Three.JS web environments. Every detail is carefully thought out to ensure that beauty meets usability, always with the user at the center.</p>
+                  <p class="font-seismic-latin-variable-span" style="width: 75%; color: white; font-size: 18px;">We don’t just design screens— we design moments that users remember.</p>`
               },
               {
                   image: 'https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/d081cccc-bfa9-4551-ebe1-958f83aa1800/public',
@@ -109,7 +107,7 @@ export const spacialObjectsData = (isMobile: boolean): any => {
                                   <li>Tailor-made Websites (Wordpress or code)</li>
                                   <li>Landing pages</li>
                                   <li>Website customization</li>
-                                  <li>Ecommerce: Shopify, Woocommerce. eCommerce from scratch</li>
+                                  <li>E-commerce: Shopify, Woocommerce. e-commerce from scratch</li>
                                   <li>Website maintenance: corrective / preventive</li>
                                   <li>Web optimization and performance</li>
                                   <li>Web security and recovery</li>

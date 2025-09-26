@@ -1,6 +1,8 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination } from 'swiper/modules';
+import { Navigation, Pagination } from 'swiper/modules';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
+
+import 'swiper/css/navigation';
 
 const cards = [
   {
@@ -38,9 +40,9 @@ const cards = [
 const Proven = () => {
   return (
     <div className='m-auto w-[90%] h-[80%] left-auto flex flex-col items-start gap-5
-    md:m-0 md:w-[80%] md:h-2/3 md:flex-row md:left-[3%]'>
+                    md:m-0 md:w-[80%] md:h-2/3 md:flex-row md:left-[3%]'>
         <div className='w-full h-auto
-        md:w-[45%] md:h-full'>
+                        md:w-[45%] md:h-full'>
             <div className='hidden md:block'>
                 <h2 style={{ fontFamily: "Bebas Neue" }} className='text-white text-8xl text-end'>our proven</h2>
                 <h2 style={{ fontFamily: "Bebas Neue" }} className='text-white text-8xl text-end'>development</h2>
@@ -61,40 +63,54 @@ const Proven = () => {
                 <p className='font-seismic-latin-variable-span-portfolio text-white text-start'>Our transparent, collaborative process keeps you involved at every stage, from concept to launch.</p>
             </div>
         </div>
-        <Swiper
-            loop
-            direction='horizontal'
-            pagination={{ clickable: true }}
-            modules={[Pagination]}
-            className="swiper-proven w-[93%] h-full
-            md:w-[55%]"
-            style={{ margin: 0 }}
-        >
-            {cards.map((card) => (
-                <SwiperSlide 
-                  className='p-3 w-full flex justify-center items-center border-white border-2 rounded-[var(--border-radius-20)] overflow-hidden
-                             md:p-9' 
-                  style={{height: '90%'}}
-                >
-                    <div className='mb-3 w-full h-[60%]
-                                    md:mb-5 md:h-[70%]'>
-                        <LazyLoadImage
-                            wrapperClassName='w-full h-full justify-center items-center rounded-xl'
-                            className='h-full'
-                            src={card.image}
-                            alt="Services alerta labs item image"
-                            effect="blur"
-                        />
-                    </div>
-                    <div className='h-[40%] overflow-y-scroll custom-scrollbar
-                                    md:h-[30%]'>
-                      <h3 className='mb-1 text-base text-white font-[Exan] font-semibold
-                                     md:mb-5 md:text-3xl'>{card.title.toUpperCase()}</h3>
-                      <p className='font-seismic-latin-variable-span-portfolio text-white'>{card.description}</p>
-                    </div>
-                </SwiperSlide>
-            ))}
-        </Swiper>
+        <div className="relative px-0 w-[93%] h-full
+                        md:px-10 md:w-[60%]">
+          <div id="swiper-prev-proven" className='hidden absolute top-[50%] left-2 -translate-y-1/2 font-[Space_Mono] text-white text-4xl z-2 cursor-pointer
+                                                  md:block'>
+              {'<'}
+          </div>
+          <div id="swiper-next-proven" className='hidden absolute top-[50%] right-2 -translate-y-1/2 font-[Space_Mono] text-white text-4xl z-2 cursor-pointer
+                                                  md:block'>
+              {'>'}
+          </div>
+          <Swiper
+              loop
+              direction='horizontal'
+              pagination={{ clickable: true }}
+              navigation={{
+                prevEl: '#swiper-prev-proven',
+                nextEl: '#swiper-next-proven',
+            }}
+              modules={[Pagination, Navigation]}
+              className="swiper-proven w-full h-full"
+              style={{ margin: 0 }}
+          >
+              {cards.map((card) => (
+                  <SwiperSlide 
+                    className='p-3 w-full flex justify-center items-center border-white border-2 rounded-[var(--border-radius-20)] overflow-hidden
+                              md:p-5' 
+                    style={{height: '90%'}}
+                  >
+                      <div className='mb-3 w-full h-[60%]
+                                      md:mb-5 md:h-[70%]'>
+                          <LazyLoadImage
+                              wrapperClassName='w-full h-full justify-center items-center rounded-xl'
+                              className='h-full'
+                              src={card.image}
+                              alt="Services alerta lab item image"
+                              effect="blur"
+                          />
+                      </div>
+                      <div className='h-[40%] overflow-y-scroll custom-scrollbar
+                                      md:h-[30%]'>
+                        <h3 className='mb-1 text-base text-white font-[Exan] font-semibold
+                                      md:mb-5 md:text-3xl'>{card.title.toUpperCase()}</h3>
+                        <p className='font-seismic-latin-variable-span-portfolio text-white'>{card.description}</p>
+                      </div>
+                  </SwiperSlide>
+              ))}
+          </Swiper>
+        </div>
     </div>
   );
 }

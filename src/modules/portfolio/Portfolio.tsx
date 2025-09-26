@@ -130,7 +130,7 @@ const Portfolio = () => {
                 className='h-[10%]
                            md:h-full'
                 src="https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/a8f65844-2732-433f-1b11-e36798d4e800/public"
-                alt="Services alerta labs item image"
+                alt="Services alerta lab item image"
                 effect="blur" // efecto visual mientras carga
             />
             <div 
@@ -176,7 +176,7 @@ const Portfolio = () => {
                                   md:w-auto md:h-[20%] md:top-[25%]'
                 className='w-full h-full object-contain'
                 src="https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/ad1a7e41-f265-4f24-a360-b13af2bed200/public"
-                alt="Services alerta labs item image"
+                alt="Services alerta lab item image"
                 effect="blur" // efecto visual mientras carga
             />
           </SwiperSlide>

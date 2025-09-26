@@ -12,6 +12,7 @@ export const ImagesUrls: imageUrlInterface = {
     asteroid: '0f85095f-b206-4f45-b4aa-ca5575d50b00',
     astronaut: 'a3980ff6-3869-4b3c-1340-366c8e145000',
     vignette: 'd2a95ff8-65a1-439b-cc90-ded1b8d0aa00',
+    flip_camera_icon: 'a9236d92-b3a0-4ab7-a465-67cfea970f00',
 }
 
 export const getImageUrl = (imageValue: ImageKey) => `${import.meta.env.VITE_CDN_BASE_URL}${ImagesUrls[imageValue]}/public`;

@@ -8,4 +8,5 @@ export interface imageUrlInterface {
     asteroid: string;
     astronaut: string;
     vignette: string;
+    flip_camera_icon: string;
 }

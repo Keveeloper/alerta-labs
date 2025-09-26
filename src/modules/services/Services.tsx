@@ -12,6 +12,7 @@ import { useIsMobile } from '../shared/hooks/useIsMobile';
 import { spacialObjectsData } from '../home/spacial-objects/spacial-objects-data';
 import ServiceInfo from '../home/components/service-info/ServiceInfo';
 import useSpacialStore from '../../store/SpacialStore';
+import { getImageUrl } from '../../shared/image-url/image-urls';
 
 const Services = () => {
 
@@ -66,7 +67,7 @@ const Services = () => {
                 className={`h-full w-full object-cover
                             md:hidden`}
                 src={getImageUrlMobile('vialactea_mobile')}
-                alt="services main alerta labs image"
+                alt="services main alerta lab image"
                 effect="blur"
             />
             <div className="w-full h-[80%] flex justify-between items-center">
@@ -107,6 +108,7 @@ const Services = () => {
                             </div>
                         :
                             <>
+                                <img src={getImageUrl('flip_camera_icon')} className='absolute top-3 right-3 pointer-events-none z-2'  alt="flip camera icon alertalab" />
                                 <div id="swiper-prev" className='absolute bottom-[12%] left-[5%] font-[Space_Mono] text-white text-4xl z-2 cursor-pointer'>
                                     {'<'}
                                 </div>
@@ -143,7 +145,7 @@ const Services = () => {
                                                     wrapperClassName='service-main-image h-full justify-center items-center'
                                                     className='h-[90%] object-contain'
                                                     src={item.image}
-                                                    alt="Services alerta labs item image"
+                                                    alt="Services alerta lab item image"
                                                     effect="blur" // efecto visual mientras carga
                                                 />
                                             </div>
@@ -183,7 +185,7 @@ const Services = () => {
                             wrapperClassName={`service-main-image w-full h-full justify-center items-center`}
                             className={`h-full`}
                             src={spacialObject.object_image}
-                            alt="services main alerta labs image"
+                            alt="services main alerta lab image"
                             effect="blur"
                         />
                     </div>
