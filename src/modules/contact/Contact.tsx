@@ -6,28 +6,102 @@ import { useLocation } from "react-router";
 import { useIsMobile } from "../shared/hooks/useIsMobile";
 import { getImageUrlMobile } from "../../shared/image-url/image-urls-mobile";
 import { getImageUrl } from "../../shared/image-url/image-urls";
+import useFormEmail from "../../shared/custom-hooks/useFormEmail";
 
 const Contact = () => {
 
+  const { PostHookSubscriber } = useFormEmail();
   const isMobile = useIsMobile();
   const location = useLocation();
   const [isContact, setIsContact] = useState(false);
+  const [isSuccess, setIsSuccess] = useState<boolean>(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    business: "",
-    description: "",
+    message: "",
+  });
+  const [errors, setErrors] = useState({
+    name: "",
+    email: "",
+    message: "",
   });
 
-  const handleChange = (e: { target: { name: any; value: any } }) => {
+  const handleChange = (e: any) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+
+    if (name === "name") {
+      setErrors({
+        ...errors,
+        name: value ? "" : "Name is required",
+      });
+    } else if (name === "email") {
+      setErrors({
+        ...errors,
+        email: value ? "" : "Email is required",
+      });
+    } else if (name === "message") {
+      setErrors({
+        ...errors,
+        email: value ? "" : "Message is required",
+      });
+    }
   };
 
-  const handleSubmit = (e: { preventDefault: () => void }) => {
+  const handleSubmit = async (e: any) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
+
+    if (!formData.name) {
+      setErrors({
+        ...errors,
+        name: "Name is required",
+      });
+      return;
+    }
+
+    if (!formData.email) {
+      setErrors({
+        ...errors,
+        email: "Email is required",
+      });
+      return;
+    }
+    try {
+      PostHookSubscriber({
+        name_company: formData.name,
+        email: formData.email,
+        comments: formData.message,
+      })
+        .then((res) => {
+          if (res === "Suscriber inserted successfuly") {
+            // onClose();
+            console.log("Success:", res);
+            setFormData({
+              name: "",
+              email: "",
+              message: "",
+            });
+            setIsSuccess(true);
+          }
+        })
+        .catch((error) => console.error(error));
+    } catch (error) {
+      console.error("Error:", error);
+    }
   };
+
+  // const handleChange = (e: { target: { name: any; value: any } }) => {
+  //   const { name, value } = e.target;
+  //   setFormData((prev) => ({ ...prev, [name]: value }));
+  // };
+
+  // const handleSubmit = (e: { preventDefault: () => void }) => {
+  //   e.preventDefault();
+  //   console.log("Form submitted:", formData);
+  // };
 
   const handleContactClick = () => {
     setIsContact((prev) => !prev);
@@ -93,9 +167,6 @@ const Contact = () => {
         <div className="relative w-full h-full flex items-center justify-center z-1">
           <div className="relative w-[70%] h-auto text-left left-3.5
                           md:w-[600px] md:h-auto md:left-0" style={{ fontFamily: "Bebas Neue" }}>
-            {/* <h2 className="text-[3rem] mb-4 text-white uppercase mb-[0]">Let us absorb and</h2>
-            <h2 className="text-[3rem] mb-4 text-white uppercase mt-[-15px] mb-[0]">transform your vision_</h2> */}
-
             <form
               onSubmit={handleSubmit}
               className="w-full h-full p-6 bg-[#000000ed] text-white rounded-xl border-2 border-white space-y-4
@@ -119,7 +190,6 @@ const Contact = () => {
                     className="w-full px-4 py-2 rounded-[1rem] border-2 border-white bg-transparent text-white focus:outline-none focus:ring focus:ring-white/30"
                   />
                 </div>
-
                 <div className="w-full md:w-1/2">
                   <input
                     type="email"
@@ -132,32 +202,20 @@ const Contact = () => {
                   />
                 </div>
               </div>
-
-              {/* Business */}
-              {/* <div>
-                <input
-                  type="text"
-                  name="business"
-                  placeholder="Business"
-                  value={formData.business}
-                  onChange={handleChange}
-                  className="w-full px-4 py-2 rounded-[1rem] border border-white bg-transparent text-white focus:outline-none focus:ring focus:ring-white/30"
-                />
-              </div> */}
-
-              {/* Description */}
               <div>
                 <textarea
-                  name="description"
+                  name="message"
                   placeholder="Add a note. Talk to us about your next project. We’ll bring it to life with precision and creativity"
-                  value={formData.description}
+                  value={formData.message}
                   onChange={handleChange}
                   className="w-full min-h-[150px] px-4 py-2 rounded-tl-[16px] rounded-tr-[16px] rounded-bl-[16px] rounded-br-[0px] border-2 border-white bg-transparent text-white focus:outline-none focus:ring focus:ring-white/30
                              md:min-h-[110px]"
                 />
               </div>
-
-              {/* Button */}
+              {errors.name && <p style={{ color: "red" }}>{errors.name}</p>}
+              {errors.email && <p style={{ color: "red" }}>{errors.email}</p>}
+              {errors.message && <p style={{ color: "red" }}>{errors.message}</p>}
+              {isSuccess && <p style={{ color: "#9EFE02", textAlign: 'center' }}>Message sent successfully!</p>}
               <div className="flex justify-end mt-[-21px]">
                 <button
                     type="submit"

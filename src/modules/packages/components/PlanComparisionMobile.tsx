@@ -29,56 +29,61 @@ function PlanComparisonMobile({
     );
 
   return (
-    <div className="bg-black text-white rounded-xl border border-white space-y-8" style={{overflow: 'hidden'}}>
-        <div className="border-b border-white text-center py-3 text-lg col-span-5 mb-0" style={{ fontFamily: "Bebas Neue" }}>
-            DESCRIPTION
+    <>
+      
+      <div className="bg-black text-white rounded-xl border border-white space-y-8">
+        <div className="sticky top-[-22px] bg-black rounded-t-xl z-10">
+          <div className="border-b border-white text-center py-3 text-lg col-span-5 mb-0 z-10" style={{ fontFamily: "Bebas Neue" }}>
+              DESCRIPTION
+          </div>
+          <div className="grid grid-cols-4 border-b border-white mb-6 z-10" style={{ fontFamily: "Bebas Neue" }}>
+              <div className="text-center border-r border-white p-2">BASIC</div>
+              <div className="text-center border-r border-white p-2">MEDIUM</div>
+              <div className="text-center border-r border-white p-2">PRO</div>
+              <div className="text-center p-2">ULTRA</div>
+          </div>
         </div>
-        <div className="grid grid-cols-4 border-b border-white  mb-6" style={{ fontFamily: "Bebas Neue" }}>
-            <div className="text-center border-r border-white p-2">BASIC</div>
-            <div className="text-center border-r border-white p-2">MEDIUM</div>
-            <div className="text-center border-r border-white p-2">PRO</div>
-            <div className="text-center p-2">ULTRA</div>
-        </div>
-      {sections.map((section, idx) => (
-        <div key={idx} className="border-b border-gray-700   font-seismic-latin-variable-span">
-            <div className="p-4 pb-6">
-                <h3 className="text-xl font-bold mb-1">{section.title}</h3>
-                <p className="text-sm text-gray-300 mb-2">{section.subtitle}</p>
+        {sections.map((section, idx) => (
+          <div key={idx} className="border-b border-gray-700   font-seismic-latin-variable-span">
+              <div className="p-4 pb-6">
+                  <h3 className="text-xl font-bold mb-1">{section.title}</h3>
+                  <p className="text-sm text-gray-300 mb-2">{section.subtitle}</p>
 
-                <ul className="list-disc list-inside text-sm space-y-1 pl-2">
-                    {section.items.map((item, i) => (
-                    <li
-                        key={i}
-                        className="text-sm"
-                        dangerouslySetInnerHTML={{ __html: addClassToSpans(item) }}
-                    />
-                    ))}
-                </ul>
-            </div>
+                  <ul className="list-disc list-inside text-sm space-y-1 pl-2">
+                      {section.items.map((item, i) => (
+                      <li
+                          key={i}
+                          className="text-sm"
+                          dangerouslySetInnerHTML={{ __html: addClassToSpans(item) }}
+                      />
+                      ))}
+                  </ul>
+              </div>
 
-          {/* PLAN AVAILABILITY */}
-         <div className="flex justify-around items-center mt-4 avaliability-icons text-white">
-            {section.availability.map((available, i) => {
-                const bgColor = [
-                "bg-[#303030]", // BASIC
-                "bg-[#242424]", // MEDIUM
-                "bg-[#303030]", // PRO
-                "bg-[#242424]", // ULTRA
-                ][i];
+            {/* PLAN AVAILABILITY */}
+          <div className="flex justify-around items-center mt-4 avaliability-icons text-white">
+              {section.availability.map((available, i) => {
+                  const bgColor = [
+                  "bg-[#303030]", // BASIC
+                  "bg-[#242424]", // MEDIUM
+                  "bg-[#303030]", // PRO
+                  "bg-[#242424]", // ULTRA
+                  ][i];
 
-                return (
-                <div
-                    key={i}
-                    className={`flex flex-col items-center text-xs w-full py-2 ${bgColor}`}
-                >
-                    {available ? <CheckIcon /> : <DashIcon />}
-                </div>
-                );
-            })}
-            </div>
-        </div>
-      ))}
-    </div>
+                  return (
+                  <div
+                      key={i}
+                      className={`flex flex-col items-center text-xs w-full py-2 ${bgColor}`}
+                  >
+                      {available ? <CheckIcon /> : <DashIcon />}
+                  </div>
+                  );
+              })}
+              </div>
+          </div>
+        ))}
+      </div>
+    </>
   );
 };
 

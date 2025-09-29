@@ -186,7 +186,7 @@ export default function PlanComparisonTable({
     <div className="bg-black text-white rounded-[1rem] p-4 mt-6 border border-[#FFFFFF] relative">
       {/* Sticky header shown only when scrolling */}
       {isFixed && (
-        <div className="sticky top-[-15px]  z-50 bg-black shadow-lg ">
+        <div className="sticky top-[-15px]  z-50 bg-black shadow-lg">
           <TableHeader columnWidth={600}/>
         </div>
       )}
