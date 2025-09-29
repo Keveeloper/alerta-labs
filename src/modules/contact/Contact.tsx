@@ -62,7 +62,7 @@ const Contact = () => {
                           md:w-auto">
             <button
               onClick={() => handleContactClick()}
-              className="px-5 py-2 w-full h-15 text-white text-xl hover:text-black hover:bg-white rounded-2xl border border-white bg-black cursor-pointer font-[Exan]
+              className="px-5 py-2 w-full h-15 text-white text-xl hover:text-black hover:bg-white rounded-2xl border-2 border-white bg-black cursor-pointer font-[Exan]
                          md:w-[390px] md:text-3xl"
             >
               INITIATE CONTACT
@@ -98,7 +98,7 @@ const Contact = () => {
 
             <form
               onSubmit={handleSubmit}
-              className="w-full h-full p-6 bg-[#000000ed] text-white rounded-xl border border-white space-y-4
+              className="w-full h-full p-6 bg-[#000000ed] text-white rounded-xl border-2 border-white space-y-4
               md:w-auto md:h-auto"
             >
               {/* Name + Email in one row */}
@@ -116,7 +116,7 @@ const Contact = () => {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-2 rounded-[1rem] border border-white bg-transparent text-white focus:outline-none focus:ring focus:ring-white/30"
+                    className="w-full px-4 py-2 rounded-[1rem] border-2 border-white bg-transparent text-white focus:outline-none focus:ring focus:ring-white/30"
                   />
                 </div>
 
@@ -128,7 +128,7 @@ const Contact = () => {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-2 rounded-[1rem] border border-white bg-transparent text-white focus:outline-none focus:ring focus:ring-white/30"
+                    className="w-full px-4 py-2 rounded-[1rem] border-2 border-white bg-transparent text-white focus:outline-none focus:ring focus:ring-white/30"
                   />
                 </div>
               </div>
@@ -152,7 +152,7 @@ const Contact = () => {
                   placeholder="Add a note. Talk to us about your next project. We’ll bring it to life with precision and creativity"
                   value={formData.description}
                   onChange={handleChange}
-                  className="w-full min-h-[150px] px-4 py-2 rounded-tl-[16px] rounded-tr-[16px] rounded-bl-[16px] rounded-br-[0px] border border-white bg-transparent text-white focus:outline-none focus:ring focus:ring-white/30
+                  className="w-full min-h-[150px] px-4 py-2 rounded-tl-[16px] rounded-tr-[16px] rounded-bl-[16px] rounded-br-[0px] border-2 border-white bg-transparent text-white focus:outline-none focus:ring focus:ring-white/30
                              md:min-h-[110px]"
                 />
               </div>
@@ -161,7 +161,7 @@ const Contact = () => {
               <div className="flex justify-end mt-[-21px]">
                 <button
                     type="submit"
-                    className="px-5 py-2 text-white text-xl border border-white bg-black hover:bg-white/20 transition rounded-b-[16px]"
+                    className="px-5 py-2 text-white text-xl border-2 border-white bg-black hover:bg-white/20 transition rounded-b-[16px]"
                 >
                     Send
                 </button>

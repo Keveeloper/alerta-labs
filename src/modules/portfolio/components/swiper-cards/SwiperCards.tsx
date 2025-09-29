@@ -143,7 +143,7 @@ const SwiperCards = () => {
             {team.map((member) => (
               <SwiperSlide 
                   key={member.id} 
-                  className='group relative w-full h-full border border-white'
+                  className='group relative w-full h-full border-2 border-white'
               >
                   <div className="cards-stack-back w-full h-full filter blur-[2px] group-[.swiper-slide-active]:filter-none">
                       <img src={member.memberPhoto} alt="" />
@@ -153,7 +153,7 @@ const SwiperCards = () => {
                   </div>
                   
                   <div
-                      className='hidden absolute pl-7 w-[190%] h-[calc(100%_+_2px)] top-[-1px] right-[-186%] flex-col justify-center rounded-r-[16px] border-t border-r border-b border-white bg-black z-2 opacity-0 invisible transition-all duration-300 group-[.swiper-slide-active]:opacity-100 group-[.swiper-slide-active]:visible
+                      className='hidden absolute pl-7 w-[190%] h-[calc(100%_+_4px)] top-[-2px] right-[-186%] flex-col justify-center rounded-r-[16px] border-t-2 border-r-2 border-b-2 border-white bg-black z-2 opacity-0 invisible transition-all duration-300 group-[.swiper-slide-active]:opacity-100 group-[.swiper-slide-active]:visible
                                 md:flex'
                   >
                       <h2 className='text-4xl font-semibold text-white font-[Space_Mono]'>{member.name.toUpperCase()}</h2>

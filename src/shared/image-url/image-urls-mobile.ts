@@ -13,4 +13,4 @@ export const ImagesUrlsMobile: imageUrlMobileInterface = {
     vialactea_mobile: '58620657-c880-4aa5-366f-278d0cf58f00',
 }
 
-export const getImageUrlMobile = (imageValue: ImageKey) => `${import.meta.env.VITE_CDN_BASE_URL}${ImagesUrlsMobile[imageValue]}/public`;
+export const getImageUrlMobile = (imageValue: ImageKey) => `${import.meta.env.VITE_CDN_BASE_URL}${ImagesUrlsMobile[imageValue]}/mobile`;

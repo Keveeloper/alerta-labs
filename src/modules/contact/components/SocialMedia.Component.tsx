@@ -5,7 +5,7 @@ import { useLocation } from 'react-router';
 const SocialMediaComponent = () => {
   const location = useLocation();
     return (
-        <div className={`absolute w-[45px] h-[200px] top-1/3 ${location.pathname === '/contact' ? 'right-10' : 'left-5 md:left-10'} mr-[15px] flex flex-col items-center border border-white  bg-transparent rounded-2xl z-50
+        <div className={`absolute w-[45px] h-[200px] top-1/3 ${location.pathname === '/contact' ? 'left-5 md:left-10' : 'left-5 md:left-10'} mr-[15px] flex flex-col items-center border border-white  bg-transparent rounded-2xl z-50
                          md:w-[65px] md:h-[254px]`}>
           <div className="p-[10px] w-full h-1/4 border-b border-white flex justify-center items-center">
             <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" className="w-2/3 h-2/3 text-white hover:text-pink-800 text-xl">

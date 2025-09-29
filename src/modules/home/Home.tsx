@@ -199,7 +199,7 @@ const Home = () => {
 
     return (
         
-        <main className="relative w-full h-lvh">
+        <main className="relative w-full h-screen">
             <LazyLoadImage
                 wrapperClassName='fixed w-full h-full mix-blend-screen'
                 className="w-full h-full object-cover"
@@ -207,7 +207,7 @@ const Home = () => {
                 alt="Alerta lab background space image"
                 effect="blur"
             />
-            <div className="absolute w-full h-[calc(100lvh-160px)] top-1/2 -translate-y-1/2 flex flex-col justify-center items-center
+            <div className="absolute w-full h-[calc(100lvh-160px)] top-[80px] flex flex-col items-center
                             md:hidden">
                 <div className="h-[10%] w-full bg-gradient-to-t from-transparent to-black">
                     <h2 className="m-auto w-[80%] font-semibold text-base text-center text-white font-[Space_Mono]">{'Swipe to explore the UNIVERSE'.toUpperCase()}</h2>
@@ -216,7 +216,7 @@ const Home = () => {
                     loop
                     direction={'horizontal'}
                     pagination={{ clickable: true }}
-                    className="w-full h-full"
+                    className="w-full h-[70%]"
                     onSlideChange={(swiper) => {
                         handleSlideChange(swiper.realIndex);
                     }}

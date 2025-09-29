@@ -174,7 +174,7 @@ const Navbar = () => {
               PACKAGES
             </p>
           </div>
-          <div className='py-3 border-b border-white'>
+          <div className='py-3 border-white'>
             <p className='font-[Exan] text-white text-xl font-bold'>
               CONTACT
             </p>

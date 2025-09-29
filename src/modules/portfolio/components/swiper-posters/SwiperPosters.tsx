@@ -158,7 +158,7 @@ const SwiperPosters = () => {
         {portfolioJobs.map((img) => (
             <SwiperSlide 
                 style={{justifyContent: 'space-between'}}
-                className='p-5 flex-col border border-white rounded-[var(--border-radius-20)] bg-black
+                className='p-5 flex-col border-2 border-white rounded-[var(--border-radius-20)] bg-black
                            md:px-7 md:py-10'
             >
                 <img style={{height: '75%'}} src={`https://imagedelivery.net/zbd8viznFTU9Xm-HIspwjQ/${img.image}/public`} alt="" />

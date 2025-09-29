@@ -134,7 +134,7 @@ const Portfolio = () => {
                 effect="blur" // efecto visual mientras carga
             />
             <div 
-              className='absolute p-5 w-[75%] h-auto top-[25.3%] rounded-[var(--border-radius-20)] border flex flex-col justify-center items-center border-white bg-black
+              className='absolute p-5 w-[75%] h-auto top-[25.3%] rounded-[var(--border-radius-20)] border-2 flex flex-col justify-center items-center border-white bg-black
                          md:p-0 md:w-[65%] md:h-[40%] md:top-[37.3%]'
             >
               <h2 
